@@ -19,5 +19,9 @@
             <menu:item id="i_seadus_new" messageCode="global_menu_new" url="/seaduses?form" z="4Jdd5BARV+OT8Uj2TLUOFslVvcM="/>
             <menu:item id="i_seadus_list" messageCode="global_menu_list" url="/seaduses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="bMv8uFCmOcQ1zI32wJeLWi5W6bc="/>
         </menu:category>
+        <menu:category id="c_seadusepunkt" z="DcjKOgFZ4/uaYmTrUW9Y720qQaQ=">
+            <menu:item id="i_seadusepunkt_new" messageCode="global_menu_new" url="/seadusepunkts?form" z="WpGmYxK6qd1W2LiyFGVtIcC8a8U="/>
+            <menu:item id="i_seadusepunkt_list" messageCode="global_menu_list" url="/seadusepunkts?page=1&amp;size=${empty param.size ? 10 : param.size}" z="RLAivtY6urnl0wTY0X+G3MGi/kI="/>
+        </menu:category>
     </menu:menu>
 </div>

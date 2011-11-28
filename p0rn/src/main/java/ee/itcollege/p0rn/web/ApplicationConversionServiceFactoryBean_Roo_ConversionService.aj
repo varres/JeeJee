@@ -7,6 +7,7 @@ import ee.itcollege.p0rn.entities.Kodakondsus;
 import ee.itcollege.p0rn.entities.Piiririkkuja;
 import ee.itcollege.p0rn.entities.Riik;
 import ee.itcollege.p0rn.entities.Seadus;
+import ee.itcollege.p0rn.entities.SeadusePunkt;
 import java.lang.String;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
@@ -18,6 +19,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(new PiiririkkujaConverter());
         registry.addConverter(new RiikConverter());
         registry.addConverter(new SeadusConverter());
+        registry.addConverter(new SeadusePunktConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
@@ -49,6 +51,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.SeadusConverter implements Converter<Seadus, String> {
         public String convert(Seadus seadus) {
             return new StringBuilder().append(seadus.getSeaduse_ID()).append(" ").append(seadus.getKood()).append(" ").append(seadus.getNimetus()).append(" ").append(seadus.getKehtiv_alates()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.SeadusePunktConverter implements Converter<SeadusePunkt, String> {
+        public String convert(SeadusePunkt seadusePunkt) {
+            return new StringBuilder().append(seadusePunkt.getSeaduse__punkt_ID()).append(" ").append(seadusePunkt.getParagrahv()).append(" ").append(seadusePunkt.getPais()).append(" ").append(seadusePunkt.getTekst()).toString();
         }
         
     }
