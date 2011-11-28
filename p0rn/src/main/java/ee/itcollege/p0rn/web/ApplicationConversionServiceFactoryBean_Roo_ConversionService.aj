@@ -6,6 +6,7 @@ package ee.itcollege.p0rn.web;
 import ee.itcollege.p0rn.entities.Kodakondsus;
 import ee.itcollege.p0rn.entities.Piiririkkuja;
 import ee.itcollege.p0rn.entities.Riik;
+import ee.itcollege.p0rn.entities.Seadus;
 import java.lang.String;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
@@ -16,6 +17,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(new KodakondsusConverter());
         registry.addConverter(new PiiririkkujaConverter());
         registry.addConverter(new RiikConverter());
+        registry.addConverter(new SeadusConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
@@ -40,6 +42,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.RiikConverter implements Converter<Riik, String> {
         public String convert(Riik riik) {
             return new StringBuilder().append(riik.getRiik_ID()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.SeadusConverter implements Converter<Seadus, String> {
+        public String convert(Seadus seadus) {
+            return new StringBuilder().append(seadus.getSeaduse_ID()).append(" ").append(seadus.getKood()).append(" ").append(seadus.getNimetus()).append(" ").append(seadus.getKehtiv_alates()).toString();
         }
         
     }

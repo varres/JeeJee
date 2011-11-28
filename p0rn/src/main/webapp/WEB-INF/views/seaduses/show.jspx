@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_p0rn_entities_Seadus" object="${seadus}" path="/seaduses" z="n6+mAp/1+/ZKHMvapy8mr0np63s=">
+        <field:display field="seaduse_ID" id="s_ee_itcollege_p0rn_entities_Seadus_seaduse_ID" object="${seadus}" z="XcG1wxrSBT8GSDbsmx70fg6+U5A="/>
+        <field:display field="kood" id="s_ee_itcollege_p0rn_entities_Seadus_kood" object="${seadus}" z="PdyuhAyE45tdFbemTo3dHLhyEiA="/>
+        <field:display field="nimetus" id="s_ee_itcollege_p0rn_entities_Seadus_nimetus" object="${seadus}" z="gkqObM3q90G1+4ZUMNLFRQICx8U="/>
+        <field:display field="kehtiv_alates" id="s_ee_itcollege_p0rn_entities_Seadus_kehtiv_alates" object="${seadus}" z="jj1W5MpPv6/KXb05A61b/dOkCq8="/>
+        <field:display field="kehtiv_kuni" id="s_ee_itcollege_p0rn_entities_Seadus_kehtiv_kuni" object="${seadus}" z="hYXTea0SqpXyGHCk/iJa0s8nTts="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_p0rn_entities_Seadus_kommentaar" object="${seadus}" z="8FvimjYdik/5DVTKG+e7Xp4pXpQ="/>
+        <field:display field="avaja" id="s_ee_itcollege_p0rn_entities_Seadus_avaja" object="${seadus}" z="tbQ3BpIfpyFxWcu4ANJiROF6miw="/>
+        <field:display date="true" dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="s_ee_itcollege_p0rn_entities_Seadus_avatud" object="${seadus}" z="Za1dzXzT6nzZrOY2u5J77K3V1xk="/>
+        <field:display field="muutja" id="s_ee_itcollege_p0rn_entities_Seadus_muutja" object="${seadus}" z="zduHm6K8dj49pto0PCMdkEl2f/o="/>
+        <field:display date="true" dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_p0rn_entities_Seadus_muudetud" object="${seadus}" z="940eFGS9HMrq6jFM9EosbAvS05g="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_p0rn_entities_Seadus_sulgeja" object="${seadus}" z="2OJZA4mQBWAAersceNOd6TVQmQg="/>
+        <field:display date="true" dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="s_ee_itcollege_p0rn_entities_Seadus_suletud" object="${seadus}" z="gMlvajL6+hTEOqLfQDdHjSk/85E="/>
+    </page:show>
+</div>

@@ -15,5 +15,9 @@
             <menu:item id="i_riik_new" messageCode="global_menu_new" url="/riiks?form" z="Osrc4MHDGnzI9KsezJA/j2RcsM4="/>
             <menu:item id="i_riik_list" messageCode="global_menu_list" url="/riiks?page=1&amp;size=${empty param.size ? 10 : param.size}" z="dnLLIm4aMreomSiFZOHLQa12gFE="/>
         </menu:category>
+        <menu:category id="c_seadus" z="td/xdGFVi/EMFr8vSwBGLSs2A3E=">
+            <menu:item id="i_seadus_new" messageCode="global_menu_new" url="/seaduses?form" z="4Jdd5BARV+OT8Uj2TLUOFslVvcM="/>
+            <menu:item id="i_seadus_list" messageCode="global_menu_list" url="/seaduses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="bMv8uFCmOcQ1zI32wJeLWi5W6bc="/>
+        </menu:category>
     </menu:menu>
 </div>
