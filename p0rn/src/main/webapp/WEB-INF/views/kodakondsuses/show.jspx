@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_p0rn_entities_Kodakondsus" object="${kodakondsus}" path="/kodakondsuses" z="Bdgf31B/nrbXL+/wKkhp7eczk8c=">
+        <field:display field="kodakondsus_ID" id="s_ee_itcollege_p0rn_entities_Kodakondsus_kodakondsus_ID" object="${kodakondsus}" z="zNY8p9FlB4QNwk6/4MlqAzqB5dw="/>
+        <field:display field="avaja" id="s_ee_itcollege_p0rn_entities_Kodakondsus_avaja" object="${kodakondsus}" z="RfmdtsJ3M78x3cSPN0wlOik5pq4="/>
+        <field:display date="true" dateTimePattern="${kodakondsus_avatud_date_format}" field="avatud" id="s_ee_itcollege_p0rn_entities_Kodakondsus_avatud" object="${kodakondsus}" z="/NvloUKa9HWk0Jbf5yWT9niQ2Co="/>
+        <field:display field="muutja" id="s_ee_itcollege_p0rn_entities_Kodakondsus_muutja" object="${kodakondsus}" z="CN4GWNffkFZSb6gUKuLPT1AiLkM="/>
+        <field:display date="true" dateTimePattern="${kodakondsus_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_p0rn_entities_Kodakondsus_muudetud" object="${kodakondsus}" z="UX0KBcu+EoHEMAYpohZq2ERjgNU="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_p0rn_entities_Kodakondsus_sulgeja" object="${kodakondsus}" z="gVI+7ShLOz5/U1g97A3XSK4G/T8="/>
+        <field:display date="true" dateTimePattern="${kodakondsus_suletud_date_format}" field="suletud" id="s_ee_itcollege_p0rn_entities_Kodakondsus_suletud" object="${kodakondsus}" z="hYpEEbQTGfGkUlp/0OtvVvZi/u0="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_p0rn_entities_Kodakondsus_kommentaar" object="${kodakondsus}" z="F/PAyQ7X40of4pnOLUk74LsPsTo="/>
+        <field:display date="true" dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="s_ee_itcollege_p0rn_entities_Kodakondsus_alates" object="${kodakondsus}" z="3+5afRUu4CUzxl60vfngQICaqlY="/>
+        <field:display date="true" dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="s_ee_itcollege_p0rn_entities_Kodakondsus_kuni" object="${kodakondsus}" z="Mq6vdKTkYEue6WvryjE421qTvuE="/>
+        <field:display field="riik_ID" id="s_ee_itcollege_p0rn_entities_Kodakondsus_riik_ID" object="${kodakondsus}" z="cdhDdTA8ZWkXcfRDp82VTWxi4jM="/>
+        <field:display field="isikukood" id="s_ee_itcollege_p0rn_entities_Kodakondsus_isikukood" object="${kodakondsus}" z="aGz17NBdPe1zsOkKcIGS6fPAw18="/>
+        <field:display field="piiririkkuja_ID" id="s_ee_itcollege_p0rn_entities_Kodakondsus_piiririkkuja_ID" object="${kodakondsus}" z="8sAtJsVdEV/BguHJjlicVJId67A="/>
+    </page:show>
+</div>
