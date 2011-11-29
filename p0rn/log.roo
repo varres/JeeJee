@@ -54,3 +54,5 @@ hint
 hint entities
 focus --class ~.entities.Kodakondsus
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-27 22:42:13
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 00:27:23
+security setup
