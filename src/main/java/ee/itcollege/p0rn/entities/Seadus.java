@@ -123,9 +123,9 @@ public class Seadus {
     
    @PrePersist
    protected void onCreate() {
-       avaja = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+       avaja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
        avatud = new Date();
-       muutja = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+       muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
        muudetud = new Date();
        // Dummy data
        sulgeja = "";
@@ -142,7 +142,7 @@ public class Seadus {
      avaja = "värdjas";
      avatud = new Date();
 	   
-	 muutja = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	 muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
      muudetud = new Date();
      
      // Dummy data
