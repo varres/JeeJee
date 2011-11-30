@@ -38,11 +38,13 @@ public class Piiririkkuja {
 	
     @NotNull
     @Size(max = 32)
+    @Column(updatable = false)
     private String avaja;
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
+    @Column(updatable = false)
     private Date avatud;
 
     @NotNull
@@ -80,20 +82,10 @@ public class Piiririkkuja {
     @DateTimeFormat(style = "M-")
     private Date synniaeg;
 
+    @Column(updatable = false)
     private int objekt_ID;
 
     public void setDefaultValues() {
-    	SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-    	avaja = "";
-    	muutja = "";
-    	sulgeja = "";
-    	try {
- 			suletud = (Date)format.parse("2099/12/31");
- 		} catch (ParseException e) {
- 			e.printStackTrace();
- 		}
-    	avatud = new Date();
-    	muudetud = new Date();
     	objekt_ID = 0;
     }
 
@@ -103,11 +95,27 @@ public class Piiririkkuja {
         avatud = new Date();
         muutja = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         muudetud = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+    	 sulgeja = "";
+    	 try {
+ 			suletud = (Date)format.parse("2099/12/31");
+ 		 } catch (ParseException e) {
+ 			e.printStackTrace();
+ 		 }
     }
 
     @PreUpdate
     protected void onUpdate() {
     	 muutja = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
          muudetud = new Date();
+         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+     	 sulgeja = "";
+     	 avaja = "";
+     	 avatud = new Date();
+     	 try {
+  			suletud = (Date)format.parse("2099/12/31");
+  		 } catch (ParseException e) {
+  			e.printStackTrace();
+  		 }
     }
 }

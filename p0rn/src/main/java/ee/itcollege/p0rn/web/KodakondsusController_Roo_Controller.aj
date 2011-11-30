@@ -39,13 +39,6 @@ privileged aspect KodakondsusController_Roo_Controller {
         return "redirect:/kodakondsuses/" + encodeUrlPathSegment(kodakondsus.getKodakondsus_ID().toString(), httpServletRequest);
     }
     
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String KodakondsusController.createForm(Model uiModel) {
-        uiModel.addAttribute("kodakondsus", new Kodakondsus());
-        addDateTimeFormatPatterns(uiModel);
-        return "kodakondsuses/create";
-    }
-    
     @RequestMapping(value = "/{kodakondsus_ID}", method = RequestMethod.GET)
     public String KodakondsusController.show(@PathVariable("kodakondsus_ID") Long kodakondsus_ID, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);

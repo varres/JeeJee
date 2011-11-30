@@ -10,11 +10,13 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import ee.itcollege.p0rn.entities.Kodakondsus;
 import ee.itcollege.p0rn.entities.Piiririkkuja;
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,6 +59,30 @@ public class PiiririkkujaController {
         uiModel.asMap().clear();
         piiririkkuja.persist();
         return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
+    }
+    
+    @RequestMapping(value = "/{piiririkkuja_ID}", params = "form", method = RequestMethod.GET)
+    public String updateForm(@PathVariable("piiririkkuja_ID") Long piiririkkuja_ID, Model uiModel) {
+    	
+        uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(piiririkkuja_ID));
+        System.out.println(Kodakondsus.findAllKodakondsuses().size());
+        uiModel.addAttribute("kodakondsuses", Kodakondsus.findAllByPiiririkkuja(piiririkkuja_ID));
+        uiModel.addAttribute("genders", getGenders());
+        addDateTimeFormatPatterns(uiModel);
+        return "piiririkkujas/update";
+    }
+    
+    @RequestMapping(method = RequestMethod.PUT)
+    public String update(@Valid Piiririkkuja piiririkkuja, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        /**if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("piiririkkuja", piiririkkuja);
+            addDateTimeFormatPatterns(uiModel);
+            return "piiririkkujas/update";
+        }
+        */
+        uiModel.asMap().clear();
+        piiririkkuja.merge();
+        return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getPiiririkkuja_ID().toString(), httpServletRequest);
     }
 }
 

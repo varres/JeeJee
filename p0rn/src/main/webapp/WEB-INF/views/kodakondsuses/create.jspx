@@ -12,7 +12,7 @@
         <field:input field="kommentaar" id="c_ee_itcollege_p0rn_entities_Kodakondsus_kommentaar" z="CrLjNexUi7/os/IRwxr7ajQN7uk="/>
         <field:datetime dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="c_ee_itcollege_p0rn_entities_Kodakondsus_alates" z="w1t1VOEbWMfPYB+E08qx+lAftAg="/>
         <field:datetime dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="c_ee_itcollege_p0rn_entities_Kodakondsus_kuni" z="ZzeB2xK1AAAfznD2o7sUhTiigzI="/>
-        <field:select field="riik_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_riik_ID" itemValue="id" items="${riiks}" path="/riiks" z="MfWt4km7fWEZIQGThg27Z/fT+k8="/>
+        <field:select field="riik_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_riik_ID" itemValue="riik_ID" items="${riiks}" path="/riiks" z="d05074jfqWoJ3CGN/JBI3shWY94="/>
         <field:input field="isikukood" id="c_ee_itcollege_p0rn_entities_Kodakondsus_isikukood" max="20" z="2bd3IpJmq+1R9m0nriBWZzJqYh0="/>
         <field:select field="piiririkkuja_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_piiririkkuja_ID" itemValue="piiririkkuja_ID" items="${piiririkkujas}" path="/piiririkkujas" z="90HiVk9s90RXJB3GhZ+9Df2SEoI="/>
     </form:create>

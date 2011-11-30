@@ -10,11 +10,9 @@ import java.lang.Long;
 import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,25 +43,6 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         }
         addDateTimeFormatPatterns(uiModel);
         return "piiririkkujas/list";
-    }
-    
-    @RequestMapping(method = RequestMethod.PUT)
-    public String PiiririkkujaController.update(@Valid Piiririkkuja piiririkkuja, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("piiririkkuja", piiririkkuja);
-            addDateTimeFormatPatterns(uiModel);
-            return "piiririkkujas/update";
-        }
-        uiModel.asMap().clear();
-        piiririkkuja.merge();
-        return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getPiiririkkuja_ID().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(value = "/{piiririkkuja_ID}", params = "form", method = RequestMethod.GET)
-    public String PiiririkkujaController.updateForm(@PathVariable("piiririkkuja_ID") Long piiririkkuja_ID, Model uiModel) {
-        uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(piiririkkuja_ID));
-        addDateTimeFormatPatterns(uiModel);
-        return "piiririkkujas/update";
     }
     
     @RequestMapping(value = "/{piiririkkuja_ID}", method = RequestMethod.DELETE)
