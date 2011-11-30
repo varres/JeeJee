@@ -35,9 +35,21 @@ public class AjaluguController {
     }
 
     @RequestMapping
-    public String index(Model uiModel) {
-        uiModel.addAttribute("seadusepunkts", SeadusePunkt.findAllSeadusePunkts());
+    public String index(@RequestParam(value = "seaduse_ID", required = false) Long seaduse_ID, @RequestParam(value = "alates", required = false) String alates, @RequestParam(value = "kuni", required = false) String kuni, Model uiModel) {
+        if (seaduse_ID == null) {
+        	seaduse_ID = (long) 0;
+        }
+        if (alates == null) {
+        	alates = "";
+        }
+        if (kuni == null) {
+        	kuni = "";
+        }
+    	uiModel.addAttribute("seadusepunkts", SeadusePunkt.findAllSeadusePunkts(seaduse_ID, alates, kuni));
         uiModel.addAttribute("seaduses", Seadus.findAllSeaduses());
+        uiModel.addAttribute("alates", alates);
+        uiModel.addAttribute("kuni", kuni);
+        uiModel.addAttribute("seaduse_ID", seaduse_ID);
         addDateTimeFormatPatterns(uiModel);
         return "ajalugu/index";
     }
