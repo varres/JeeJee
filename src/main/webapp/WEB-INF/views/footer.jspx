@@ -8,7 +8,7 @@
     <a href="${home}">
       <spring:message code="button_home"/>
     </a>
-  </span>
+  </span>${user.home}
   <c:if test="${pageContext['request'].userPrincipal != null}">
     <c:out value=" | "/>
     <span>

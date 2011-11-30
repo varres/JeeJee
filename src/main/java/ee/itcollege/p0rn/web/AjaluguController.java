@@ -1,5 +1,7 @@
 package ee.itcollege.p0rn.web;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -36,7 +38,13 @@ public class AjaluguController {
 
     @RequestMapping
     public String index(@RequestParam(value = "seaduse_ID", required = false) Long seaduse_ID, @RequestParam(value = "alates", required = false) String alates, @RequestParam(value = "kuni", required = false) String kuni, Model uiModel) {
-        if (seaduse_ID == null) {
+    	Map<String, String> env = System.getenv();
+
+    	String debug = "";
+        for (Map.Entry<String, String> entry : env.entrySet()) {
+        	debug = debug + entry.getKey() + "=" + entry.getValue() + ";";
+        }
+    	if (seaduse_ID == null) {
         	seaduse_ID = (long) 0;
         }
         if (alates == null) {
@@ -50,6 +58,7 @@ public class AjaluguController {
         uiModel.addAttribute("alates", alates);
         uiModel.addAttribute("kuni", kuni);
         uiModel.addAttribute("seaduse_ID", seaduse_ID);
+        uiModel.addAttribute("debug", debug);
         addDateTimeFormatPatterns(uiModel);
         return "ajalugu/index";
     }
