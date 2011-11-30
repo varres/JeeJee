@@ -12,7 +12,6 @@ privileged aspect Kodakondsus_Roo_ToString {
         sb.append("Alates: ").append(getAlates()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
-        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Isikukood: ").append(getIsikukood()).append(", ");
         sb.append("Kodakondsus_ID: ").append(getKodakondsus_ID()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");

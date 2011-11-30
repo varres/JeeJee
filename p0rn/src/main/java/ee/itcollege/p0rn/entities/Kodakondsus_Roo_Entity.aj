@@ -10,9 +10,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,22 +21,9 @@ privileged aspect Kodakondsus_Roo_Entity {
     @PersistenceContext
     transient EntityManager Kodakondsus.entityManager;
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long Kodakondsus.id;
-    
     @Version
     @Column(name = "version")
     private Integer Kodakondsus.version;
-    
-    public Long Kodakondsus.getId() {
-        return this.id;
-    }
-    
-    public void Kodakondsus.setId(Long id) {
-        this.id = id;
-    }
     
     public Integer Kodakondsus.getVersion() {
         return this.version;
@@ -61,7 +45,7 @@ privileged aspect Kodakondsus_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Kodakondsus attached = Kodakondsus.findKodakondsus(this.id);
+            Kodakondsus attached = Kodakondsus.findKodakondsus(this.kodakondsus_ID);
             this.entityManager.remove(attached);
         }
     }
@@ -100,9 +84,9 @@ privileged aspect Kodakondsus_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Kodakondsus o", Kodakondsus.class).getResultList();
     }
     
-    public static Kodakondsus Kodakondsus.findKodakondsus(Long id) {
-        if (id == null) return null;
-        return entityManager().find(Kodakondsus.class, id);
+    public static Kodakondsus Kodakondsus.findKodakondsus(Long kodakondsus_ID) {
+        if (kodakondsus_ID == null) return null;
+        return entityManager().find(Kodakondsus.class, kodakondsus_ID);
     }
     
     public static List<Kodakondsus> Kodakondsus.findKodakondsusEntries(int firstResult, int maxResults) {

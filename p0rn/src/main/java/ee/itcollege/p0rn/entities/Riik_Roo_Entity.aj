@@ -10,9 +10,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,22 +21,9 @@ privileged aspect Riik_Roo_Entity {
     @PersistenceContext
     transient EntityManager Riik.entityManager;
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long Riik.id;
-    
     @Version
     @Column(name = "version")
     private Integer Riik.version;
-    
-    public Long Riik.getId() {
-        return this.id;
-    }
-    
-    public void Riik.setId(Long id) {
-        this.id = id;
-    }
     
     public Integer Riik.getVersion() {
         return this.version;
@@ -61,7 +45,7 @@ privileged aspect Riik_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Riik attached = Riik.findRiik(this.id);
+            Riik attached = Riik.findRiik(this.riik_ID);
             this.entityManager.remove(attached);
         }
     }
@@ -100,9 +84,9 @@ privileged aspect Riik_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Riik o", Riik.class).getResultList();
     }
     
-    public static Riik Riik.findRiik(Long id) {
-        if (id == null) return null;
-        return entityManager().find(Riik.class, id);
+    public static Riik Riik.findRiik(Long riik_ID) {
+        if (riik_ID == null) return null;
+        return entityManager().find(Riik.class, riik_ID);
     }
     
     public static List<Riik> Riik.findRiikEntries(int firstResult, int maxResults) {

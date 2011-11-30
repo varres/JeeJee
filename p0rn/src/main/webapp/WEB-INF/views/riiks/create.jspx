@@ -3,7 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_p0rn_entities_Riik" modelAttribute="riik" path="/riiks" render="${empty dependencies}" z="I+Z0/QnYhy1vks+QYVvmEMYGwgE=">
-        <field:input field="riik_ID" id="c_ee_itcollege_p0rn_entities_Riik_riik_ID" z="ouZr+2v+W5Foke7ng689dJmzDB8="/>
         <field:input field="ISO_kood" id="c_ee_itcollege_p0rn_entities_Riik_ISO_kood" max="20" required="true" z="5oA8MtxLlLbyFW8dl71VTjRKy2A="/>
         <field:input field="ANSI_kood" id="c_ee_itcollege_p0rn_entities_Riik_ANSI_kood" max="20" required="true" z="xbZtsG3KcmNiCrnKS/7Y/ytV25U="/>
         <field:input field="kommentaar" id="c_ee_itcollege_p0rn_entities_Riik_kommentaar" required="true" z="4TKpX9CD8tQBC9mc0qdQJ+gGoPw="/>

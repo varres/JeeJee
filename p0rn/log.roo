@@ -74,3 +74,7 @@ hint
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-30 11:33:30
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 11:33:38
 field number --class ee.itcollege.p0rn.entities.Piiririkkuja --fieldName piiririkkuja_ID --type java.lang.Integer --notNull --unique --column id
+// [failed] field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakondsus_ID --type java.lang.Integer --notNull --unique
+field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakondsus_ID --type java.lang.Integer --notNull --unique
+// [failed] field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakondsus_ID --type java.lang.Integer --notNull --unique --column id
+field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakondsuse_ID --type java.lang.Integer --notNull --unique --column id

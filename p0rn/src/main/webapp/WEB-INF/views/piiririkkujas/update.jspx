@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+<div 
+	xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" 
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+	version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
+    
+    <page:list id="pl_ee_itcollege_p0rn_entities_Kodakondsus" items="${kodakondsuses}" z="dBv4+VUGHdxce+sj8hZkT63JKYs=">
+        <table:table data="${kodakondsuses}" id="l_ee_itcollege_p0rn_entities_Kodakondsus" path="/kodakondsuses" z="Zpr4YR+qlMVMoOxHwN76QdFfLBo=">
+            <table:column id="c_ee_itcollege_p0rn_entities_Kodakondsus_kodakondsus_ID" property="kodakondsus_ID" z="gXsyz2HJ+AYH5JFV7LHyAlZvm7Q="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Kodakondsus_avaja" property="avaja" z="kszZOXU0SUGeOZlrnuURtemrJxc="/>
+            <table:column date="true" dateTimePattern="${kodakondsus_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_Kodakondsus_avatud" property="avatud" z="XXu49jPcxkm3Bmyl+N+qFG113/E="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Kodakondsus_muutja" property="muutja" z="zkr/OSCveJ3oN2NOmS+mdNa+6oE="/>
+            <table:column date="true" dateTimePattern="${kodakondsus_muudetud_date_format}" id="c_ee_itcollege_p0rn_entities_Kodakondsus_muudetud" property="muudetud" z="dkt6nX+MvedqNRm9fDf4xW5fDL0="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Kodakondsus_sulgeja" property="sulgeja" z="x+01jEKhD2avtZ6rAkTBy3cPzt8="/>
+        </table:table>
+    </page:list>
+    
     <form:update id="fu_ee_itcollege_p0rn_entities_Piiririkkuja" idField="piiririkkuja_ID" modelAttribute="piiririkkuja" path="/piiririkkujas" versionField="Version" z="MoOG+XGKQmIGQg+8NE3/ZWXeOH8=">
         <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avaja" required="true" z="JnCN/rKtq64kDTxJg/AJzSpK2QY="/>
         <field:datetime dateTimePattern="${piiririkkuja_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avatud" required="true" z="yJP/L/ecKWJGgkl/USANS6Ealxg="/>
@@ -17,4 +35,5 @@
         <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_synniaeg" z="14+EeDyUeTxI+u3vqH4coSah4Hc="/>
         <field:input field="objekt_ID" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_objekt_ID" z="HvQwFmWNKe/voWIZJDNaGIlHAyY="/>
     </form:update>
+    
 </div>

@@ -29,7 +29,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.KodakondsusConverter implements Converter<Kodakondsus, String> {
         public String convert(Kodakondsus kodakondsus) {
-            return new StringBuilder().append(kodakondsus.getKodakondsus_ID()).append(" ").append(kodakondsus.getAvaja()).append(" ").append(kodakondsus.getAvatud()).append(" ").append(kodakondsus.getMuutja()).toString();
+            return new StringBuilder().append(kodakondsus.getAvaja()).append(" ").append(kodakondsus.getAvatud()).append(" ").append(kodakondsus.getMuutja()).append(" ").append(kodakondsus.getMuudetud()).toString();
         }
         
     }
@@ -43,7 +43,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.RiikConverter implements Converter<Riik, String> {
         public String convert(Riik riik) {
-            return new StringBuilder().append(riik.getRiik_ID()).append(" ").append(riik.getISO_kood()).append(" ").append(riik.getANSI_kood()).append(" ").append(riik.getKommentaar()).toString();
+            return new StringBuilder().append(riik.getISO_kood()).append(" ").append(riik.getANSI_kood()).append(" ").append(riik.getKommentaar()).append(" ").append(riik.getAvaja()).toString();
         }
         
     }

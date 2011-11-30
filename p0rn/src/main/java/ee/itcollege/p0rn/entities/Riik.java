@@ -6,6 +6,10 @@ import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -15,7 +19,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 @RooEntity
 public class Riik {
 
-    private int riik_ID;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private Long riik_ID;
 
     @NotNull
     @Size(max = 20)
