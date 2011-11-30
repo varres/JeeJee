@@ -72,3 +72,14 @@ field string --class ee.itcollege.p0rn.entities.Riik --fieldName sulgeja --sizeM
 field date --class ee.itcollege.p0rn.entities.Riik --fieldName suletud --type java.util.Date --notNull
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 09:56:29
 persistence setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 12:18:47
+help
+perform tests
+perform tests
+perform tests
+perform tests
+perform tests
+perform tests
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 12:57:24
+help
+perform tests

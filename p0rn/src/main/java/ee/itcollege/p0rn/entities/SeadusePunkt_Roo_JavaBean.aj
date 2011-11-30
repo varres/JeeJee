@@ -10,12 +10,12 @@ import java.util.Date;
 
 privileged aspect SeadusePunkt_Roo_JavaBean {
     
-    public int SeadusePunkt.getSeaduse__punkt_ID() {
-        return this.seaduse__punkt_ID;
+    public int SeadusePunkt.getSeaduse_punkt_ID() {
+        return this.seaduse_punkt_ID;
     }
     
-    public void SeadusePunkt.setSeaduse__punkt_ID(int seaduse__punkt_ID) {
-        this.seaduse__punkt_ID = seaduse__punkt_ID;
+    public void SeadusePunkt.setSeaduse_punkt_ID(int seaduse_punkt_ID) {
+        this.seaduse_punkt_ID = seaduse_punkt_ID;
     }
     
     public String SeadusePunkt.getParagrahv() {
