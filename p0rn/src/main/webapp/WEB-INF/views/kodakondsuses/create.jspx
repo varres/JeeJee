@@ -15,7 +15,7 @@
         <field:datetime dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="c_ee_itcollege_p0rn_entities_Kodakondsus_kuni" z="ZzeB2xK1AAAfznD2o7sUhTiigzI="/>
         <field:input field="riik_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_riik_ID" z="ut5m4PhJyL+A5N1VA/FCtXQxnx8="/>
         <field:input field="isikukood" id="c_ee_itcollege_p0rn_entities_Kodakondsus_isikukood" max="20" z="2bd3IpJmq+1R9m0nriBWZzJqYh0="/>
-        <field:select field="piiririkkuja_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_piiririkkuja_ID" itemValue="id" items="${piiririkkujas}" path="/piiririkkujas" z="bviSeuSDueldefV6Ie2dDHpKtrc="/>
+        <field:select field="piiririkkuja_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_piiririkkuja_ID" itemValue="piiririkkuja_ID" items="${piiririkkujas}" path="/piiririkkujas" z="90HiVk9s90RXJB3GhZ+9Df2SEoI="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_p0rn_entities_Kodakondsus" render="${not empty dependencies}" z="IuAK+dpUvNReu7WTnGxnuc8ltEg="/>
 </div>
