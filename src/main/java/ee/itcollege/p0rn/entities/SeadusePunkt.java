@@ -147,7 +147,7 @@ public class SeadusePunkt {
       avaja = "värdjas";
       avatud = new Date();
  	   
- 	  muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+ 	 muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
       muudetud = new Date();
       
       // Dummy data
