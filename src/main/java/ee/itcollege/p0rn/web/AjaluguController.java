@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ee.itcollege.p0rn.entities.Seadus;
 import ee.itcollege.p0rn.entities.SeadusePunkt;
 
 @RequestMapping("/ajalugu/**")
@@ -36,6 +37,7 @@ public class AjaluguController {
     @RequestMapping
     public String index(Model uiModel) {
         uiModel.addAttribute("seadusepunkts", SeadusePunkt.findAllSeadusePunkts());
+        uiModel.addAttribute("seaduses", Seadus.findAllSeaduses());
         addDateTimeFormatPatterns(uiModel);
         return "ajalugu/index";
     }
