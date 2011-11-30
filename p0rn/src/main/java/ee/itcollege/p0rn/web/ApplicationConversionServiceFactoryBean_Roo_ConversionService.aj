@@ -36,7 +36,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.PiiririkkujaConverter implements Converter<Piiririkkuja, String> {
         public String convert(Piiririkkuja piiririkkuja) {
-            return new StringBuilder().append(piiririkkuja.getPiirirkkuja_ID()).append(" ").append(piiririkkuja.getAvaja()).append(" ").append(piiririkkuja.getAvatud()).append(" ").append(piiririkkuja.getMuutja()).toString();
+            return new StringBuilder().append(piiririkkuja.getAvaja()).append(" ").append(piiririkkuja.getAvatud()).append(" ").append(piiririkkuja.getMuutja()).append(" ").append(piiririkkuja.getMuudetud()).toString();
         }
         
     }

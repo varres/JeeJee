@@ -3,17 +3,18 @@
 
 package ee.itcollege.p0rn.entities;
 
+import java.lang.Long;
 import java.lang.String;
 import java.util.Date;
 
 privileged aspect Piiririkkuja_Roo_JavaBean {
     
-    public int Piiririkkuja.getPiirirkkuja_ID() {
-        return this.piirirkkuja_ID;
+    public Long Piiririkkuja.getPiiririkkuja_ID() {
+        return this.piiririkkuja_ID;
     }
     
-    public void Piiririkkuja.setPiirirkkuja_ID(int piirirkkuja_ID) {
-        this.piirirkkuja_ID = piirirkkuja_ID;
+    public void Piiririkkuja.setPiiririkkuja_ID(Long piiririkkuja_ID) {
+        this.piiririkkuja_ID = piiririkkuja_ID;
     }
     
     public String Piiririkkuja.getAvaja() {

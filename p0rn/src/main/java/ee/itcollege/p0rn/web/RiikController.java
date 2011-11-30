@@ -1,5 +1,6 @@
 package ee.itcollege.p0rn.web;
 
+
 import ee.itcollege.p0rn.entities.Riik;
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
