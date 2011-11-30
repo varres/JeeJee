@@ -43,13 +43,7 @@ public class Seadus {
     @Size(max = 20)
     private String kood;
 
-    public String getSulgeja() {
-		return sulgeja;
-	}
 
-	public void setSulgeja(String sulgeja) {
-		this.sulgeja = sulgeja;
-	}
 
 	@NotNull
     @Size(max = 20)
@@ -69,11 +63,13 @@ public class Seadus {
 
     @NotNull
     @Size(max = 32)
+    @Column(updatable=false)
     private String avaja;
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
+    @Column(updatable=false)
     private Date avatud;
 
     @NotNull
@@ -88,6 +84,14 @@ public class Seadus {
     @NotNull
     @Size(max = 32)
     private String sulgeja;
+   
+    public String getSulgeja() {
+		return sulgeja;
+	}
+
+	public void setSulgeja(String sulgeja) {
+		this.sulgeja = sulgeja;
+	}
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
@@ -101,7 +105,7 @@ public class Seadus {
 	public void setSuletud(Date suletud) {
 		this.suletud = suletud;
 	}
-
+    /*
 	public void setDefaultValues() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         avaja = "";
@@ -115,7 +119,7 @@ public class Seadus {
         avatud = new Date();
         muudetud = new Date();
         seaduse_ID = (long) 0;
-   }
+   } */
     
    @PrePersist
    protected void onCreate() {
@@ -123,11 +127,31 @@ public class Seadus {
        avatud = new Date();
        muutja = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
        muudetud = new Date();
+       // Dummy data
+       sulgeja = "";
+       try {
+    	   SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+    	   suletud = (Date)format.parse("2099/12/31");
+       } catch (ParseException e) {
+    	   e.printStackTrace();
+       }
    }
 
    @PreUpdate
-   protected void onUpdate() {
-     muutja = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+   protected void onUpdate() {  
+     avaja = "värdjas";
+     avatud = new Date();
+	   
+	 muutja = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
      muudetud = new Date();
+     
+     // Dummy data
+     sulgeja = "";
+     try {
+  	   SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+  	   suletud = (Date)format.parse("2099/12/31");
+     } catch (ParseException e) {
+  	   e.printStackTrace();
+     }
    }
 }

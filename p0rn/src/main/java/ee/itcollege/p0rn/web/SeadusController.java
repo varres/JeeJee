@@ -26,7 +26,6 @@ public class SeadusController {
 	
     @RequestMapping(method = RequestMethod.POST)
     public String create(@Valid Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-    	seadus.setDefaultValues();
     	/* if (bindingResult.hasErrors()) {
     		System.out.println(bindingResult.getAllErrors().toString());
             uiModel.addAttribute("seadus", seadus);
@@ -40,10 +39,10 @@ public class SeadusController {
     }
     
     @RequestMapping(method = RequestMethod.PUT)
-    public String update(@Valid Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        //Seadus DBSeadus = Seadus.findSeadus(seadus.seaduse_ID);
-        seadus.setSulgeja("");
-        seadus.setSuletud(new Date());
+    public String update(Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        Seadus DBSeadus = Seadus.findSeadus(seadus.getId());
+//        seadus.setSulgeja("");
+//        seadus.setSuletud(new Date());
         
 
     	/* if (bindingResult.hasErrors()) {
@@ -51,9 +50,8 @@ public class SeadusController {
             addDateTimeFormatPatterns(uiModel);
             return "seaduses/update";
         }*/
-    	
         uiModel.asMap().clear();
         seadus.merge();
-        return "redirect:/seaduses/" + encodeUrlPathSegment(seadus.getSeaduse_ID().toString(), httpServletRequest);
+        return "redirect:/seaduses/" + encodeUrlPathSegment(seadus.getId().toString(), httpServletRequest);
     }
 }
