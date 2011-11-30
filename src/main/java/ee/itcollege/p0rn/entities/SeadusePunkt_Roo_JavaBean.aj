@@ -5,16 +5,17 @@ package ee.itcollege.p0rn.entities;
 
 import ee.itcollege.p0rn.entities.Seadus;
 import ee.itcollege.p0rn.entities.SeadusePunkt;
+import java.lang.Long;
 import java.lang.String;
 import java.util.Date;
 
 privileged aspect SeadusePunkt_Roo_JavaBean {
     
-    public int SeadusePunkt.getSeaduse_punkt_ID() {
+    public Long SeadusePunkt.getSeaduse_punkt_ID() {
         return this.seaduse_punkt_ID;
     }
     
-    public void SeadusePunkt.setSeaduse_punkt_ID(int seaduse_punkt_ID) {
+    public void SeadusePunkt.setSeaduse_punkt_ID(Long seaduse_punkt_ID) {
         this.seaduse_punkt_ID = seaduse_punkt_ID;
     }
     

@@ -27,6 +27,10 @@ public class SeadusePunktController {
         }*/
         uiModel.asMap().clear();
         seadusepunkt.merge();
-        return "redirect:/seaduses/" + encodeUrlPathSegment(seadusepunkt.getSeaduse_ID().getId().toString(), httpServletRequest) + "?form";
+        try {
+        	return "redirect:/seaduses/" + encodeUrlPathSegment(seadusepunkt.getSeaduse_ID().getId().toString(), httpServletRequest) + "?form";
+        } catch (Exception ex) {
+        	return "redirect:/seadusepunkts/";
+        }
     }
 }

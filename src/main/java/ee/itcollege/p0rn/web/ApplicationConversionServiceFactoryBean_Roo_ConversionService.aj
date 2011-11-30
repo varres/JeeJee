@@ -57,7 +57,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.SeadusePunktConverter implements Converter<SeadusePunkt, String> {
         public String convert(SeadusePunkt seadusePunkt) {
-            return new StringBuilder().append(seadusePunkt.getSeaduse_punkt_ID()).append(" ").append(seadusePunkt.getParagrahv()).append(" ").append(seadusePunkt.getPais()).append(" ").append(seadusePunkt.getTekst()).toString();
+            return new StringBuilder().append(seadusePunkt.getParagrahv()).append(" ").append(seadusePunkt.getPais()).append(" ").append(seadusePunkt.getTekst()).append(" ").append(seadusePunkt.getKehtiv_alates()).toString();
         }
         
     }

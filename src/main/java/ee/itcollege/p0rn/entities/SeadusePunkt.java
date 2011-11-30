@@ -9,6 +9,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,8 +23,13 @@ import javax.persistence.ManyToOne;
 @RooToString
 @RooEntity
 public class SeadusePunkt {
-
-    private int seaduse_punkt_ID;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private Long seaduse_punkt_ID;
+    
+	public Long getId() {
+		return seaduse_punkt_ID;
+	}
 
     @NotNull
     @Size(max = 20)

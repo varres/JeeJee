@@ -17,6 +17,5 @@
         <field:display date="true" dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="s_ee_itcollege_p0rn_entities_SeadusePunkt_suletud" object="${seadusepunkt}" z="CAZlhcAzt6eS/nys/lDDe/BWV/w="/>
         <field:display field="seaduse_ID" id="s_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" object="${seadusepunkt}" z="dHAB7cpSNupkqwa1FxLl7IFq+KU="/>
         <field:display field="ylemus_seaduse_punkt_ID" id="s_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" object="${seadusepunkt}" z="RDUKZZBThNwSVh3jCy91M6o8wQY="/>
-        <field:display field="seaduse_punkt_ID" id="s_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_punkt_ID" object="${seadusepunkt}" z="Ndk5S+CV2ChjSiaBj2iTQwuNvdw="/>
     </page:show>
 </div>

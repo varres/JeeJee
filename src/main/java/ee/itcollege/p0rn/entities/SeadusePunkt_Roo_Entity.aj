@@ -9,9 +9,6 @@ import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,22 +16,9 @@ privileged aspect SeadusePunkt_Roo_Entity {
     
     declare @type: SeadusePunkt: @Entity;
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long SeadusePunkt.id;
-    
     @Version
     @Column(name = "version")
     private Integer SeadusePunkt.version;
-    
-    public Long SeadusePunkt.getId() {
-        return this.id;
-    }
-    
-    public void SeadusePunkt.setId(Long id) {
-        this.id = id;
-    }
     
     public Integer SeadusePunkt.getVersion() {
         return this.version;
@@ -56,7 +40,7 @@ privileged aspect SeadusePunkt_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            SeadusePunkt attached = SeadusePunkt.findSeadusePunkt(this.id);
+            SeadusePunkt attached = SeadusePunkt.findSeadusePunkt(this.seaduse_punkt_ID);
             this.entityManager.remove(attached);
         }
     }
@@ -89,9 +73,9 @@ privileged aspect SeadusePunkt_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o", SeadusePunkt.class).getResultList();
     }
     
-    public static SeadusePunkt SeadusePunkt.findSeadusePunkt(Long id) {
-        if (id == null) return null;
-        return entityManager().find(SeadusePunkt.class, id);
+    public static SeadusePunkt SeadusePunkt.findSeadusePunkt(Long seaduse_punkt_ID) {
+        if (seaduse_punkt_ID == null) return null;
+        return entityManager().find(SeadusePunkt.class, seaduse_punkt_ID);
     }
     
     public static List<SeadusePunkt> SeadusePunkt.findSeadusePunktEntries(int firstResult, int maxResults) {

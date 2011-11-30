@@ -43,8 +43,6 @@ public class Seadus {
     @Size(max = 20)
     private String kood;
 
-
-
 	@NotNull
     @Size(max = 20)
     private String nimetus;

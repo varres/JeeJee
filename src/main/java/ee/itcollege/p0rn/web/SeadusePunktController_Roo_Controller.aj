@@ -33,11 +33,11 @@ privileged aspect SeadusePunktController_Roo_Controller {
         return "seadusepunkts/create";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String SeadusePunktController.show(@PathVariable("id") Long id, Model uiModel) {
+    @RequestMapping(value = "/{seaduse_punkt_ID}", method = RequestMethod.GET)
+    public String SeadusePunktController.show(@PathVariable("seaduse_punkt_ID") Long seaduse_punkt_ID, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("seadusepunkt", SeadusePunkt.findSeadusePunkt(id));
-        uiModel.addAttribute("itemId", id);
+        uiModel.addAttribute("seadusepunkt", SeadusePunkt.findSeadusePunkt(seaduse_punkt_ID));
+        uiModel.addAttribute("itemId", seaduse_punkt_ID);
         return "seadusepunkts/show";
     }
     
@@ -64,19 +64,19 @@ privileged aspect SeadusePunktController_Roo_Controller {
         }
         uiModel.asMap().clear();
         seadusePunkt.merge();
-        return "redirect:/seadusepunkts/" + encodeUrlPathSegment(seadusePunkt.getId().toString(), httpServletRequest);
+        return "redirect:/seadusepunkts/" + encodeUrlPathSegment(seadusePunkt.getSeaduse_punkt_ID().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String SeadusePunktController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("seadusePunkt", SeadusePunkt.findSeadusePunkt(id));
+    @RequestMapping(value = "/{seaduse_punkt_ID}", params = "form", method = RequestMethod.GET)
+    public String SeadusePunktController.updateForm(@PathVariable("seaduse_punkt_ID") Long seaduse_punkt_ID, Model uiModel) {
+        uiModel.addAttribute("seadusePunkt", SeadusePunkt.findSeadusePunkt(seaduse_punkt_ID));
         addDateTimeFormatPatterns(uiModel);
         return "seadusepunkts/update";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String SeadusePunktController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        SeadusePunkt.findSeadusePunkt(id).remove();
+    @RequestMapping(value = "/{seaduse_punkt_ID}", method = RequestMethod.DELETE)
+    public String SeadusePunktController.delete(@PathVariable("seaduse_punkt_ID") Long seaduse_punkt_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        SeadusePunkt.findSeadusePunkt(seaduse_punkt_ID).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());

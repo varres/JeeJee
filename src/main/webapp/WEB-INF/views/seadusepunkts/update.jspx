@@ -2,7 +2,8 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_ee_itcollege_p0rn_entities_SeadusePunkt" modelAttribute="seadusePunkt" path="/seadusepunkts" versionField="Version" z="5DyrSU9YmcaTABCI+PkI3VXVIuc=">
+    <form:update id="fu_ee_itcollege_p0rn_entities_SeadusePunkt" idField="seaduse_punkt_ID" modelAttribute="seadusePunkt" path="/seadusepunkts" versionField="Version" z="W5nlJW/82fi1L1AgJJoyTcxL+7E=">
+        <field:select field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" itemValue="seaduse_ID" items="${seaduses}" path="/seaduses" z="9bI80E3oR2r3xDrgQP9oyFVsVtg="/>
         <field:input field="paragrahv" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_paragrahv" max="20" required="true" z="LxivFOEF5r0uxsYi7iMxym+Y2pQ="/>
         <field:input field="pais" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_pais" max="20" required="true" z="ume40BUrwhhoMRtUo7B2vGjm5SI="/>
         <field:input field="tekst" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_tekst" max="20" required="true" z="Cu4ksNcLRAMlenxdHrWQtc2Mu3o="/>
@@ -15,8 +16,6 @@
         <field:datetime dateTimePattern="${seadusePunkt_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muudetud" required="true" z="DczE2tz0jpwOR21o5xCHbvIOIBY="/>
         <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_sulgeja" required="true" z="zuAL3VaJbq+etbSUM3Ao5Fl8OV4="/>
         <field:datetime dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_suletud" required="true" z="OwATclDx4qw9JdzvCftvTYTT1U0="/>
-        <field:select field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" itemValue="seaduse_ID" items="${seaduses}" path="/seaduses" z="9bI80E3oR2r3xDrgQP9oyFVsVtg="/>
-        <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" itemValue="id" items="${seadusepunkts}" path="/seadusepunkts" z="IBVIeLdVI2fpG8AAJnpH5MZcu3Y="/>
-        <field:input field="seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_punkt_ID" z="c+uoT8q0K8ggWm7qUagGRSVLfW8="/>
+        <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" itemValue="seaduse_punkt_ID" items="${seadusepunkts}" path="/seadusepunkts" z="kC6jUZRrdLNBQXUNKOB0k83/Tl8="/>
     </form:update>
 </div>

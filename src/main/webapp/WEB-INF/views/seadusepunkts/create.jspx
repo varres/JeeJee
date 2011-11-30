@@ -16,8 +16,7 @@
         <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_sulgeja" required="true" z="zuAL3VaJbq+etbSUM3Ao5Fl8OV4="/>
         <field:datetime dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_suletud" required="true" z="OwATclDx4qw9JdzvCftvTYTT1U0="/>
         <field:select field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" itemValue="seaduse_ID" items="${seaduses}" path="/seaduses" z="9bI80E3oR2r3xDrgQP9oyFVsVtg="/>
-        <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" itemValue="id" items="${seadusepunkts}" path="/seadusepunkts" z="IBVIeLdVI2fpG8AAJnpH5MZcu3Y="/>
-        <field:input field="seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_punkt_ID" z="c+uoT8q0K8ggWm7qUagGRSVLfW8="/>
+        <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" itemValue="seaduse_punkt_ID" items="${seadusepunkts}" path="/seadusepunkts" z="kC6jUZRrdLNBQXUNKOB0k83/Tl8="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_p0rn_entities_SeadusePunkt" render="${not empty dependencies}" z="agniRmHNyzsqWyDsnR6v2iplr5w="/>
 </div>
