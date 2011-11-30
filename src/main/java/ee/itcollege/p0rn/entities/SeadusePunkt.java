@@ -121,7 +121,7 @@ public class SeadusePunkt {
     		g = g + " AND kehtiv_alates >= '" + alates + "')";
     	}
     	if (kuni.length() > 0) {
-    		g = g + " AND kehtiv_kuni >= '" + kuni + "'";
+    		g = g + " AND kehtiv_kuni <= '" + kuni + "'";
     	}
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o " + g, SeadusePunkt.class).getResultList();
     }
