@@ -10,9 +10,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,22 +21,9 @@ privileged aspect Seadus_Roo_Entity {
     @PersistenceContext
     transient EntityManager Seadus.entityManager;
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long Seadus.id;
-    
     @Version
     @Column(name = "version")
     private Integer Seadus.version;
-    
-    public Long Seadus.getId() {
-        return this.id;
-    }
-    
-    public void Seadus.setId(Long id) {
-        this.id = id;
-    }
     
     public Integer Seadus.getVersion() {
         return this.version;
@@ -61,7 +45,7 @@ privileged aspect Seadus_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Seadus attached = Seadus.findSeadus(this.id);
+            Seadus attached = Seadus.findSeadus(this.seaduse_ID);
             this.entityManager.remove(attached);
         }
     }
@@ -100,9 +84,9 @@ privileged aspect Seadus_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Seadus o", Seadus.class).getResultList();
     }
     
-    public static Seadus Seadus.findSeadus(Long id) {
-        if (id == null) return null;
-        return entityManager().find(Seadus.class, id);
+    public static Seadus Seadus.findSeadus(Long seaduse_ID) {
+        if (seaduse_ID == null) return null;
+        return entityManager().find(Seadus.class, seaduse_ID);
     }
     
     public static List<Seadus> Seadus.findSeadusEntries(int firstResult, int maxResults) {

@@ -17,7 +17,7 @@ import javax.persistence.ManyToOne;
 @RooEntity
 public class SeadusePunkt {
 
-    private int seaduse__punkt_ID;
+    private int seaduse_punkt_ID;
 
     @NotNull
     @Size(max = 20)

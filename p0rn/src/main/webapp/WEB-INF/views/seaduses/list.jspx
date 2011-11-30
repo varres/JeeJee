@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_p0rn_entities_Seadus" items="${seaduses}" z="wykT0xuWSu0GQ7Nojq6vNljd+0c=">
-        <table:table data="${seaduses}" id="l_ee_itcollege_p0rn_entities_Seadus" path="/seaduses" z="2GC51HVGV59UktfFgt5+IwYWYKQ=">
-            <table:column id="c_ee_itcollege_p0rn_entities_Seadus_seaduse_ID" property="seaduse_ID" z="jMAanyiDPx6ypDcytYIIqzg3bxA="/>
+        <table:table data="${seaduses}" id="l_ee_itcollege_p0rn_entities_Seadus" path="/seaduses" typeIdFieldName="seaduse_ID" z="XuBc4nu69nuAlg1i/6VYySTzVt0=">
             <table:column id="c_ee_itcollege_p0rn_entities_Seadus_kood" property="kood" z="BdNoyVPnOMs4d5dgn55h1LYyXF4="/>
             <table:column id="c_ee_itcollege_p0rn_entities_Seadus_nimetus" property="nimetus" z="/GzOzBlNu+bz/4K/R0ShySMsyqQ="/>
             <table:column id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_alates" property="kehtiv_alates" z="P9D1jExVjkkWgGdLdMk0GIxs3Bo="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Seadus_sulgeja" property="sulgeja" z="akg6ROXoAmkhdX6sMNPiLQLZCf4="/>
+            <table:column date="true" dateTimePattern="${seadus_suletud_date_format}" id="c_ee_itcollege_p0rn_entities_Seadus_suletud" property="suletud" z="Lf3isWZJ6ClXzD0LqJo/ffE4BJc="/>
             <table:column id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_kuni" property="kehtiv_kuni" z="OOS+D/NAW4deyFIGyhLpI6roFIA="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_Seadus_kommentaar" property="kommentaar" z="Ra8aXOEnvZ+6XRBpqIl78+qotMw="/>
         </table:table>
     </page:list>
 </div>

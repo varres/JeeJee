@@ -3,18 +3,18 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_p0rn_entities_Seadus" modelAttribute="seadus" path="/seaduses" render="${empty dependencies}" z="dE9lJjgBGk4zW22yeHgf6XuyS8A=">
-        <field:input field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_Seadus_seaduse_ID" z="LsSe8PDeH/kmTUI1/9I/Ips54Oc="/>
+        <field:input field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_Seadus_seaduse_ID" render="false" z="user-managed"/>
         <field:input field="kood" id="c_ee_itcollege_p0rn_entities_Seadus_kood" max="20" required="true" z="xp3gNS0lU2lE+HSmaQhq75HMTzk="/>
         <field:input field="nimetus" id="c_ee_itcollege_p0rn_entities_Seadus_nimetus" max="20" required="true" z="NGnC0aC3lSKLhv2SKljpszR569o="/>
         <field:input field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_alates" max="20" required="true" z="1ubMKqkaiyAWLhjVuiISG59Cr0E="/>
         <field:input field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_kuni" max="20" required="true" z="LM5xIF7Lj0MN4EOq4hnGSTFrBfI="/>
         <field:input field="kommentaar" id="c_ee_itcollege_p0rn_entities_Seadus_kommentaar" max="20" required="true" z="Y3KZ1F4g5y4pv/nYsKY9ADKcuKg="/>
-        <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_Seadus_avaja" required="true" z="MZMvAAFD6GNmJL1zXNJ+6JpAMgc="/>
-        <field:datetime dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_Seadus_avatud" required="true" z="66nO1xClqX2AEZy0SN5T2banvGc="/>
-        <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_Seadus_muutja" required="true" z="TctXjh56DQvH5rBXU/+XbC9ecJ8="/>
-        <field:datetime dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Seadus_muudetud" required="true" z="w97anp2nL4lXwtRpmFy/AQtsJ4E="/>
-        <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_Seadus_sulgeja" required="true" z="hV5BGQKtlXV0r0KdskwsnhsN1TA="/>
-        <field:datetime dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Seadus_suletud" required="true" z="0r23GNCg5/QI+IZoSaBuiHhW760="/>
+        <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_Seadus_avaja" render="false" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_Seadus_avatud" render="false" required="true" z="user-managed"/>
+        <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_Seadus_muutja" render="false" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Seadus_muudetud" render="false" required="true" z="user-managed"/>
+        <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_Seadus_sulgeja" render="false" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Seadus_suletud" render="false" required="true" z="user-managed"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_p0rn_entities_Seadus" render="${not empty dependencies}" z="fsEoGSuMqbHVNmx78x6Qz2vt9t8="/>
 </div>

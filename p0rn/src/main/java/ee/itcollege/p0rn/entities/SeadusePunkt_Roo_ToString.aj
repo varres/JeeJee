@@ -20,7 +20,7 @@ privileged aspect SeadusePunkt_Roo_ToString {
         sb.append("Pais: ").append(getPais()).append(", ");
         sb.append("Paragrahv: ").append(getParagrahv()).append(", ");
         sb.append("Seaduse_ID: ").append(getSeaduse_ID()).append(", ");
-        sb.append("Seaduse__punkt_ID: ").append(getSeaduse__punkt_ID()).append(", ");
+        sb.append("Seaduse_punkt_ID: ").append(getSeaduse_punkt_ID()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Tekst: ").append(getTekst()).append(", ");

@@ -3,16 +3,17 @@
 
 package ee.itcollege.p0rn.entities;
 
+import java.lang.Long;
 import java.lang.String;
 import java.util.Date;
 
 privileged aspect Seadus_Roo_JavaBean {
     
-    public int Seadus.getSeaduse_ID() {
+    public Long Seadus.getSeaduse_ID() {
         return this.seaduse_ID;
     }
     
-    public void Seadus.setSeaduse_ID(int seaduse_ID) {
+    public void Seadus.setSeaduse_ID(Long seaduse_ID) {
         this.seaduse_ID = seaduse_ID;
     }
     
@@ -86,22 +87,6 @@ privileged aspect Seadus_Roo_JavaBean {
     
     public void Seadus.setMuudetud(Date muudetud) {
         this.muudetud = muudetud;
-    }
-    
-    public String Seadus.getSulgeja() {
-        return this.sulgeja;
-    }
-    
-    public void Seadus.setSulgeja(String sulgeja) {
-        this.sulgeja = sulgeja;
-    }
-    
-    public Date Seadus.getSuletud() {
-        return this.suletud;
-    }
-    
-    public void Seadus.setSuletud(Date suletud) {
-        this.suletud = suletud;
     }
     
 }
