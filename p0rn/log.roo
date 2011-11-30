@@ -79,3 +79,9 @@ field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakond
 // [failed] field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakondsus_ID --type java.lang.Integer --notNull --unique --column id
 field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakondsuse_ID --type java.lang.Integer --notNull --unique --column id
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-30 16:14:19
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 16:26:10
+hint
+hint controllers
+controller class --class ee.itcollege.p0rn.web.AjaluguController
+hint view
+hint

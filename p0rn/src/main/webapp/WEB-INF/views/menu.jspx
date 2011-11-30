@@ -23,5 +23,8 @@
             <menu:item id="i_seadusepunkt_new" messageCode="global_menu_new" url="/seadusepunkts?form" z="WpGmYxK6qd1W2LiyFGVtIcC8a8U="/>
             <menu:item id="i_seadusepunkt_list" messageCode="global_menu_list" url="/seadusepunkts?page=1&amp;size=${empty param.size ? 10 : param.size}" z="RLAivtY6urnl0wTY0X+G3MGi/kI="/>
         </menu:category>
+        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__ajaluguindex_id" messageCode="global_generic" url="/ajalugu/index" z="ZHNULjYuOjrY+RMM4fZ9XBnnST8="/>
+        </menu:category>
     </menu:menu>
 </div>
