@@ -3,8 +3,13 @@ package ee.itcollege.p0rn.entities;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
+import org.springframework.security.core.context.SecurityContextHolder;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +18,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -117,5 +124,39 @@ public class SeadusePunkt {
     		g = g + " AND kehtiv_kuni >= '" + kuni + "'";
     	}
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o " + g, SeadusePunkt.class).getResultList();
+    }
+    
+    @PrePersist
+    protected void onCreate() {
+        avaja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+        avatud = new Date();
+        muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+        muudetud = new Date();
+        // Dummy data
+        sulgeja = "";
+        try {
+     	   SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+     	   suletud = (Date)format.parse("2099/12/31");
+        } catch (ParseException e) {
+     	   e.printStackTrace();
+        }
+    }
+
+    @PreUpdate
+    protected void onUpdate() {  
+      avaja = "värdjas";
+      avatud = new Date();
+ 	   
+ 	  muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+      muudetud = new Date();
+      
+      // Dummy data
+      sulgeja = "";
+      try {
+   	   SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+   	   suletud = (Date)format.parse("2099/12/31");
+      } catch (ParseException e) {
+   	   e.printStackTrace();
+      }
     }
 }
