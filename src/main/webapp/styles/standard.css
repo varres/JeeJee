@@ -371,3 +371,61 @@ fieldset th {
 	height: 11px;
 	width: 16px;
 }
+
+.quicklinks {
+	display:none;
+}
+
+.dijitTitlePane {
+	float:left;
+	margin-right:10px;
+	margin-bottom:10px;
+	min-width:330px;
+}
+#footer {
+	clear:both;
+	margin-top:30px;
+}
+.new {
+	clear:right;
+	float:left;
+}
+.tundra .dijitTextArea {
+	width:174px;
+	height:20px;
+}
+.tundra .dijitTitlePaneTitle {
+	background:transparent;
+	border:0;
+	font-weight:bold;
+	font-size:28px;
+	padding:0;
+}
+.tundra .dijitTitlePaneTextNode {
+	padding-bottom:20px;
+	font-size:20px;
+}
+.dijitArrowNode {
+	display:none;
+	
+}
+.dijitTitlePan,
+.tundra div.dijitTitlePaneContentOuter,
+.tundra .dijitTitlePaneContentInner  {
+	border:0;
+	padding:0;
+}
+table a.button,
+a.button {
+	text-decoration:none;
+	display:block;
+	padding:5px;
+	text-align:center;
+	background:#333;
+	color:white; 
+	border:1px solid #333;
+}
+div#wrapper {
+	width:924px;
+	max-width:924px;
+}

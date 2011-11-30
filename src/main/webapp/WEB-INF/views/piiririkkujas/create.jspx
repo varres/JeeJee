@@ -10,11 +10,11 @@
         <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_sulgeja" render="false" z="user-managed"/>
         <field:datetime dateTimePattern="${piiririkkuja_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_suletud" render="false" required="true" z="user-managed"/>
         <field:input field="isikukood" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_isikukood" max="20" z="5f0DE6djqortbvSOvpFW2VjwaTI="/>
-        <field:input field="kommentaar" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_kommentaar" z="iyazzDIlbTMN7leuHgRctOSW9Gs="/>
         <field:input field="eesnimi" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_eesnimi" max="25" z="rI5Cd9zF5ECY7/3yBjLdaRtZiiU="/>
-        <field:textarea field="perek_nimi" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_perek_nimi" z="GgqJTrrndhBPUWNGBiZD4goo7jc="/>
-        <field:select field="sugu" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_sugu" path="sugu" items="${genders}" z="user-managed"/>
+        <field:input field="perek_nimi" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_perek_nimi" z="user-managed"/>
         <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_synniaeg" z="14+EeDyUeTxI+u3vqH4coSah4Hc="/>
+        <field:select field="sugu" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_sugu" items="${genders}" path="sugu" z="user-managed"/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_kommentaar" z="user-managed"/>
         <field:input field="objekt_ID" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_objekt_ID" render="false" z="user-managed"/>
         <field:input field="piiririkkuja_ID" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_piiririkkuja_ID" render="false" required="true" validationMessageCode="field_invalid_integer" z="user-managed"/>
     </form:create>

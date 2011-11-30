@@ -80,15 +80,6 @@ privileged aspect KodakondsusController_Roo_Controller {
         return "kodakondsuses/update";
     }
     
-    @RequestMapping(value = "/{kodakondsus_ID}", method = RequestMethod.DELETE)
-    public String KodakondsusController.delete(@PathVariable("kodakondsus_ID") Long kodakondsus_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Kodakondsus.findKodakondsus(kodakondsus_ID).remove();
-        uiModel.asMap().clear();
-        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
-        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/kodakondsuses";
-    }
-    
     @ModelAttribute("kodakondsuses")
     public Collection<Kodakondsus> KodakondsusController.populateKodakondsuses() {
         return Kodakondsus.findAllKodakondsuses();

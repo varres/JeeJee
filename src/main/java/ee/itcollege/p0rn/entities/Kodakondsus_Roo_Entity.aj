@@ -35,17 +35,6 @@ privileged aspect Kodakondsus_Roo_Entity {
     }
     
     @Transactional
-    public void Kodakondsus.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Kodakondsus attached = Kodakondsus.findKodakondsus(this.kodakondsus_ID);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
     public void Kodakondsus.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();

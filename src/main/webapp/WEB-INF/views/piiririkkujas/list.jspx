@@ -4,6 +4,9 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_p0rn_entities_Piiririkkuja" items="${piiririkkujas}" z="jCZ7sfdiaI/3BE15ail/9c7/j3A=">
         <table:table data="${piiririkkujas}" id="l_ee_itcollege_p0rn_entities_Piiririkkuja" path="/piiririkkujas" typeIdFieldName="piiririkkuja_ID" z="Tsgi6SCVoZgXCaFtuko749bGpHU=">
+            <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_isikukood" property="isikukood"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_eesnimi" property="eesnimi"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_perek_nimi" property="perek_nimi"/>
             <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avaja" property="avaja" z="wPoo9GZWqIglUviZG3HI6A6jcaU="/>
             <table:column date="true" dateTimePattern="${piiririkkuja_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avatud" property="avatud" z="s0c7dANPOwDeVgD0inipb7REOiE="/>
             <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_muutja" property="muutja" z="Yuf2Xs0548bEQ9Jyf49fxkZ52fk="/>

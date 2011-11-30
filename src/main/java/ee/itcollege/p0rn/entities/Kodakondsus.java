@@ -3,6 +3,9 @@ package ee.itcollege.p0rn.entities;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -85,6 +88,13 @@ public class Kodakondsus {
     }
     
     public static List<Kodakondsus> findAllByPiiririkkuja(long id) {
-        return entityManager().createQuery("SELECT o FROM Kodakondsus o WHERE piiririkkuja_ID = " + id, Kodakondsus.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM Kodakondsus o WHERE suletud > CURDATE() AND piiririkkuja_ID = " + id, Kodakondsus.class).getResultList();
+    }
+    
+    @Transactional
+    public void remove() {
+        if (this.entityManager == null) this.entityManager = entityManager();
+        sulgeja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+        this.entityManager.createQuery("UPDATE Kodakondsus o SET suletud = CURDATE() WHERE kodakondsus_ID = " + this.kodakondsus_ID + " AND sulgeja = '" + sulgeja + "'").executeUpdate();
     }
 }
