@@ -57,3 +57,16 @@ focus --class ~.entities.Kodakondsus
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 00:27:23
 security setup
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-30 00:40:51
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 09:05:18
+hint
+hint fields
+field string --class ee.itcollege.p0rn.entities.Riik --fieldName ISO_kood --sizeMax 20 --notNull
+field string --class ee.itcollege.p0rn.entities.Riik --fieldName ANSI_kood --sizeMax 20 --notNull
+field string --class ee.itcollege.p0rn.entities.Riik --fieldName kommentaar --notNull
+field string --class ee.itcollege.p0rn.entities.Riik --fieldName avaja --notNull --sizeMax 32
+field date --class ee.itcollege.p0rn.entities.Riik --fieldName avatud --type java.util.Date --notNull
+field string --class ee.itcollege.p0rn.entities.Riik --fieldName muutja ---notNull --sizeMax 32
+field date --class ee.itcollege.p0rn.entities.Riik --fieldName muudetud --type java.util.Date --notNull
+field string --class ee.itcollege.p0rn.entities.Riik --fieldName sulgeja --sizeMax 32 --notNull
+// [failed] field date --class ee.itcollege.p0rn.entities.Riik --fieldName suletud --type java.util.Date --notNull
+field date --class ee.itcollege.p0rn.entities.Riik --fieldName suletud --type java.util.Date --notNull

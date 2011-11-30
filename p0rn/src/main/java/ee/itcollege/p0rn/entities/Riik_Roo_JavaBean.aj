@@ -3,6 +3,9 @@
 
 package ee.itcollege.p0rn.entities;
 
+import java.lang.String;
+import java.util.Date;
+
 privileged aspect Riik_Roo_JavaBean {
     
     public int Riik.getRiik_ID() {
@@ -11,6 +14,78 @@ privileged aspect Riik_Roo_JavaBean {
     
     public void Riik.setRiik_ID(int riik_ID) {
         this.riik_ID = riik_ID;
+    }
+    
+    public String Riik.getISO_kood() {
+        return this.ISO_kood;
+    }
+    
+    public void Riik.setISO_kood(String ISO_kood) {
+        this.ISO_kood = ISO_kood;
+    }
+    
+    public String Riik.getANSI_kood() {
+        return this.ANSI_kood;
+    }
+    
+    public void Riik.setANSI_kood(String ANSI_kood) {
+        this.ANSI_kood = ANSI_kood;
+    }
+    
+    public String Riik.getKommentaar() {
+        return this.kommentaar;
+    }
+    
+    public void Riik.setKommentaar(String kommentaar) {
+        this.kommentaar = kommentaar;
+    }
+    
+    public String Riik.getAvaja() {
+        return this.avaja;
+    }
+    
+    public void Riik.setAvaja(String avaja) {
+        this.avaja = avaja;
+    }
+    
+    public Date Riik.getAvatud() {
+        return this.avatud;
+    }
+    
+    public void Riik.setAvatud(Date avatud) {
+        this.avatud = avatud;
+    }
+    
+    public String Riik.getMuutja() {
+        return this.muutja;
+    }
+    
+    public void Riik.setMuutja(String muutja) {
+        this.muutja = muutja;
+    }
+    
+    public Date Riik.getMuudetud() {
+        return this.muudetud;
+    }
+    
+    public void Riik.setMuudetud(Date muudetud) {
+        this.muudetud = muudetud;
+    }
+    
+    public String Riik.getSulgeja() {
+        return this.sulgeja;
+    }
+    
+    public void Riik.setSulgeja(String sulgeja) {
+        this.sulgeja = sulgeja;
+    }
+    
+    public Date Riik.getSuletud() {
+        return this.suletud;
+    }
+    
+    public void Riik.setSuletud(Date suletud) {
+        this.suletud = suletud;
     }
     
 }

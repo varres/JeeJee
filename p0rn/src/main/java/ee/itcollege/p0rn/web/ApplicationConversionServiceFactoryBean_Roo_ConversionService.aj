@@ -43,7 +43,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.RiikConverter implements Converter<Riik, String> {
         public String convert(Riik riik) {
-            return new StringBuilder().append(riik.getRiik_ID()).toString();
+            return new StringBuilder().append(riik.getRiik_ID()).append(" ").append(riik.getISO_kood()).append(" ").append(riik.getANSI_kood()).append(" ").append(riik.getKommentaar()).toString();
         }
         
     }

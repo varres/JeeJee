@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,6 +29,7 @@ privileged aspect RiikController_Roo_Controller {
     public String RiikController.create(@Valid Riik riik, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("riik", riik);
+            addDateTimeFormatPatterns(uiModel);
             return "riiks/create";
         }
         uiModel.asMap().clear();
@@ -37,11 +40,13 @@ privileged aspect RiikController_Roo_Controller {
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String RiikController.createForm(Model uiModel) {
         uiModel.addAttribute("riik", new Riik());
+        addDateTimeFormatPatterns(uiModel);
         return "riiks/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String RiikController.show(@PathVariable("id") Long id, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("riik", Riik.findRiik(id));
         uiModel.addAttribute("itemId", id);
         return "riiks/show";
@@ -57,6 +62,7 @@ privileged aspect RiikController_Roo_Controller {
         } else {
             uiModel.addAttribute("riiks", Riik.findAllRiiks());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "riiks/list";
     }
     
@@ -64,6 +70,7 @@ privileged aspect RiikController_Roo_Controller {
     public String RiikController.update(@Valid Riik riik, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("riik", riik);
+            addDateTimeFormatPatterns(uiModel);
             return "riiks/update";
         }
         uiModel.asMap().clear();
@@ -74,6 +81,7 @@ privileged aspect RiikController_Roo_Controller {
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String RiikController.updateForm(@PathVariable("id") Long id, Model uiModel) {
         uiModel.addAttribute("riik", Riik.findRiik(id));
+        addDateTimeFormatPatterns(uiModel);
         return "riiks/update";
     }
     
@@ -89,6 +97,12 @@ privileged aspect RiikController_Roo_Controller {
     @ModelAttribute("riiks")
     public Collection<Riik> RiikController.populateRiiks() {
         return Riik.findAllRiiks();
+    }
+    
+    void RiikController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("riik_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("riik_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("riik_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     String RiikController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
