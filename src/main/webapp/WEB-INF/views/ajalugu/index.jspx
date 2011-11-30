@@ -25,6 +25,7 @@
     			<td><input type="text" value="${kuni}" name="kuni"/></td>
     			<td>
     				<select name="seaduse_ID">
+    					<option></option>
     					<c:forEach items="${seaduses}" var="b">
     						<c:if test="${b.seaduse_ID==seaduse_ID}">
     							<option value="${b.seaduse_ID}" selected="selected">${b.nimetus}</option>

@@ -27,18 +27,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect KodakondsusController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String KodakondsusController.create(@Valid Kodakondsus kodakondsus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("kodakondsus", kodakondsus);
-            addDateTimeFormatPatterns(uiModel);
-            return "kodakondsuses/create";
-        }
-        uiModel.asMap().clear();
-        kodakondsus.persist();
-        return "redirect:/kodakondsuses/" + encodeUrlPathSegment(kodakondsus.getKodakondsus_ID().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(value = "/{kodakondsus_ID}", method = RequestMethod.GET)
     public String KodakondsusController.show(@PathVariable("kodakondsus_ID") Long kodakondsus_ID, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);

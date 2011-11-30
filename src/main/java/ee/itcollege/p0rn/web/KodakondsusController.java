@@ -3,6 +3,9 @@ package ee.itcollege.p0rn.web;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 
 import ee.itcollege.p0rn.entities.Kodakondsus;
 import ee.itcollege.p0rn.entities.Piiririkkuja;
@@ -11,6 +14,7 @@ import ee.itcollege.p0rn.entities.Piiririkkuja;
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +31,18 @@ public class KodakondsusController {
         uiModel.addAttribute("kodakondsus", model);
         addDateTimeFormatPatterns(uiModel);
         return "kodakondsuses/create";
+    }
+	
+	@RequestMapping(method = RequestMethod.POST)
+    public String create(@Valid Kodakondsus kodakondsus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("kodakondsus", kodakondsus);
+            addDateTimeFormatPatterns(uiModel);
+            return "kodakondsuses/create";
+        }
+        uiModel.asMap().clear();
+        kodakondsus.persist();
+        return "redirect:/piiririkkujas/" + kodakondsus.getPiiririkkuja_ID().getPiiririkkuja_ID() + "?form";
     }
 	
 
