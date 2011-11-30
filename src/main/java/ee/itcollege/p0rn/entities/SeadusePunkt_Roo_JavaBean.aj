@@ -114,10 +114,6 @@ privileged aspect SeadusePunkt_Roo_JavaBean {
         this.suletud = suletud;
     }
     
-    public Seadus SeadusePunkt.getSeaduse_ID() {
-        return this.seaduse_ID;
-    }
-    
     public void SeadusePunkt.setSeaduse_ID(Seadus seaduse_ID) {
         this.seaduse_ID = seaduse_ID;
     }

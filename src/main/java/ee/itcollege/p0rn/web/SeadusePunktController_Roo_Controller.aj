@@ -26,18 +26,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect SeadusePunktController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String SeadusePunktController.create(@Valid SeadusePunkt seadusePunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("seadusePunkt", seadusePunkt);
-            addDateTimeFormatPatterns(uiModel);
-            return "seadusepunkts/create";
-        }
-        uiModel.asMap().clear();
-        seadusePunkt.persist();
-        return "redirect:/seadusepunkts/" + encodeUrlPathSegment(seadusePunkt.getId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String SeadusePunktController.createForm(Model uiModel) {
         uiModel.addAttribute("seadusePunkt", new SeadusePunkt());

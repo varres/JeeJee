@@ -73,6 +73,10 @@ public class SeadusePunkt {
     @ManyToOne
     private Seadus seaduse_ID;
 
-    @ManyToOne
+    public Seadus getSeaduse_ID() {
+		return seaduse_ID;
+	}
+
+	@ManyToOne
     private ee.itcollege.p0rn.entities.SeadusePunkt ylemus_seaduse_punkt_ID;
 }
