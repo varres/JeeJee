@@ -3,7 +3,6 @@
 
 package ee.itcollege.p0rn.entities;
 
-import ee.itcollege.p0rn.entities.Seadus;
 import ee.itcollege.p0rn.entities.SeadusePunkt;
 import java.lang.Long;
 import java.lang.String;
@@ -113,10 +112,6 @@ privileged aspect SeadusePunkt_Roo_JavaBean {
     
     public void SeadusePunkt.setSuletud(Date suletud) {
         this.suletud = suletud;
-    }
-    
-    public void SeadusePunkt.setSeaduse_ID(Seadus seaduse_ID) {
-        this.seaduse_ID = seaduse_ID;
     }
     
     public SeadusePunkt SeadusePunkt.getYlemus_seaduse_punkt_ID() {

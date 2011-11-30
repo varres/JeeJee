@@ -89,6 +89,10 @@ public class SeadusePunkt {
 		return seaduse_ID;
 	}
 
+	public void setSeaduse_ID(Seadus seaduse_ID) {
+		this.seaduse_ID = seaduse_ID;
+	}
+
 	@ManyToOne
     private ee.itcollege.p0rn.entities.SeadusePunkt ylemus_seaduse_punkt_ID;
     

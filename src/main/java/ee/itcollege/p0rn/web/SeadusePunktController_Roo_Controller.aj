@@ -26,13 +26,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect SeadusePunktController_Roo_Controller {
     
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String SeadusePunktController.createForm(Model uiModel) {
-        uiModel.addAttribute("seadusePunkt", new SeadusePunkt());
-        addDateTimeFormatPatterns(uiModel);
-        return "seadusepunkts/create";
-    }
-    
     @RequestMapping(value = "/{seaduse_punkt_ID}", method = RequestMethod.GET)
     public String SeadusePunktController.show(@PathVariable("seaduse_punkt_ID") Long seaduse_punkt_ID, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
