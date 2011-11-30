@@ -8,8 +8,8 @@
             <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_pais" property="pais" z="fLC0MYHO/gFehswC3CT5RtVehes="/>
             <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_tekst" property="tekst" z="iYaXum7CcGI5p0Qoi0LHxTw+y5I="/>
             <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_alates" property="kehtiv_alates" z="OWcX7vr6A0Ivb2EltHMZXvKthqY="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_kuni" property="kehtiv_kuni" z="SkiZgtQzl3Fj4sivSeQwUqy241c="/>
             <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_punkt_ID" property="seaduse_punkt_ID" z="9lWgreDIL0FhPvI/W4GsGsRbxrQ="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" property="seaduse_ID" z="gs6T+NJOBrR2lUGblmgzDYCWVgQ="/>
         </table:table>
     </page:list>
 </div>

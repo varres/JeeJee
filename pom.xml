@@ -614,7 +614,7 @@
 			            <configuration>
 			              <autocommit>true</autocommit>
 			              <srcFiles>
-			                <srcFile>src/main/sql/your-schema.sql</srcFile>
+			                <srcFile>src/test/test.sql</srcFile>
 			              </srcFiles>
 			            </configuration>
 			          </execution>
