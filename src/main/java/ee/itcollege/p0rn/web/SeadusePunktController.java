@@ -20,10 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SeadusePunktController {
     @RequestMapping(method = RequestMethod.POST)
     public String create(SeadusePunkt seadusepunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-//        seadus.setSulgeja("");
-//        seadus.setSuletud(new Date());
-        
-
     	/* if (bindingResult.hasErrors()) {
             uiModel.addAttribute("seadus", seadus);
             addDateTimeFormatPatterns(uiModel);
@@ -36,6 +32,18 @@ public class SeadusePunktController {
         } catch (Exception ex) {
         	return "redirect:/seadusepunkts/";
         }
+    }
+    
+    @RequestMapping(method = RequestMethod.PUT)
+    public String update(SeadusePunkt seadusepunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    	/* if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("seadus", seadus);
+            addDateTimeFormatPatterns(uiModel);
+            return "seaduses/update";
+        }*/
+        uiModel.asMap().clear();
+        seadusepunkt.merge();
+        return "redirect:/seadusepunkts/" + encodeUrlPathSegment(seadusepunkt.getId().toString(), httpServletRequest);
     }
     
 	@RequestMapping(params = "form", method = RequestMethod.GET)

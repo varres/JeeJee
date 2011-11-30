@@ -40,11 +40,6 @@ public class SeadusController {
     
     @RequestMapping(method = RequestMethod.PUT)
     public String update(Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        Seadus DBSeadus = Seadus.findSeadus(seadus.getId());
-//        seadus.setSulgeja("");
-//        seadus.setSuletud(new Date());
-        
-
     	/* if (bindingResult.hasErrors()) {
             uiModel.addAttribute("seadus", seadus);
             addDateTimeFormatPatterns(uiModel);

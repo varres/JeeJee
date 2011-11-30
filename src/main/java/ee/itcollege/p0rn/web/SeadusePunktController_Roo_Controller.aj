@@ -11,11 +11,9 @@ import java.lang.Long;
 import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,18 +44,6 @@ privileged aspect SeadusePunktController_Roo_Controller {
         }
         addDateTimeFormatPatterns(uiModel);
         return "seadusepunkts/list";
-    }
-    
-    @RequestMapping(method = RequestMethod.PUT)
-    public String SeadusePunktController.update(@Valid SeadusePunkt seadusePunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("seadusePunkt", seadusePunkt);
-            addDateTimeFormatPatterns(uiModel);
-            return "seadusepunkts/update";
-        }
-        uiModel.asMap().clear();
-        seadusePunkt.merge();
-        return "redirect:/seadusepunkts/" + encodeUrlPathSegment(seadusePunkt.getSeaduse_punkt_ID().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{seaduse_punkt_ID}", params = "form", method = RequestMethod.GET)
