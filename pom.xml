@@ -597,6 +597,14 @@
         		 <artifactId>sql-maven-plugin</artifactId>
         		 <version>1.5</version>
         		 
+        		 <dependencies>
+	        		 <dependency>
+					    <groupId>hsqldb</groupId>
+					    <artifactId>hsqldb</artifactId>
+					    <version>1.8.0.1</version>
+					</dependency>
+				</dependencies>
+        		 
         		 <configuration>
 			          <driver>org.hsqldb.jdbcDriver</driver>
 			          <url>jdbc:hsqldb:file:${user.home}/i377/Team27/db;shutdown=true</url>
