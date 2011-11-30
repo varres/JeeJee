@@ -3,16 +3,17 @@
 
 package ee.itcollege.p0rn.entities;
 
+import java.lang.Long;
 import java.lang.String;
 import java.util.Date;
 
 privileged aspect Riik_Roo_JavaBean {
     
-    public int Riik.getRiik_ID() {
+    public Long Riik.getRiik_ID() {
         return this.riik_ID;
     }
     
-    public void Riik.setRiik_ID(int riik_ID) {
+    public void Riik.setRiik_ID(Long riik_ID) {
         this.riik_ID = riik_ID;
     }
     

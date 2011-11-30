@@ -6,6 +6,10 @@ import org.springframework.roo.addon.tostring.RooToString;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,8 +21,10 @@ import javax.persistence.ManyToOne;
 @RooEntity
 public class Kodakondsus {
 
-    private int kodakondsus_ID;
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private Long kodakondsus_ID;
+	
     @NotNull
     @Size(max = 32)
     private String avaja;
@@ -55,8 +61,9 @@ public class Kodakondsus {
     @DateTimeFormat(style = "M-")
     private Date kuni;
 
-    private int riik_ID;
-
+    @ManyToOne
+    private Riik riik_ID;
+    
     @Size(max = 20)
     private String isikukood;
 

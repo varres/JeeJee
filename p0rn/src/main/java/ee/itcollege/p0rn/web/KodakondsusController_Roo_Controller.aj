@@ -5,6 +5,7 @@ package ee.itcollege.p0rn.web;
 
 import ee.itcollege.p0rn.entities.Kodakondsus;
 import ee.itcollege.p0rn.entities.Piiririkkuja;
+import ee.itcollege.p0rn.entities.Riik;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
@@ -35,7 +36,7 @@ privileged aspect KodakondsusController_Roo_Controller {
         }
         uiModel.asMap().clear();
         kodakondsus.persist();
-        return "redirect:/kodakondsuses/" + encodeUrlPathSegment(kodakondsus.getId().toString(), httpServletRequest);
+        return "redirect:/kodakondsuses/" + encodeUrlPathSegment(kodakondsus.getKodakondsus_ID().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -45,11 +46,11 @@ privileged aspect KodakondsusController_Roo_Controller {
         return "kodakondsuses/create";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String KodakondsusController.show(@PathVariable("id") Long id, Model uiModel) {
+    @RequestMapping(value = "/{kodakondsus_ID}", method = RequestMethod.GET)
+    public String KodakondsusController.show(@PathVariable("kodakondsus_ID") Long kodakondsus_ID, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(id));
-        uiModel.addAttribute("itemId", id);
+        uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(kodakondsus_ID));
+        uiModel.addAttribute("itemId", kodakondsus_ID);
         return "kodakondsuses/show";
     }
     
@@ -76,19 +77,19 @@ privileged aspect KodakondsusController_Roo_Controller {
         }
         uiModel.asMap().clear();
         kodakondsus.merge();
-        return "redirect:/kodakondsuses/" + encodeUrlPathSegment(kodakondsus.getId().toString(), httpServletRequest);
+        return "redirect:/kodakondsuses/" + encodeUrlPathSegment(kodakondsus.getKodakondsus_ID().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String KodakondsusController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(id));
+    @RequestMapping(value = "/{kodakondsus_ID}", params = "form", method = RequestMethod.GET)
+    public String KodakondsusController.updateForm(@PathVariable("kodakondsus_ID") Long kodakondsus_ID, Model uiModel) {
+        uiModel.addAttribute("kodakondsus", Kodakondsus.findKodakondsus(kodakondsus_ID));
         addDateTimeFormatPatterns(uiModel);
         return "kodakondsuses/update";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String KodakondsusController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Kodakondsus.findKodakondsus(id).remove();
+    @RequestMapping(value = "/{kodakondsus_ID}", method = RequestMethod.DELETE)
+    public String KodakondsusController.delete(@PathVariable("kodakondsus_ID") Long kodakondsus_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Kodakondsus.findKodakondsus(kodakondsus_ID).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
@@ -103,6 +104,11 @@ privileged aspect KodakondsusController_Roo_Controller {
     @ModelAttribute("piiririkkujas")
     public Collection<Piiririkkuja> KodakondsusController.populatePiiririkkujas() {
         return Piiririkkuja.findAllPiiririkkujas();
+    }
+    
+    @ModelAttribute("riiks")
+    public Collection<Riik> KodakondsusController.populateRiiks() {
+        return Riik.findAllRiiks();
     }
     
     void KodakondsusController.addDateTimeFormatPatterns(Model uiModel) {

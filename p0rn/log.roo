@@ -22,7 +22,7 @@ web mvc setup
 web mvc all --package ~.web
 entity --class ~.entities.Kodakondsus
 field number --fieldName kodakondsus_ID --type int
-field string --fieldName avaja --sizeMax 32 --notNull 
+field string --fieldName avaja --sizeMax 32 --notNull
 field date --fieldName avatud --type java.util.Date --notNull
 field string --fieldName muutja ---notNull --sizeMax 32
 field date --fieldName muudetud --type java.util.Date --notNull
@@ -35,7 +35,7 @@ field number --fieldName riik_ID --type int
 field number --fieldName piirirkkuja_ID --type int
 field string --fieldName isikukood --sizeMax 20
 // [failed] field set --fieldName piiririkkuja_ID --type ~.entities.Piiririkkuja --cardinality MANY_TO_ONE
-field reference --fieldName piiririkkuja_ID --type ~.entities.Piiririkkuja --cardinality MANY_TO_ONE 
+field reference --fieldName piiririkkuja_ID --type ~.entities.Piiririkkuja --cardinality MANY_TO_ONE
 web mvc all --package ee
 web mvc all --package ~.web
 web mvc all --package ~.web
@@ -45,7 +45,7 @@ entity --class ~.entities.Riik
 field number --fieldName riik_ID --type int
 web mvc all --package ~.web
 // [failed] web mvc controller --class ~.entities.Kodakondsus
-web mvc update tags 
+web mvc update tags
 web mvc all --package ~.web
 hint
 hint controllers
@@ -70,16 +70,11 @@ field date --class ee.itcollege.p0rn.entities.Riik --fieldName muudetud --type j
 field string --class ee.itcollege.p0rn.entities.Riik --fieldName sulgeja --sizeMax 32 --notNull
 // [failed] field date --class ee.itcollege.p0rn.entities.Riik --fieldName suletud --type java.util.Date --notNull
 field date --class ee.itcollege.p0rn.entities.Riik --fieldName suletud --type java.util.Date --notNull
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 09:56:29
-persistence setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT 
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 12:18:47
-help
-perform tests
-perform tests
-perform tests
-perform tests
-perform tests
-perform tests
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 12:57:24
-help
-perform tests
+hint
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-30 11:33:30
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 11:33:38
+field number --class ee.itcollege.p0rn.entities.Piiririkkuja --fieldName piiririkkuja_ID --type java.lang.Integer --notNull --unique --column id
+// [failed] field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakondsus_ID --type java.lang.Integer --notNull --unique
+field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakondsus_ID --type java.lang.Integer --notNull --unique
+// [failed] field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakondsus_ID --type java.lang.Integer --notNull --unique --column id
+field number --class ee.itcollege.p0rn.entities.Kodakondsus --fieldName kodakondsuse_ID --type java.lang.Integer --notNull --unique --column id

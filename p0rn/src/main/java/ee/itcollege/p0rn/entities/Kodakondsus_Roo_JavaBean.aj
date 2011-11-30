@@ -4,16 +4,18 @@
 package ee.itcollege.p0rn.entities;
 
 import ee.itcollege.p0rn.entities.Piiririkkuja;
+import ee.itcollege.p0rn.entities.Riik;
+import java.lang.Long;
 import java.lang.String;
 import java.util.Date;
 
 privileged aspect Kodakondsus_Roo_JavaBean {
     
-    public int Kodakondsus.getKodakondsus_ID() {
+    public Long Kodakondsus.getKodakondsus_ID() {
         return this.kodakondsus_ID;
     }
     
-    public void Kodakondsus.setKodakondsus_ID(int kodakondsus_ID) {
+    public void Kodakondsus.setKodakondsus_ID(Long kodakondsus_ID) {
         this.kodakondsus_ID = kodakondsus_ID;
     }
     
@@ -89,11 +91,11 @@ privileged aspect Kodakondsus_Roo_JavaBean {
         this.kuni = kuni;
     }
     
-    public int Kodakondsus.getRiik_ID() {
+    public Riik Kodakondsus.getRiik_ID() {
         return this.riik_ID;
     }
     
-    public void Kodakondsus.setRiik_ID(int riik_ID) {
+    public void Kodakondsus.setRiik_ID(Riik riik_ID) {
         this.riik_ID = riik_ID;
     }
     

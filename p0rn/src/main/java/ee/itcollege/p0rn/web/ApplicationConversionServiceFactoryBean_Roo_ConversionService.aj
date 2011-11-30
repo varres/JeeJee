@@ -29,21 +29,21 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.KodakondsusConverter implements Converter<Kodakondsus, String> {
         public String convert(Kodakondsus kodakondsus) {
-            return new StringBuilder().append(kodakondsus.getKodakondsus_ID()).append(" ").append(kodakondsus.getAvaja()).append(" ").append(kodakondsus.getAvatud()).append(" ").append(kodakondsus.getMuutja()).toString();
+            return new StringBuilder().append(kodakondsus.getAvaja()).append(" ").append(kodakondsus.getAvatud()).append(" ").append(kodakondsus.getMuutja()).append(" ").append(kodakondsus.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.PiiririkkujaConverter implements Converter<Piiririkkuja, String> {
         public String convert(Piiririkkuja piiririkkuja) {
-            return new StringBuilder().append(piiririkkuja.getPiirirkkuja_ID()).append(" ").append(piiririkkuja.getAvaja()).append(" ").append(piiririkkuja.getAvatud()).append(" ").append(piiririkkuja.getMuutja()).toString();
+            return new StringBuilder().append(piiririkkuja.getAvaja()).append(" ").append(piiririkkuja.getAvatud()).append(" ").append(piiririkkuja.getMuutja()).append(" ").append(piiririkkuja.getMuudetud()).toString();
         }
         
     }
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.RiikConverter implements Converter<Riik, String> {
         public String convert(Riik riik) {
-            return new StringBuilder().append(riik.getRiik_ID()).append(" ").append(riik.getISO_kood()).append(" ").append(riik.getANSI_kood()).append(" ").append(riik.getKommentaar()).toString();
+            return new StringBuilder().append(riik.getISO_kood()).append(" ").append(riik.getANSI_kood()).append(" ").append(riik.getKommentaar()).append(" ").append(riik.getAvaja()).toString();
         }
         
     }

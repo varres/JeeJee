@@ -3,7 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_ee_itcollege_p0rn_entities_Piiririkkuja" object="${piiririkkuja}" path="/piiririkkujas" z="hXDbSXD4q/05yLiN9mdNrShg6tU=">
-        <field:display field="piirirkkuja_ID" id="s_ee_itcollege_p0rn_entities_Piiririkkuja_piirirkkuja_ID" object="${piiririkkuja}" z="7O6vnZ0MduJgKFBVYypIPsEP3qM="/>
         <field:display field="avaja" id="s_ee_itcollege_p0rn_entities_Piiririkkuja_avaja" object="${piiririkkuja}" z="5VKTIxiW925D5PdI14nK/Y8H1kA="/>
         <field:display date="true" dateTimePattern="${piiririkkuja_avatud_date_format}" field="avatud" id="s_ee_itcollege_p0rn_entities_Piiririkkuja_avatud" object="${piiririkkuja}" z="6amLcjoWMzHhUkd2KjpUU1+YC+k="/>
         <field:display field="muutja" id="s_ee_itcollege_p0rn_entities_Piiririkkuja_muutja" object="${piiririkkuja}" z="1ubW87W8bdlCQXcgQraq/qcZaQ0="/>
