@@ -70,3 +70,5 @@ field date --class ee.itcollege.p0rn.entities.Riik --fieldName muudetud --type j
 field string --class ee.itcollege.p0rn.entities.Riik --fieldName sulgeja --sizeMax 32 --notNull
 // [failed] field date --class ee.itcollege.p0rn.entities.Riik --fieldName suletud --type java.util.Date --notNull
 field date --class ee.itcollege.p0rn.entities.Riik --fieldName suletud --type java.util.Date --notNull
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-30 09:56:29
+persistence setup --provider HIBERNATE --database HYPERSONIC_PERSISTENT 
