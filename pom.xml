@@ -607,7 +607,7 @@
         		 
         		 <configuration>
 			          <driver>org.hsqldb.jdbcDriver</driver>
-			          <url>jdbc:hsqldb:file:${user.home}/i377/Team27/db;shutdown=true</url>
+			          <url>jdbc:hsqldb:file:${java.home}/i377/Team27/db;shutdown=true</url>
 			          <username>sa</username>
 			          <password></password>
 			     </configuration>
