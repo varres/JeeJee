@@ -1,5 +1,5 @@
-INSERT INTO "Riik" ("Riik_ID", "ISO_kood", "ANSI_kood", "Avaja", "Avatud", "Muutja", "Muudetud", "Sulgeja", "Suletud", "Kommentaar") VALUES(null, 'EE', 'EST', 'Test', '2011/12/01', 'Test', '2011/12/01', '', '2030/12/01', '');
-INSERT INTO "Riik" ("Riik_ID", "ISO_kood", "ANSI_kood", "Avaja", "Avatud", "Muutja", "Muudetud", "Sulgeja", "Suletud", "Kommentaar") VALUES(null, 'EN', 'ENG', 'Test', '2011/12/01', 'Test', '2011/12/01', '', '2030/12/01', '');
-INSERT INTO "Riik" ("Riik_ID", "ISO_kood", "ANSI_kood", "Avaja", "Avatud", "Muutja", "Muudetud", "Sulgeja", "Suletud", "Kommentaar") VALUES(null, 'DE', 'DEU', 'Test', '2011/12/01', 'Test', '2011/12/01', '', '2030/12/01', '');
-INSERT INTO "Riik" ("Riik_ID", "ISO_kood", "ANSI_kood", "Avaja", "Avatud", "Muutja", "Muudetud", "Sulgeja", "Suletud", "Kommentaar") VALUES(null, 'US', 'USA', 'Test', '2011/12/01', 'Test', '2011/12/01', '', '2030/12/01', '');
+INSERT INTO Riik (Riik_ID, ISO_kood, ANSI_kood, Avaja, Avatud, Muutja, Muudetud, Sulgeja, Suletud, Kommentaar) VALUES(null, 'EE', 'EST', 'Test', '2011-12-01 00:00:00', 'Test', '2011-12-01 00:00:00', '', '2030-12-01 00:00:00', '');
+INSERT INTO Riik (Riik_ID, ISO_kood, ANSI_kood, Avaja, Avatud, Muutja, Muudetud, Sulgeja, Suletud, Kommentaar) VALUES(null, 'EN', 'ENG', 'Test', '2011-12-01 00:00:00', 'Test', '2011-12-01 00:00:00', '', '2030-12-01 00:00:00', '');
+INSERT INTO Riik (Riik_ID, ISO_kood, ANSI_kood, Avaja, Avatud, Muutja, Muudetud, Sulgeja, Suletud, Kommentaar) VALUES(null, 'DE', 'DEU', 'Test', '2011-12-01 00:00:00', 'Test', '2011-12-01 00:00:00', '', '2030-12-01 00:00:00', '');
+INSERT INTO Riik (Riik_ID, ISO_kood, ANSI_kood, Avaja, Avatud, Muutja, Muudetud, Sulgeja, Suletud, Kommentaar) VALUES(null, 'US', 'USA', 'Test', '2011-12-01 00:00:00', 'Test', '2011-12-01 00:00:00', '', '2030-12-01 00:00:00', '');
 COMMIT;
