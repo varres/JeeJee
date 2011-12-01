@@ -175,6 +175,24 @@ public class Kodakondsus {
 	    	g.setPiiririkkuja_ID(d);
 	    	g.setRiik_ID(c);
 	    	g.persist();
+	    	
+	    	Seadus s = new Seadus();
+	    	s.setKehtiv_alates("2010-12-30");
+	    	s.setKehtiv_kuni("2011-12-30");
+	    	s.setKommentaar("");
+	    	s.setKood("AA");
+	    	s.setNimetus("Relva seadus");
+	    	s.persist();
+	    	
+	    	Seadus s2 = new Seadus();
+	    	s2.setKehtiv_alates("2012-12-30");
+	    	s2.setKehtiv_kuni("2015-12-30");
+	    	s2.setKommentaar("");
+	    	s2.setKood("ABWS");
+	    	s2.setNimetus("Raha seadus");
+	    	s2.persist();
+	    	
+
     	}
     }
 }
