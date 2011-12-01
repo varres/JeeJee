@@ -52,13 +52,6 @@ privileged aspect SeadusController_Roo_Controller {
         return "seaduses/list";
     }
     
-    @RequestMapping(value = "/{seaduse_ID}", params = "form", method = RequestMethod.GET)
-    public String SeadusController.updateForm(@PathVariable("seaduse_ID") Long seaduse_ID, Model uiModel) {
-        uiModel.addAttribute("seadus", Seadus.findSeadus(seaduse_ID));
-        addDateTimeFormatPatterns(uiModel);
-        return "seaduses/update";
-    }
-    
     @RequestMapping(value = "/{seaduse_ID}", method = RequestMethod.DELETE)
     public String SeadusController.delete(@PathVariable("seaduse_ID") Long seaduse_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Seadus.findSeadus(seaduse_ID).remove();

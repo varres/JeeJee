@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -64,11 +65,13 @@ public class SeadusePunkt {
 
     @NotNull
     @Size(max = 32)
+    @Column(updatable = false)
     private String avaja;
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
+    @Column(updatable = false)
     private Date avatud;
 
     @NotNull
