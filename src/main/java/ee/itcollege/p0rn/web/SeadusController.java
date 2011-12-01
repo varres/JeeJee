@@ -58,9 +58,10 @@ public class SeadusController {
     @RequestMapping(value = "/{seaduse_ID}", params = "form", method = RequestMethod.GET)
     public String updateForm(@PathVariable("seaduse_ID") Long seaduse_ID, Model uiModel) {
         uiModel.addAttribute("seadusepunkts", SeadusePunkt.findAllSeadusePunkts(seaduse_ID, "", ""));
-        uiModel.addAttribute("seadusePunkt", new SeadusePunkt());
         uiModel.addAttribute("seadus", Seadus.findSeadus(seaduse_ID));
+        uiModel.addAttribute("seadusePunkt", new SeadusePunkt());
+
         addDateTimeFormatPatterns(uiModel);
-        return "seadusepunkts/update";
+        return "seaduses/update";
     }
 }

@@ -35,17 +35,6 @@ privileged aspect SeadusePunkt_Roo_Entity {
     }
     
     @Transactional
-    public void SeadusePunkt.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            SeadusePunkt attached = SeadusePunkt.findSeadusePunkt(this.seaduse_punkt_ID);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
     public void SeadusePunkt.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();

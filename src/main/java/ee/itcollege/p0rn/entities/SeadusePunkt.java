@@ -4,8 +4,10 @@ import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
 
 import java.text.ParseException;
@@ -104,7 +106,7 @@ public class SeadusePunkt {
 	}
 
 	@ManyToOne
-    private ee.itcollege.p0rn.entities.SeadusePunkt ylemus_seaduse_punkt_ID;
+	private ee.itcollege.p0rn.entities.SeadusePunkt ylemus_seaduse_punkt_ID;
     
     @PersistenceContext
     transient EntityManager entityManager;
@@ -121,11 +123,13 @@ public class SeadusePunkt {
     		g = g + " AND seaduse_ID = " + seaduse_ID;
     	}
     	if (alates.length() > 0) {
-    		g = g + " AND kehtiv_alates >= '" + alates + "')";
+    		g = g + " AND kehtiv_alates >= '" + alates + "'";
     	}
     	if (kuni.length() > 0) {
     		g = g + " AND kehtiv_kuni <= '" + kuni + "'";
     	}
+    	g = g + " AND sulgeja = '' ";
+    	
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o " + g, SeadusePunkt.class).getResultList();
     }
     
@@ -161,5 +165,12 @@ public class SeadusePunkt {
       } catch (ParseException e) {
    	   e.printStackTrace();
       }
+    }
+    
+    @Transactional
+    public void remove() {
+        if (this.entityManager == null) this.entityManager = entityManager();
+        sulgeja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+        this.entityManager.createQuery("UPDATE SeadusePunkt o SET suletud = CURDATE(), sulgeja = '" + sulgeja + "' WHERE seaduse_punkt_ID = " + this.seaduse_punkt_ID).executeUpdate();
     }
 }

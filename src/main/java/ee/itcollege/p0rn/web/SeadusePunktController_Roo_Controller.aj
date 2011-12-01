@@ -53,15 +53,6 @@ privileged aspect SeadusePunktController_Roo_Controller {
         return "seadusepunkts/update";
     }
     
-    @RequestMapping(value = "/{seaduse_punkt_ID}", method = RequestMethod.DELETE)
-    public String SeadusePunktController.delete(@PathVariable("seaduse_punkt_ID") Long seaduse_punkt_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        SeadusePunkt.findSeadusePunkt(seaduse_punkt_ID).remove();
-        uiModel.asMap().clear();
-        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
-        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/seadusepunkts";
-    }
-    
     @ModelAttribute("seaduses")
     public Collection<Seadus> SeadusePunktController.populateSeaduses() {
         return Seadus.findAllSeaduses();

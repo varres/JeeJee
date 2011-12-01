@@ -35,10 +35,10 @@
             <c:forEach items="${seadusepunkts}" var="b">
                 <tr>
                     <td>
-                        <!-- <c:out value="${b.paragrahv}"/> -->eee
+                        <c:out value="${b.paragrahv}"/>
                     </td>
                     <td>
-                        <!--<c:out value="${b.pais}"/> --> uuu
+                        <c:out value="${b.pais}"/>
                     </td>
                     <td>
                         <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="edit_url">

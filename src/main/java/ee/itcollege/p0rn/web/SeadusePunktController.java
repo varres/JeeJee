@@ -10,6 +10,7 @@ import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,5 +55,18 @@ public class SeadusePunktController {
         uiModel.addAttribute("seadusePunkt", model);
         addDateTimeFormatPatterns(uiModel);
         return "seadusepunkts/create";
+    }
+	
+	@RequestMapping(value = "/{seadusepunkt_ID}", params = "delete", method = RequestMethod.GET)
+    public String delete(@PathVariable("seadusepunkt_ID") Long seadusepunkt_ID, Model uiModel) {
+        SeadusePunkt model = SeadusePunkt.findSeadusePunkt(seadusepunkt_ID);
+        if (model!=null) {
+        	model.remove();
+        	uiModel.asMap().clear();
+        	return "redirect:/seaduses/" + model.getSeaduse_ID().getId().toString() + "?form";
+        } else {
+        	uiModel.asMap().clear();
+        	return "redirect:/seaduses";
+        }
     }
 }
