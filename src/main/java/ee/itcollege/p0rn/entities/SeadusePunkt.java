@@ -135,9 +135,14 @@ public class SeadusePunkt {
     
     @PrePersist
     protected void onCreate() {
-        avaja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+    	if (SecurityContextHolder.getContext().getAuthentication() != null) {
+    		avaja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+    		muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+    	} else {
+    		avaja = "unknown";
+    		muutja = "unknown";
+    	}
         avatud = new Date();
-        muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
         muudetud = new Date();
         // Dummy data
         sulgeja = "";

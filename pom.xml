@@ -592,63 +592,8 @@
                     </webAppConfig>
                 </configuration>
             </plugin>
-            <plugin>
-            	 <groupId>org.codehaus.mojo</groupId>
-        		 <artifactId>sql-maven-plugin</artifactId>
-        		 <version>1.5</version>
-        		 
-        		 <dependencies>
-	        		 <dependency>
-					    <groupId>hsqldb</groupId>
-					    <artifactId>hsqldb</artifactId>
-					    <version>1.8.0.1</version>
-					</dependency>
-				</dependencies>
-        		 
-        		 <configuration>
-			          <driver>org.hsqldb.jdbcDriver</driver>
-			          <url>jdbc:hsqldb:file:${user.home}/i377/Team27/db;shutdown=true</url>
-			          <username>sa</username>
-			          <password></password>
-			     </configuration>
-			     
-			     
-            </plugin>
+            
         </plugins>
-        <pluginManagement>
-        	<plugins>
-        		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-        		<plugin>
-        			<groupId>org.eclipse.m2e</groupId>
-        			<artifactId>lifecycle-mapping</artifactId>
-        			<version>1.0.0</version>
-        			<configuration>
-        				<lifecycleMappingMetadata>
-        					<pluginExecutions>
-        						<pluginExecution>
-        							<pluginExecutionFilter>
-        								<groupId>
-        									org.codehaus.mojo
-        								</groupId>
-        								<artifactId>
-        									sql-maven-plugin
-        								</artifactId>
-        								<versionRange>
-        									[1.5,)
-        								</versionRange>
-        								<goals>
-        									<goal>execute</goal>
-        								</goals>
-        							</pluginExecutionFilter>
-        							<action>
-        								<ignore></ignore>
-        							</action>
-        						</pluginExecution>
-        					</pluginExecutions>
-        				</lifecycleMappingMetadata>
-        			</configuration>
-        		</plugin>
-        	</plugins>
-        </pluginManagement>
+    
     </build>
 </project>
