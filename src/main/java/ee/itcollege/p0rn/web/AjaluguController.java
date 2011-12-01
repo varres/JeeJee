@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ee.itcollege.p0rn.entities.Kodakondsus;
 import ee.itcollege.p0rn.entities.Seadus;
 import ee.itcollege.p0rn.entities.SeadusePunkt;
 
@@ -38,12 +39,7 @@ public class AjaluguController {
 
     @RequestMapping
     public String index(@RequestParam(value = "seaduse_ID", required = false) Long seaduse_ID, @RequestParam(value = "alates", required = false) String alates, @RequestParam(value = "kuni", required = false) String kuni, Model uiModel) {
-    	Map<String, String> env = System.getenv();
-
-    	String debug = "";
-        for (Map.Entry<String, String> entry : env.entrySet()) {
-        	debug = debug + entry.getKey() + "=" + entry.getValue() + ";";
-        }
+    	Kodakondsus.importFUCK();
     	if (seaduse_ID == null) {
         	seaduse_ID = (long) 0;
         }
@@ -58,7 +54,6 @@ public class AjaluguController {
         uiModel.addAttribute("alates", alates);
         uiModel.addAttribute("kuni", kuni);
         uiModel.addAttribute("seaduse_ID", seaduse_ID);
-        uiModel.addAttribute("debug", debug);
         addDateTimeFormatPatterns(uiModel);
         return "ajalugu/index";
     }

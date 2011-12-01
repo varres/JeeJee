@@ -612,7 +612,21 @@
 			          <password></password>
 			     </configuration>
 			     
-			     
+			     <executions>
+			          <execution>
+			            <id>create-schema</id>
+			            <phase>process-test-resources</phase>
+			            <goals>
+			              <goal>execute</goal>
+			            </goals>
+			            <configuration>
+			              <autocommit>true</autocommit>
+			              <srcFiles>
+			                <srcFile>src/test/test.sql</srcFile>
+			              </srcFiles>
+			            </configuration>
+			          </execution>
+			     </executions>
             </plugin>
         </plugins>
         <pluginManagement>

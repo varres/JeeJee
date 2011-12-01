@@ -67,4 +67,7 @@
         <property name="persistenceUnitName" value="persistenceUnit"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
+    <bean class="ee.itcollege.p0rn.entities.Listen" id="listen">
+
+    </bean>
 </beans>

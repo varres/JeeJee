@@ -8,6 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +20,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -96,5 +100,81 @@ public class Kodakondsus {
         if (this.entityManager == null) this.entityManager = entityManager();
         sulgeja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
         this.entityManager.createQuery("UPDATE Kodakondsus o SET suletud = CURDATE() WHERE kodakondsus_ID = " + this.kodakondsus_ID + " AND sulgeja = '" + sulgeja + "'").executeUpdate();
+    }
+    
+    @PrePersist
+    protected void onCreate() {
+    	if (SecurityContextHolder.getContext().getAuthentication() != null) {
+    		avaja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+    		muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+    	} else {
+    		avaja = "unknown";
+    		muutja = "unknown";
+    	}
+        avatud = new Date();
+        muudetud = new Date();
+        // Dummy data
+        sulgeja = "";
+        try {
+     	   SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+     	   suletud = (Date)format.parse("2099/12/31");
+        } catch (ParseException e) {
+     	   e.printStackTrace();
+        }
+    }
+    
+    public static void importFUCK() {
+    	if (Riik.countRiiks() < 1) {
+	    	Riik a = new Riik();
+	    	a.setISO_kood("EE");
+	    	a.setANSI_kood("EST");
+	    	a.setKommentaar("");
+	    	a.persist();
+	    	Riik b = new Riik();
+	    	b.setISO_kood("EN");
+	    	b.setANSI_kood("ENG");
+	    	b.setKommentaar("");
+	    	b.persist();
+	    	Riik c = new Riik();
+	    	c.setISO_kood("DE");
+	    	c.setANSI_kood("DEU");
+	    	c.setKommentaar("");
+	    	c.persist();
+	    	
+	    	Piiririkkuja d = new Piiririkkuja();
+	    	d.setEesnimi("Jaan");
+	    	d.setPerek_nimi("Kuusk");
+	    	d.setIsikukood("4000");
+	    	d.setKommentaar("");
+	    	d.setSynniaeg(new Date());
+	    	d.persist();
+	    	
+	    	Kodakondsus e = new Kodakondsus();
+	    	e.setIsikukood("1001");
+	    	e.setAlates(new Date());
+	    	e.setKuni(new Date());
+	    	e.setKommentaar("");
+	    	e.setPiiririkkuja_ID(d);
+	    	e.setRiik_ID(a);
+	    	e.persist();
+	    	
+	    	Kodakondsus f = new Kodakondsus();
+	    	f.setIsikukood("1001");
+	    	f.setAlates(new Date());
+	    	f.setKuni(new Date());
+	    	f.setKommentaar("");
+	    	f.setPiiririkkuja_ID(d);
+	    	f.setRiik_ID(b);
+	    	f.persist();
+	    	
+	    	Kodakondsus g = new Kodakondsus();
+	    	g.setIsikukood("1001");
+	    	g.setAlates(new Date());
+	    	g.setKuni(new Date());
+	    	g.setKommentaar("");
+	    	g.setPiiririkkuja_ID(d);
+	    	g.setRiik_ID(c);
+	    	g.persist();
+    	}
     }
 }
