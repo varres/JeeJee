@@ -84,10 +84,18 @@ public class Kodakondsus extends Base {
 	    	Piiririkkuja d = new Piiririkkuja();
 	    	d.setEesnimi("Jaan");
 	    	d.setPerek_nimi("Kuusk");
-	    	d.setIsikukood("4000");
+	    	d.setIsikukood("4342346000");
 	    	d.setKommentaar("");
 	    	d.setSynniaeg(new Date());
 	    	d.persist();
+	    	
+	    	Piiririkkuja d2 = new Piiririkkuja();
+	    	d2.setEesnimi("Triin");
+	    	d2.setPerek_nimi("Tamm");
+	    	d2.setIsikukood("50003234444");
+	    	d2.setKommentaar("");
+	    	d2.setSynniaeg(new Date());
+	    	d2.persist();
 	    	
 	    	Kodakondsus e = new Kodakondsus();
 	    	e.setIsikukood("1001");
@@ -115,6 +123,15 @@ public class Kodakondsus extends Base {
 	    	g.setPiiririkkuja_ID(d);
 	    	g.setRiik_ID(c);
 	    	g.persist();
+	    	
+	    	Kodakondsus g2 = new Kodakondsus();
+	    	g2.setIsikukood("1001");
+	    	g2.setAlates(new Date());
+	    	g2.setKuni(new Date());
+	    	g2.setKommentaar("");
+	    	g2.setPiiririkkuja_ID(d2);
+	    	g2.setRiik_ID(c);
+	    	g2.persist();
 	    
 	    	Seadus s = new Seadus();
 	    	s.setKehtiv_alates("2010-12-30");

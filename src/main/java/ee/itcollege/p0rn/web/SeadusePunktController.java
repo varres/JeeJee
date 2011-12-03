@@ -21,11 +21,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SeadusePunktController {
     @RequestMapping(method = RequestMethod.POST)
     public String create(SeadusePunkt seadusepunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-    	/* if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("seadus", seadus);
+    	if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("seadus", seadusepunkt);
             addDateTimeFormatPatterns(uiModel);
             return "seaduses/update";
-        }*/
+        }
         uiModel.asMap().clear();
         seadusepunkt.merge();
         try {
@@ -37,11 +37,11 @@ public class SeadusePunktController {
     
     @RequestMapping(method = RequestMethod.PUT)
     public String update(SeadusePunkt seadusepunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-    	/* if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("seadus", seadus);
+    	if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("seadus", seadusepunkt);
             addDateTimeFormatPatterns(uiModel);
             return "seaduses/update";
-        }*/
+        }
         uiModel.asMap().clear();
         seadusepunkt.merge();
 
@@ -78,6 +78,16 @@ public class SeadusePunktController {
         return "seadusepunkts/update";
     }
 	
+	@RequestMapping(value = "/{seadusepunkt_ID}", method = RequestMethod.DELETE)
+    public String delete(@PathVariable("seadusepunkt_ID") Long seadusepunkt_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+		SeadusePunkt model = SeadusePunkt.findSeadusePunkt(seadusepunkt_ID);
+        model.remove();
+        uiModel.asMap().clear();	
+        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
+        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
+        return "redirect:/seaduses";
+	}
+    
 	@RequestMapping(value = "/{seadusepunkt_ID}", params = "delete", method = RequestMethod.GET)
     public String delete(@PathVariable("seadusepunkt_ID") Long seadusepunkt_ID, Model uiModel) {
         SeadusePunkt model = SeadusePunkt.findSeadusePunkt(seadusepunkt_ID);
