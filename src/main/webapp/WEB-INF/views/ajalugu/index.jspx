@@ -12,12 +12,12 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <div>
-    	<form method="GET" action="">   	
+    	<form name="search" method="GET" action="">   	
     	<table>
     		<tr>
-    			<td>Alates</td>
-    			<td>Kuni</td>
-    			<td>Seadus</td>
+    			<td><spring:message code="start" /></td>
+    			<td><spring:message code="end" /></td>
+    			<td><spring:message code="law" /></td>
     			<td></td>
     		</tr>
     		<tr>
@@ -37,10 +37,12 @@
     				</select>
 				</td>
 				<td>
-					<input type="submit" value="Värskenda" />
+					<a href="#" class="button" onclick="document.forms['search'].submit();"><spring:message code="refresh" /></a>
 				</td>
     		</tr>
     	</table>
+    	<br />
+    	<br />
     	<script type="text/javascript">
         	Spring.addDecoration(
         			new Spring.ElementDecoration({
@@ -74,9 +76,9 @@
     <page:list id="pl_ee_itcollege_p0rn_entities_SeadusePunkt" items="${seadusepunkts}" z="+twsmkOZJ3knkSjNqB8qEIv+XNY=">
     	<table>
     		<tr>
-    			<th>Punkt</th>
-    			<th>Alates</th>
-    			<th>Kuni</th>
+    			<th><spring:message code="paragraph" /></th>
+    			<th><spring:message code="start" /></th>
+    			<th><spring:message code="end" /></th>
     			<th></th>
     		</tr>
 	    	<c:forEach items="${seadusepunkts}" var="b">
@@ -88,7 +90,7 @@
 	    			<spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="view_url">
 		            	<spring:param name="form"/>
 		        	</spring:url>
-		        	<a href="${view_url}">VAATA</a>
+		        	<a href="${view_url}"><spring:message code="view" /></a>
 	    		</td>
 	    	</tr>
 	    	</c:forEach>
