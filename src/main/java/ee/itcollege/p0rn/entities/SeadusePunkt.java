@@ -99,4 +99,16 @@ public class SeadusePunkt extends Base {
     	
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o " + g, SeadusePunkt.class).getResultList();
     }
+    
+    public static long countSeadusePunkts() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM SeadusePunkt o WHERE suletud > CURDATE()", Long.class).getSingleResult();
+    }
+    
+    public static List<SeadusePunkt> findAllSeadusePunkts() {
+        return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE suletud > CURDATE()", SeadusePunkt.class).getResultList();
+    }
+    
+    public static List<SeadusePunkt> findSeadusePunktEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE suletud > CURDATE()", SeadusePunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
 }

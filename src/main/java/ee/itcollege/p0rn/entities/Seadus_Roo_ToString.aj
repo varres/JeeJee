@@ -23,8 +23,7 @@ privileged aspect Seadus_Roo_ToString {
         sb.append("Seaduse_ID: ").append(getSeaduse_ID()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
-        sb.append("TableName: ").append(getTableName()).append(", ");
-        sb.append("Version: ").append(getVersion());
+        sb.append("TableName: ").append(getTableName());
         return sb.toString();
     }
     

@@ -5,7 +5,7 @@
     <form:update id="fu_ee_itcollege_p0rn_entities_Seadus" idField="seaduse_ID" modelAttribute="seadus" path="/seaduses" versionField="Version" z="yNxVUHdRDjJZl7toZfV5AI0zuao=">
         <field:input field="kood" id="c_ee_itcollege_p0rn_entities_Seadus_kood" max="20" required="true" z="xp3gNS0lU2lE+HSmaQhq75HMTzk="/>
         <field:input field="nimetus" id="c_ee_itcollege_p0rn_entities_Seadus_nimetus" max="20" required="true" z="NGnC0aC3lSKLhv2SKljpszR569o="/>
-        <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Seadus_kommentaar" required="true" z="user-manage"/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Seadus_kommentaar" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadus_kehtiv_alates_date_format}" field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_alates" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadus_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_kuni" required="true" z="user-managed"/>
         <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_Seadus_avaja" render="false" required="true" z="user-managed"/>
@@ -23,7 +23,7 @@
         <table>
             <tr>
                 <th>Paragrahv</th>
-                <th colspan="3">PÃ¤is</th>
+                <th colspan="3">Päis</th>
             </tr>
             <c:forEach items="${seadusepunkts}" var="b">
                 <tr>

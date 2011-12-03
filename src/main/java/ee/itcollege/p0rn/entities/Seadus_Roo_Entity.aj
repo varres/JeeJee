@@ -6,7 +6,6 @@ package ee.itcollege.p0rn.entities;
 import ee.itcollege.p0rn.entities.Seadus;
 import java.lang.Integer;
 import java.lang.Long;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Version;
@@ -54,21 +53,9 @@ privileged aspect Seadus_Roo_Entity {
         return merged;
     }
     
-    public static long Seadus.countSeaduses() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Seadus o", Long.class).getSingleResult();
-    }
-    
-    public static List<Seadus> Seadus.findAllSeaduses() {
-        return entityManager().createQuery("SELECT o FROM Seadus o", Seadus.class).getResultList();
-    }
-    
     public static Seadus Seadus.findSeadus(Long seaduse_ID) {
         if (seaduse_ID == null) return null;
         return entityManager().find(Seadus.class, seaduse_ID);
-    }
-    
-    public static List<Seadus> Seadus.findSeadusEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Seadus o", Seadus.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

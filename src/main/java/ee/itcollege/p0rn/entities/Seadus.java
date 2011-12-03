@@ -12,6 +12,7 @@ import javax.validation.constraints.Size;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
@@ -64,4 +65,16 @@ public class Seadus extends Base {
 	public String getIdName() {
 		return "seaduse_ID";
 	}
+	
+    public static long countSeaduses() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Seadus o WHERE suletud > CURDATE()", Long.class).getSingleResult();
+    }
+    
+    public static List<Seadus> findAllSeaduses() {
+        return entityManager().createQuery("SELECT o FROM Seadus o WHERE suletud > CURDATE()", Seadus.class).getResultList();
+    }
+    
+    public static List<Seadus> findSeadusEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Seadus o WHERE suletud > CURDATE()", Seadus.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
 }
