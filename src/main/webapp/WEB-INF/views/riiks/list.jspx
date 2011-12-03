@@ -4,12 +4,14 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_p0rn_entities_Riik" items="${riiks}" z="76hC1EK21HtbjuSmXv0o/4OPYb0=">
         <table:table data="${riiks}" id="l_ee_itcollege_p0rn_entities_Riik" path="/riiks" typeIdFieldName="riik_ID" z="Q4HvP69A4PXTkl4jWAnW7tAEd0M=">
-            <table:column id="c_ee_itcollege_p0rn_entities_Riik_kommentaar" property="kommentaar" z="X6lnjJ8DuifBajORoFtmGXsog3M="/>
-            <table:column date="true" dateTimePattern="${riik_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_Riik_avatud" property="avatud" z="c3oz9etPSKphKzG0vEdHYJFyA58="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_Riik_muutja" property="muutja" z="yWdY6ZkjkijA8GvM4+OFHHE5hpI="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_Riik_sulgeja" property="sulgeja" z="YZFHonBTyR1k2gwN3fu87pFZJ1E="/>
-            <table:column date="true" dateTimePattern="${riik_suletud_date_format}" id="c_ee_itcollege_p0rn_entities_Riik_suletud" property="suletud" z="vABPTGUqBq7qF8d5QGLpg21jv5A="/>
-            <table:column date="true" dateTimePattern="${riik_muudetud_date_format}" id="c_ee_itcollege_p0rn_entities_Riik_muudetud" property="muudetud" z="OKk74NYtAEja9pRnGk8hiGM+x64="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Riik_kommentaar" property="kommentaar" render="false" z="user-managed"/>
+            <table:column date="true" dateTimePattern="${riik_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_Riik_avatud" property="avatud" render="false" z="user-managed"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Riik_muutja" property="muutja" render="false" z="user-managed"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Riik_sulgeja" property="sulgeja" render="false" z="user-managed"/>
+            <table:column date="true" dateTimePattern="${riik_suletud_date_format}" id="c_ee_itcollege_p0rn_entities_Riik_suletud" property="suletud" render="false" z="user-managed"/>
+            <table:column date="true" dateTimePattern="${riik_muudetud_date_format}" id="c_ee_itcollege_p0rn_entities_Riik_muudetud" property="muudetud" render="false" z="user-managed"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Riik_ISO_kood" property="ISO_kood"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Riik_ANSI_kood" property="ANSI_kood"/>
         </table:table>
     </page:list>
 </div>

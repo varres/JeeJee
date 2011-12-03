@@ -6,7 +6,6 @@ package ee.itcollege.p0rn.entities;
 import ee.itcollege.p0rn.entities.Kodakondsus;
 import java.lang.Integer;
 import java.lang.Long;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Version;
@@ -54,21 +53,9 @@ privileged aspect Kodakondsus_Roo_Entity {
         return merged;
     }
     
-    public static long Kodakondsus.countKodakondsuses() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Kodakondsus o", Long.class).getSingleResult();
-    }
-    
-    public static List<Kodakondsus> Kodakondsus.findAllKodakondsuses() {
-        return entityManager().createQuery("SELECT o FROM Kodakondsus o", Kodakondsus.class).getResultList();
-    }
-    
     public static Kodakondsus Kodakondsus.findKodakondsus(Long kodakondsus_ID) {
         if (kodakondsus_ID == null) return null;
         return entityManager().find(Kodakondsus.class, kodakondsus_ID);
-    }
-    
-    public static List<Kodakondsus> Kodakondsus.findKodakondsusEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Kodakondsus o", Kodakondsus.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

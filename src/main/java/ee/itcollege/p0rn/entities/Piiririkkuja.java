@@ -14,6 +14,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -68,5 +70,21 @@ public class Piiririkkuja extends Base {
 	@Override
 	public String getIdName() {
 		return "piiririkkuja_ID";
+	}
+	
+	public String getFormLabel() {
+		return getEesnimi() + " " + getPerek_nimi() + " ("+getIsikukood()+")";
+	}
+	
+	public static long countPiiririkkujas() {
+       return entityManager().createQuery("SELECT COUNT(o) FROM Piiririkkuja o WHERE suletud > CURDATE()", Long.class).getSingleResult();
+	}
+   
+	public static List<Piiririkkuja> findAllPiiririkkujas() {
+       return entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE suletud > CURDATE()", Piiririkkuja.class).getResultList();
+	} 
+
+	public static List<Piiririkkuja> findPiiririkkujaEntries(int firstResult, int maxResults) {
+       return entityManager().createQuery("SELECT o FROM Piiririkkuja o WHERE suletud > CURDATE()", Piiririkkuja.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
 	}
 }

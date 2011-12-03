@@ -31,13 +31,12 @@ public class SeadusController {
 	
     @RequestMapping(method = RequestMethod.POST)
     public String create(@Valid Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-    	/* if (bindingResult.hasErrors()) {
+    	if (bindingResult.hasErrors()) {
     		System.out.println(bindingResult.getAllErrors().toString());
             uiModel.addAttribute("seadus", seadus);
             addDateTimeFormatPatterns(uiModel);
             return "seaduses/create";
         }
-        */
         uiModel.asMap().clear();
         seadus.persist();
         return "redirect:/seaduses/" + encodeUrlPathSegment(seadus.getId().toString(), httpServletRequest);
@@ -45,11 +44,11 @@ public class SeadusController {
     
     @RequestMapping(method = RequestMethod.PUT)
     public String update(Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-    	/* if (bindingResult.hasErrors()) {
+    	if (bindingResult.hasErrors()) {
             uiModel.addAttribute("seadus", seadus);
             addDateTimeFormatPatterns(uiModel);
             return "seaduses/update";
-        }*/
+        }
         uiModel.asMap().clear();
         seadus.merge();
         return "redirect:/seaduses/" + encodeUrlPathSegment(seadus.getId().toString(), httpServletRequest);

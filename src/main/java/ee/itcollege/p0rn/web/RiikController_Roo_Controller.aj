@@ -97,6 +97,12 @@ privileged aspect RiikController_Roo_Controller {
         return Riik.findAllRiiks();
     }
     
+    void RiikController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("riik_suletud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("riik_avatud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("riik_muudetud_date_format", "dd.MM.yyyy");
+    }
+    
     String RiikController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
         String enc = httpServletRequest.getCharacterEncoding();
         if (enc == null) {

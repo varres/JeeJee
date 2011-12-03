@@ -152,4 +152,16 @@ public class Kodakondsus extends Base {
 	public Long getId() {
 		return kodakondsus_ID;
 	}
+	
+    public static long countKodakondsuses() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Kodakondsus o WHERE suletud > CURDATE()", Long.class).getSingleResult();
+    }
+    
+    public static List<Kodakondsus> findAllKodakondsuses() {
+        return entityManager().createQuery("SELECT o FROM Kodakondsus o WHERE suletud > CURDATE()", Kodakondsus.class).getResultList();
+    }
+
+    public static List<Kodakondsus> findKodakondsusEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Kodakondsus o WHERE suletud > CURDATE()", Kodakondsus.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
 }

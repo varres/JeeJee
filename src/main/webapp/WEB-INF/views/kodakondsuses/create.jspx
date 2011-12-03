@@ -9,12 +9,12 @@
         <field:datetime dateTimePattern="${kodakondsus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Kodakondsus_muudetud" render="false" required="true" z="user-managed"/>
         <field:input field="sulgeja" id="c_ee_itcollege_p0rn_entities_Kodakondsus_sulgeja" render="false" z="user-managed"/>
         <field:datetime dateTimePattern="${kodakondsus_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Kodakondsus_suletud" render="false" required="true" z="user-managed"/>
-        <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Kodakondsus_kommentaar" z="user-managed"/>
-        <field:datetime dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="c_ee_itcollege_p0rn_entities_Kodakondsus_alates" z="w1t1VOEbWMfPYB+E08qx+lAftAg="/>
-        <field:datetime dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="c_ee_itcollege_p0rn_entities_Kodakondsus_kuni" z="ZzeB2xK1AAAfznD2o7sUhTiigzI="/>
+        <field:select field="piiririkkuja_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_piiririkkuja_ID" itemLabel="formLabel" itemValue="piiririkkuja_ID" items="${piiririkkujas}" path="/piiririkkujas" z="user-managed"/>
         <field:select field="riik_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_riik_ID" itemLabel="ISO_kood" itemValue="riik_ID" items="${riiks}" path="/riiks" z="user-managed"/>
         <field:input field="isikukood" id="c_ee_itcollege_p0rn_entities_Kodakondsus_isikukood" max="20" z="2bd3IpJmq+1R9m0nriBWZzJqYh0="/>
-        <field:select field="piiririkkuja_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_piiririkkuja_ID" itemLabel="formLabel" itemValue="piiririkkuja_ID" items="${piiririkkujas}" path="/piiririkkujas" z="user-managed"/>
+        <field:datetime dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="c_ee_itcollege_p0rn_entities_Kodakondsus_alates" z="w1t1VOEbWMfPYB+E08qx+lAftAg="/>
+        <field:datetime dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="c_ee_itcollege_p0rn_entities_Kodakondsus_kuni" z="ZzeB2xK1AAAfznD2o7sUhTiigzI="/>
+    	<field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Kodakondsus_kommentaar" z="user-managed"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_p0rn_entities_Kodakondsus" render="${not empty dependencies}" z="IuAK+dpUvNReu7WTnGxnuc8ltEg="/>
 </div>
