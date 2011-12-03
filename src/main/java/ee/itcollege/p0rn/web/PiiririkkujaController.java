@@ -81,5 +81,13 @@ public class PiiririkkujaController {
         piiririkkuja.merge();
         return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getPiiririkkuja_ID().toString(), httpServletRequest);
     }
+    
+    void addDateTimeFormatPatterns(Model uiModel) {
+    	String datetimeformat = "yyyy/dd/MM";
+        uiModel.addAttribute("piiririkkuja_avatud_date_format", datetimeformat);
+        uiModel.addAttribute("piiririkkuja_muudetud_date_format", datetimeformat);
+        uiModel.addAttribute("piiririkkuja_suletud_date_format", datetimeformat);
+        uiModel.addAttribute("piiririkkuja_synniaeg_date_format", datetimeformat);
+    }
 }
 

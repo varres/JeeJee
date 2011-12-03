@@ -11,8 +11,6 @@ import java.lang.Long;
 import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -61,12 +59,6 @@ privileged aspect SeadusePunktController_Roo_Controller {
     @ModelAttribute("seadusepunkts")
     public Collection<SeadusePunkt> SeadusePunktController.populateSeadusePunkts() {
         return SeadusePunkt.findAllSeadusePunkts();
-    }
-    
-    void SeadusePunktController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("seadusePunkt_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("seadusePunkt_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("seadusePunkt_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     String SeadusePunktController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

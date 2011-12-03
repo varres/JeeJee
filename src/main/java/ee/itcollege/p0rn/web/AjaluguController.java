@@ -32,9 +32,10 @@ public class AjaluguController {
     }
 
     void addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("seadusePunkt_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("seadusePunkt_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("seadusePunkt_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+    	String datetimeformat = "yyyy/dd/MM";
+        uiModel.addAttribute("seadusePunkt_avatud_date_format", datetimeformat);
+        uiModel.addAttribute("seadusePunkt_muudetud_date_format", datetimeformat);
+        uiModel.addAttribute("seadusePunkt_suletud_date_format", datetimeformat);
     }
 
     @RequestMapping
