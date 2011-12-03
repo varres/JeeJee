@@ -22,6 +22,7 @@
         <div>
             <!--<spring:message code="label_ee_itcollege_p0rn_entities_Seadus_plural"/>!-->
         </div>
+        Punktid
         <table>
             <tr>
                 <th>§</th>

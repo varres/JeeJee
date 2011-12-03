@@ -11,6 +11,7 @@ privileged aspect SeadusePunkt_Roo_ToString {
         StringBuilder sb = new StringBuilder();
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("FormLabel: ").append(getFormLabel()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("IdName: ").append(getIdName()).append(", ");
         sb.append("Kehtiv_alates: ").append(getKehtiv_alates()).append(", ");

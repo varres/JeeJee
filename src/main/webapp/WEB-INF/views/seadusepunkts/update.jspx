@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_p0rn_entities_SeadusePunkt" idField="seaduse_punkt_ID" modelAttribute="seadusePunkt" path="/seadusepunkts" versionField="Version" z="W5nlJW/82fi1L1AgJJoyTcxL+7E=">
-        <field:select field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" itemValue="seaduse_ID" items="${seaduses}" path="/seaduses" z="9bI80E3oR2r3xDrgQP9oyFVsVtg="/>
         <field:input field="paragrahv" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_paragrahv" max="20" required="true" z="LxivFOEF5r0uxsYi7iMxym+Y2pQ="/>
         <field:input field="pais" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_pais" max="20" required="true" z="ume40BUrwhhoMRtUo7B2vGjm5SI="/>
-        <field:input field="tekst" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_tekst" max="20" required="true" z="Cu4ksNcLRAMlenxdHrWQtc2Mu3o="/>
-        <field:input field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_alates" max="20" required="true" z="M6pD5OANfhApdJZy0aIMKCncE3o="/>
-        <field:input field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_kuni" max="20" required="true" z="oddZiczfbrvsZT+7WaqU6veR3Lo="/>
-        <field:input field="kommentaar" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kommentaar" min="0" required="true" z="NGYwCegVWWjy4b0Y+C73cxsdWeQ="/>
+        <field:textarea field="tekst" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_tekst" required="true" z="user-managed"/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kommentaar" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_alates_date_format}" field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_alates" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_kuni" required="true" z="user-managed"/>
         <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avaja" render="false" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadusePunkt_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avatud" render="false" required="true" z="user-managed"/>
         <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muutja" render="false" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadusePunkt_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muudetud" render="false" required="true" z="user-managed"/>
         <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_sulgeja" render="false" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_suletud" render="false" required="true" z="user-managed"/>
-        <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" itemValue="seaduse_punkt_ID" items="${seadusepunkts}" path="/seadusepunkts" z="kC6jUZRrdLNBQXUNKOB0k83/Tl8="/>
+        <field:select field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" itemValue="seaduse_ID" items="${seaduses}" path="/seaduses" render="false" z="user-managed"/>
+        <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" itemLabel="formLabel" itemValue="seaduse_punkt_ID" items="${seadusepunkts}" path="/seadusepunkts" z="user-managed"/>
     </form:update>
+    <page:show id="pl_ee_itcollege_p0rn_entities_SeadusePunkt" object="${alam_seadusepunkts}" path="/seadusepunkts" z="dBv4+VUGHdxce+sj8hZkT63JKYs=">
+        <!--<field:display field="name" id="pl_ee_itcollege_p0rn_entities_Seadus" object="${cage}" z="8A8Ciz+KXs63h7jwGDod5gFgilY="/>!-->
+        <div>
+            <!--<spring:message code="label_ee_itcollege_p0rn_entities_Seadus_plural"/>!-->
+        </div>
+        Alampunktid
+        <table>
+            <tr>
+                <th>§</th>
+                <th colspan="3">Päis</th>
+            </tr>
+            <c:forEach items="${alam_seadusepunkts}" var="b">
+                <tr>
+                    <td>
+                        <c:out value="${b.paragrahv}"/>
+                    </td>
+                    <td>
+                        <c:out value="${b.pais}"/>
+                    </td>
+                    <td>
+                        <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="edit_url">
+                            <spring:param name="form"/>
+                            <spring:param name="seaduse_ID" value="${seadus.seaduse_ID}"/>
+                        </spring:url>
+                        <a class="button" href="${edit_url}">Muuda</a>
+                    </td>
+                    <td>
+                        <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="del_url">
+                            <spring:param name="delete"/>
+                        </spring:url>
+                        <a class="button" href="${del_url}">Kustuta</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </page:show>
+    <span class="new">
+        <spring:url value="/seadusepunkts" var="create_url">
+            <spring:param name="form"/>
+            <spring:param name="seaduse_ID" value="${seadus.seaduse_ID}"/>
+        </spring:url>
+        <a class="button" href="${create_url}">Lisa uus</a>
+    </span>
 </div>

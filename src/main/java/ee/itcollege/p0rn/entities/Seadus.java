@@ -66,6 +66,10 @@ public class Seadus extends Base {
 		return "seaduse_ID";
 	}
 	
+	public String getFormLabel() {
+		return getKood()+"/"+getNimetus();
+	}
+	
     public static long countSeaduses() {
         return entityManager().createQuery("SELECT COUNT(o) FROM Seadus o WHERE suletud > CURDATE()", Long.class).getSingleResult();
     }

@@ -44,6 +44,9 @@ public class SeadusePunktController {
         }*/
         uiModel.asMap().clear();
         seadusepunkt.merge();
+        
+        uiModel.addAttribute("seadusePunkt", uiModel);
+
         try {
         	return "redirect:/seaduses/" + encodeUrlPathSegment(seadusepunkt.getSeaduse_ID().getId().toString(), httpServletRequest) + "?form";
         } catch (Exception ex) {
@@ -55,10 +58,22 @@ public class SeadusePunktController {
     public String createForm(@RequestParam(required = false) Long seaduse_ID, Model uiModel) {
 		SeadusePunkt model = new SeadusePunkt();
 		model.setSeaduse_ID(Seadus.findSeadus(seaduse_ID));
-		
         uiModel.addAttribute("seadusePunkt", model);
         addDateTimeFormatPatterns(uiModel);
         return "seadusepunkts/create";
+    }
+	
+
+    @RequestMapping(value = "/{seaduse_punkt_ID}", params = "form", method = RequestMethod.GET)
+    public String updateForm(@PathVariable("seaduse_punkt_ID") Long seaduse_punkt_ID, Model uiModel) {
+        uiModel.addAttribute("seadusePunkt", SeadusePunkt.findSeadusePunkt(seaduse_punkt_ID));
+        try {
+        	uiModel.addAttribute("alam_seadusepunkts", SeadusePunkt.findAllAlamSeadusePunkts(seaduse_punkt_ID));
+        } catch (Exception ex) {
+        	System.out.println(ex.toString());
+        }
+        addDateTimeFormatPatterns(uiModel);
+        return "seadusepunkts/update";
     }
 	
 	@RequestMapping(value = "/{seadusepunkt_ID}", params = "delete", method = RequestMethod.GET)
@@ -75,7 +90,9 @@ public class SeadusePunktController {
     }
 	
     void addDateTimeFormatPatterns(Model uiModel) {
-    	String datetimeformat = "yyyy/dd/MM";
+    	String datetimeformat = "yyyy-dd-MM";
+        uiModel.addAttribute("seadusePunkt_kehtiv_alates_date_format", datetimeformat);
+        uiModel.addAttribute("seadusePunkt_kehtiv_kuni_date_format", datetimeformat);
         uiModel.addAttribute("seadusePunkt_avatud_date_format", datetimeformat);
         uiModel.addAttribute("seadusePunkt_muudetud_date_format", datetimeformat);
         uiModel.addAttribute("seadusePunkt_suletud_date_format", datetimeformat);

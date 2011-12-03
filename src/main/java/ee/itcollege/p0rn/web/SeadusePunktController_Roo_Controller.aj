@@ -44,13 +44,6 @@ privileged aspect SeadusePunktController_Roo_Controller {
         return "seadusepunkts/list";
     }
     
-    @RequestMapping(value = "/{seaduse_punkt_ID}", params = "form", method = RequestMethod.GET)
-    public String SeadusePunktController.updateForm(@PathVariable("seaduse_punkt_ID") Long seaduse_punkt_ID, Model uiModel) {
-        uiModel.addAttribute("seadusePunkt", SeadusePunkt.findSeadusePunkt(seaduse_punkt_ID));
-        addDateTimeFormatPatterns(uiModel);
-        return "seadusepunkts/update";
-    }
-    
     @ModelAttribute("seaduses")
     public Collection<Seadus> SeadusePunktController.populateSeaduses() {
         return Seadus.findAllSeaduses();
