@@ -132,7 +132,38 @@ public class Kodakondsus extends Base {
 	    	s2.setNimetus("Raha seadus");
 	    	s2.persist();
 	    	
-
+	    	SeadusePunkt sp1 = new SeadusePunkt();
+	    	sp1.setParagrahv("1");
+	    	sp1.setPais("Palju raha punkt");
+	    	sp1.setTekst("Kõigile raha");
+	    	sp1.setKommentaar("Ausad oleme");
+	    	sp1.setKehtiv_alates("2011-01-25");
+	    	sp1.setKehtiv_kuni("2012-12-30");
+	    	sp1.setSeaduse_ID(s2);
+	    	sp1.setYlemus_seaduse_punkt_ID(null);
+	    	sp1.persist();
+	    	
+	    	SeadusePunkt sp2 = new SeadusePunkt();
+	    	sp2.setParagrahv("2");
+	    	sp2.setPais("Täpsustus");
+	    	sp2.setTekst("Rikastele!");
+	    	sp2.setKommentaar("Problem?");
+	    	sp2.setKehtiv_alates("2011-01-25");
+	    	sp2.setKehtiv_kuni("2020-12-30");
+	    	sp2.setSeaduse_ID(s2);
+	    	sp2.setYlemus_seaduse_punkt_ID(sp1);
+	    	sp2.persist();
+	    	
+	    	SeadusePunkt sp3 = new SeadusePunkt();
+	    	sp3.setParagrahv("3");
+	    	sp3.setPais("Relvad!");
+	    	sp3.setTekst("Lastele relvi!");
+	    	sp3.setKommentaar("Tehtud!");
+	    	sp3.setKehtiv_alates("2012-01-25");
+	    	sp3.setKehtiv_kuni("2012-12-30");
+	    	sp3.setSeaduse_ID(s);
+	    	sp3.setYlemus_seaduse_punkt_ID(null);
+	    	sp3.persist();
     	}
     }
 
