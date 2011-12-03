@@ -33,9 +33,8 @@ public class AjaluguController {
 
     void addDateTimeFormatPatterns(Model uiModel) {
     	String datetimeformat = "yyyy/dd/MM";
-        uiModel.addAttribute("seadusePunkt_avatud_date_format", datetimeformat);
-        uiModel.addAttribute("seadusePunkt_muudetud_date_format", datetimeformat);
-        uiModel.addAttribute("seadusePunkt_suletud_date_format", datetimeformat);
+        uiModel.addAttribute("seadus_kehtiv_alates_date_format", datetimeformat);
+        uiModel.addAttribute("seadus_kehtiv_kuni_date_format", datetimeformat);
     }
 
     @RequestMapping
@@ -52,6 +51,7 @@ public class AjaluguController {
         }
     	uiModel.addAttribute("seadusepunkts", SeadusePunkt.findAllSeadusePunkts(seaduse_ID, alates, kuni));
         uiModel.addAttribute("seaduses", Seadus.findAllSeaduses());
+        uiModel.addAttribute("seadus", new Seadus());
         uiModel.addAttribute("alates", alates);
         uiModel.addAttribute("kuni", kuni);
         uiModel.addAttribute("seaduse_ID", seaduse_ID);
