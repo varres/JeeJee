@@ -30,43 +30,13 @@ import javax.persistence.ManyToOne;
 @RooJavaBean
 @RooToString
 @RooEntity
-public class Kodakondsus {
+public class Kodakondsus extends Base {
     @PersistenceContext
     transient EntityManager entityManager;
     
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private Long kodakondsus_ID;
-	
-    @NotNull
-    @Size(max = 32)
-    @Column(updatable = false)
-    private String avaja;
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    @Column(updatable = false)
-    private Date avatud;
-
-    @NotNull
-    @Size(max = 32)
-    private String muutja;
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date muudetud;
-
-    @Size(max = 32)
-    private String sulgeja;
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date suletud;
-
-    private String kommentaar;
 
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(style = "M-")
@@ -94,35 +64,7 @@ public class Kodakondsus {
     public static List<Kodakondsus> findAllByPiiririkkuja(long id) {
         return entityManager().createQuery("SELECT o FROM Kodakondsus o WHERE suletud > CURDATE() AND piiririkkuja_ID = " + id, Kodakondsus.class).getResultList();
     }
-    
-    @Transactional
-    public void remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        sulgeja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-        this.entityManager.createQuery("UPDATE Kodakondsus o SET suletud = CURDATE() WHERE kodakondsus_ID = " + this.kodakondsus_ID + " AND sulgeja = '" + sulgeja + "'").executeUpdate();
-    }
-    
-    @PrePersist
-    protected void onCreate() {
-    	if (SecurityContextHolder.getContext().getAuthentication() != null) {
-    		avaja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-    		muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-    	} else {
-    		avaja = "unknown";
-    		muutja = "unknown";
-    	}
-        avatud = new Date();
-        muudetud = new Date();
-        // Dummy data
-        sulgeja = "";
-        try {
-     	   SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-     	   suletud = (Date)format.parse("2099/12/31");
-        } catch (ParseException e) {
-     	   e.printStackTrace();
-        }
-    }
-    
+
     public static void importFUCK() {
     	if (Riik.countRiiks() < 1) {
 	    	Riik a = new Riik();
@@ -175,7 +117,7 @@ public class Kodakondsus {
 	    	g.setPiiririkkuja_ID(d);
 	    	g.setRiik_ID(c);
 	    	g.persist();
-	    	
+	    
 	    	Seadus s = new Seadus();
 	    	s.setKehtiv_alates("2010-12-30");
 	    	s.setKehtiv_kuni("2011-12-30");
@@ -195,4 +137,19 @@ public class Kodakondsus {
 
     	}
     }
+
+	@Override
+	public String getTableName() {
+		return "Kodakondsus";
+	}
+
+	@Override
+	public String getIdName() {
+		return "kodakondsus_ID";
+	}
+
+	@Override
+	public Long getId() {
+		return kodakondsus_ID;
+	}
 }

@@ -112,6 +112,38 @@ public abstract class Base {
     public void setSuletud(Date suletud) {
         this.suletud = suletud;
     }
+    
+    public Date getAvatud() {
+        return this.avatud;
+    }
+    
+    public void setAvatud(Date avatud) {
+        this.suletud = avatud;
+    }
+    
+    public Date getMuudetud() {
+        return this.muudetud;
+    }
+    
+    public void setMuudetud(Date muudetud) {
+        this.muudetud = muudetud;
+    }
+    
+    public String getMuutja() {
+        return this.muutja;
+    }
+    
+    public void setMuutja(String muudetud) {
+        this.muutja = muudetud;
+    }
+    
+    public String getAvaja() {
+        return this.avaja;
+    }
+    
+    public void setAvaja(String avaja) {
+        this.avaja = avaja;
+    }
 	 
 
 	@PrePersist
