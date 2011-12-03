@@ -5,7 +5,9 @@
     
     <form:update id="fu_ee_itcollege_p0rn_entities_Seadus" idField="seaduse_ID" modelAttribute="seadus" path="/seaduses" versionField="Version" z="yNxVUHdRDjJZl7toZfV5AI0zuao=">
         <div class="flr">
-    <page:show id="pl_ee_itcollege_p0rn_entities_SeadusePunkt" object="${seadusepunkts}" path="/seadusepunkts" z="dBv4+VUGHdxce+sj8hZkT63JKYs=">
+   
+   
+    <div class="dijitTitlePane">
         <!--<field:display field="name" id="pl_ee_itcollege_p0rn_entities_Seadus" object="${cage}" z="8A8Ciz+KXs63h7jwGDod5gFgilY="/>!-->
         <div>
             <!--<spring:message code="label_ee_itcollege_p0rn_entities_Seadus_plural"/>!-->
@@ -40,8 +42,6 @@
                 </tr>
             </c:forEach>
         </table>
-<div class="clr"></div>
-    </page:show>
         <span class="new">
         <spring:url value="/seadusepunkts" var="create_url">
             <spring:param name="form"/>
@@ -50,6 +50,9 @@
         </spring:url>
         <a class="button" href="${create_url}"><spring:message code="new" /></a>
     </span>
+<div class="clr"></div>
+    </div>
+        
     </div>
 
     <div class="fll">
