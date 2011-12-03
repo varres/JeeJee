@@ -51,8 +51,7 @@ public class Piiririkkuja extends Base {
     @Size(max = 1)
     private String sugu;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date synniaeg;
 
     @Column(updatable = false)

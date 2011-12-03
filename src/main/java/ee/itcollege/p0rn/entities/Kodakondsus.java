@@ -38,12 +38,10 @@ public class Kodakondsus extends Base {
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private Long kodakondsus_ID;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
+	@DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date alates;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date kuni;
 
     @ManyToOne

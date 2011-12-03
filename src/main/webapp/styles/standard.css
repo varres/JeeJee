@@ -5,16 +5,32 @@ body,div,td {
 	font-size: 12px;
 	color: #666;
 }
-
+html {
+	padding:0;
+	margin:0;
+}
 body {
-	background-color: #fff;
+	background-color: #333333;
 	text-align: center;
+	border-top:5px solid red;
+	padding:0;
+	margin:0;
 }
 
 #header {
 	margin-bottom: 1em;
 }
 
+#header a,
+#nn {
+	font-size:50px;
+	text-decoration:none;
+	color:#000;
+	margin-top:10px;
+}
+.tundra .dijitTitlePaneTextNode {
+    margin:0;
+}
 #wrapper {
 	width:800px;
 	min-width: 800px;
@@ -27,6 +43,15 @@ body {
 	
 	overflow:hidden;
 	display:block;
+	background:#fff;
+	padding:25px;
+	
+	-moz-box-shadow: 0 0 5px 5px #000;
+	-webkit-box-shadow: 0 0 5px 5px #000;
+	box-shadow: 0 0 5px 5px #000;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	margin-top:30px;
 }
 
 /* header and footer elements */
@@ -39,10 +64,10 @@ body {
 #menu {
 	background: #eee;
 	position:relative;
-	float:left;  	
-	left:0px;
+	float:right;  	
+	right:0px;
 	width:220px;
-	margin-right:15px;
+	margin-left:15px;
 }
 
 #menu ul{
@@ -65,7 +90,7 @@ body {
 
 #menu h2 {
 	color: #fff;
-	background: #648C1D;
+	background: red;
 	text-transform: uppercase;
 	font-weight:bold;
 	font-size: 12px;
@@ -84,17 +109,18 @@ body {
 }
 
 #footer {
-	background:#fff;
-	border:none;
-	margin-top:15px;
-	border-top:1px solid #999999;
+	text-align:right;
+	width:880px;
+	margin:auto;
+	margin-top:10px;
+	color:#fff;
 }
 
 #footer .new {
 	float:left;
 }
 
-#footer a:link {color: #7db223;}
+#footer a {color: #fff;}
 
 .quicklinks {
 	clear:both; 
@@ -108,10 +134,11 @@ table.navigation {
 	border: 0px;
 }
 
+
 label {
-	width:100px;
+	width:110px;
 	float:left;
-	margin-left: 5px;
+	margin-left: 0px;
 	margin-top: 0px;
 }
 
@@ -323,7 +350,9 @@ fieldset th {
 	background-color:#fff;
 	border:none;
 }
-
+div table a.button, a.button, div .submit input {
+	float:right;
+}
 .table-buttons td {
 	border:none;
 }
@@ -377,18 +406,79 @@ fieldset th {
 }
 
 .dijitTitlePane {
-	float:left;
 	margin-right:10px;
 	margin-bottom:10px;
-	min-width:330px;
+	width:100%;
+	position:relative;
+}
+.flr {
+	position:relative;
+}
+.flr .dijitTitlePane {
+	float:right;
+	width:auto;
+	position:relative;
+	top:-40px;
+	right:0;
+}
+.fll {
+	float:left;
+}
+.dijitTitlePane .dijitTitlePane table {
+	width:auto;
+	min-width:300px;
+}
+div .submit input {
+	position:absolute;
+	bottom:10px;
+	right:0;
+	width:100px;
+}
+.cancel.button {
+	position:absolute;
+	bottom:10px;
+	right:110px;
+	font-weight:bold;
+	width:100px;
+	text-transform:uppercase;
+}
+#_title_pl_ee_itcollege_p0rn_entities_Piiririkkuja_id,
+#_title_pl_ee_itcollege_p0rn_entities_Kodakondsus_id,
+#_title_pl_ee_itcollege_p0rn_entities_Riik_id,
+#_title_pl_ee_itcollege_p0rn_entities_Seadus_id,
+#_title_pl_ee_itcollege_p0rn_entities_SeadusePunkt_id,
+#_title_pl_ee_itcollege_p0rn_entities_SeadusePunkt_id {
+	
+}
+table,
+table thead
+table thead tr {
+	width:100%;
+}
+table th {
+	padding:5px;
+	font-size:14px;
+	background:red;
+	border:0;
+}
+table td, table th {
+	padding:5px;
+	border:0;
+}
+table tr {
+	background:transparent;
 }
 #footer {
-	clear:both;
-	margin-top:30px;
+	clear:both; 
 }
-.new {
+.clr {
+	clear:both;
+}
+.new a.button {
 	clear:right;
-	float:left;
+	float:right;
+	margin-top:5px;
+	margin-right:0;
 }
 .tundra .dijitTextArea {
 	width:174px;
@@ -400,6 +490,12 @@ fieldset th {
 	font-weight:bold;
 	font-size:28px;
 	padding:0;
+	margin-bottom:10px;
+}
+.tundra .dijitTextBox.cust {
+	margin-bottom:15px;
+	border:0;
+	background:none;
 }
 .tundra .dijitTitlePaneTextNode {
 	padding-bottom:20px;
@@ -416,7 +512,8 @@ fieldset th {
 	padding:0;
 }
 table a.button,
-a.button {
+a.button,
+.submit input {
 	text-decoration:none;
 	display:block;
 	padding:5px;
@@ -424,8 +521,14 @@ a.button {
 	background:#333;
 	color:white; 
 	border:1px solid #333;
+	float:left;
+	margin-right:5px;
+	height:auto;
 }
 div#wrapper {
 	width:924px;
 	max-width:924px;
+}
+table {
+	width:100%;
 }
