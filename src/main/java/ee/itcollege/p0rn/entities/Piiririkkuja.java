@@ -27,7 +27,7 @@ import javax.persistence.Column;
 @RooJavaBean
 @RooToString
 @RooEntity
-public class Piiririkkuja {
+public class Piiririkkuja extends Base {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,39 +36,9 @@ public class Piiririkkuja {
 	public Long getId() {
 		return piiririkkuja_ID;
 	}
-	
-    @NotNull
-    @Size(max = 32)
-    @Column(updatable = false)
-    private String avaja;
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    @Column(updatable = false)
-    private Date avatud;
-
-    @NotNull
-    @Size(max = 32)
-    private String muutja;
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date muudetud;
-
-    @Size(max = 32)
-    private String sulgeja;
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date suletud;
 
     @Size(max = 20)
     private String isikukood;
-
-    private String kommentaar;
 
     @Size(max = 25)
     private String eesnimi;
@@ -90,38 +60,13 @@ public class Piiririkkuja {
     	objekt_ID = 0;
     }
 
-    @PrePersist
-    protected void onCreate() {
-    	if (SecurityContextHolder.getContext().getAuthentication() != null) {
-    		avaja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-    		muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-    	} else {
-    		avaja = "unknown";
-    		muutja = "unknown";
-    	}
-        avatud = new Date();
-        muudetud = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-    	 sulgeja = "";
-    	 try {
- 			suletud = (Date)format.parse("2099/12/31");
- 		 } catch (ParseException e) {
- 			e.printStackTrace();
- 		 }
-    }
+	@Override
+	public String getTableName() {
+		return "Piiririkkuja";
+	}
 
-    @PreUpdate
-    protected void onUpdate() {
-    	 muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-         muudetud = new Date();
-         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-     	 sulgeja = "";
-     	 avaja = "";
-     	 avatud = new Date();
-     	 try {
-  			suletud = (Date)format.parse("2099/12/31");
-  		 } catch (ParseException e) {
-  			e.printStackTrace();
-  		 }
-    }
+	@Override
+	public String getIdName() {
+		return "piiririkkuja_ID";
+	}
 }

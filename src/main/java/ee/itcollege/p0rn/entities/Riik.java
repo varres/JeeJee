@@ -23,7 +23,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @RooJavaBean
 @RooToString
 @RooEntity
-public class Riik {
+public class Riik extends Base {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,53 +37,18 @@ public class Riik {
     @Size(max = 20)
     private String ANSI_kood;
 
-    @NotNull
-    private String kommentaar;
+	@Override
+	public String getTableName() {
+		return "Riik";
+	}
 
-    @NotNull
-    @Size(max = 32)
-    private String avaja;
+	@Override
+	public String getIdName() {
+		return "riik_ID";
+	}
 
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date avatud;
-
-    @NotNull
-    @Size(max = 32)
-    private String muutja;
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date muudetud;
-
-    @NotNull
-    @Size(max = 32)
-    private String sulgeja;
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date suletud;
-    
-    @PrePersist
-    protected void onCreate() {
-    	if (SecurityContextHolder.getContext().getAuthentication() != null) {
-    		avaja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-    		muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-    	} else {
-    		avaja = "unknown";
-    		muutja = "unknown";
-    	}
-        avatud = new Date();
-        muudetud = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-    	 sulgeja = "";
-    	 try {
- 			suletud = (Date)format.parse("2099/12/31");
- 		 } catch (ParseException e) {
- 			e.printStackTrace();
- 		 }
-    }
+	@Override
+	public Long getId() {
+		return riik_ID;
+	}
 }

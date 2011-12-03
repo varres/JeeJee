@@ -30,7 +30,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @RooJavaBean
 @RooToString
 @RooEntity
-public class Seadus {
+public class Seadus extends Base {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private Long seaduse_ID;
@@ -55,106 +55,13 @@ public class Seadus {
     @Size(max = 20)
     private String kehtiv_kuni;
 
-    @NotNull
-    @Size(max = 20)
-    private String kommentaar;
-
-    @NotNull
-    @Size(max = 32)
-    @Column(updatable=false)
-    private String avaja;
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    @Column(updatable=false)
-    private Date avatud;
-
-    @NotNull
-    @Size(max = 32)
-    private String muutja;
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date muudetud;
-
-    @NotNull
-    @Size(max = 32)
-    private String sulgeja;
-   
-    public String getSulgeja() {
-		return sulgeja;
+	@Override
+	public String getTableName() {
+		return "Seadus";
 	}
 
-	public void setSulgeja(String sulgeja) {
-		this.sulgeja = sulgeja;
+	@Override
+	public String getIdName() {
+		return "seaduse_ID";
 	}
-
-    @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Date suletud;
-    
-    public Date getSuletud() {
-		return suletud;
-	}
-
-	public void setSuletud(Date suletud) {
-		this.suletud = suletud;
-	}
-    /*
-	public void setDefaultValues() {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-        avaja = "";
-        muutja = "";
-        sulgeja = "";
-        try {
-        	suletud = (Date)format.parse("2099/12/31");
-        } catch (ParseException e) {
-        	e.printStackTrace();
-        }
-        avatud = new Date();
-        muudetud = new Date();
-        seaduse_ID = (long) 0;
-   } */
-    
-   @PrePersist
-   protected void onCreate() {
-	    if (SecurityContextHolder.getContext().getAuthentication() != null) {
-   			avaja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-   			muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-	   	} else {
-	   		avaja = "unknown";
-	   		muutja = "unknown";
-	   	}
-       avatud = new Date();
-       muudetud = new Date();
-       // Dummy data
-       sulgeja = "";
-       try {
-    	   SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-    	   suletud = (Date)format.parse("2099/12/31");
-       } catch (ParseException e) {
-    	   e.printStackTrace();
-       }
-   }
-
-   @PreUpdate
-   protected void onUpdate() {  
-     avaja = "värdjas";
-     avatud = new Date();
-	   
-	 muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
-     muudetud = new Date();
-     
-     // Dummy data
-     sulgeja = "";
-     try {
-  	   SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-  	   suletud = (Date)format.parse("2099/12/31");
-     } catch (ParseException e) {
-  	   e.printStackTrace();
-     }
-   }
 }
