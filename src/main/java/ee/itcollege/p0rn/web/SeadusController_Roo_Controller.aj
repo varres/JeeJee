@@ -10,8 +10,6 @@ import java.lang.Long;
 import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -64,12 +62,6 @@ privileged aspect SeadusController_Roo_Controller {
     @ModelAttribute("seaduses")
     public Collection<Seadus> SeadusController.populateSeaduses() {
         return Seadus.findAllSeaduses();
-    }
-    
-    void SeadusController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("seadus_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("seadus_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("seadus_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     String SeadusController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

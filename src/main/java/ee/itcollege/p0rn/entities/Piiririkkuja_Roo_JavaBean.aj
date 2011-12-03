@@ -5,7 +5,6 @@ package ee.itcollege.p0rn.entities;
 
 import java.lang.Long;
 import java.lang.String;
-import java.util.Calendar;
 import java.util.Date;
 
 privileged aspect Piiririkkuja_Roo_JavaBean {
@@ -18,60 +17,12 @@ privileged aspect Piiririkkuja_Roo_JavaBean {
         this.piiririkkuja_ID = piiririkkuja_ID;
     }
     
-    public String Piiririkkuja.getAvaja() {
-        return this.avaja;
-    }
-    
-    public void Piiririkkuja.setAvaja(String avaja) {
-        this.avaja = avaja;
-    }
-    
-    public Date Piiririkkuja.getAvatud() {
-        return this.avatud;
-    }
-    
-    public void Piiririkkuja.setAvatud(Date avatud) {
-        this.avatud = avatud;
-    }
-    
-    public String Piiririkkuja.getMuutja() {
-        return this.muutja;
-    }
-    
-    public void Piiririkkuja.setMuutja(String muutja) {
-        this.muutja = muutja;
-    }
-    
-    public Date Piiririkkuja.getMuudetud() {
-        return this.muudetud;
-    }
-    
-    public void Piiririkkuja.setMuudetud(Date muudetud) {
-        this.muudetud = muudetud;
-    }
-    
-    public String Piiririkkuja.getSulgeja() {
-        return this.sulgeja;
-    }
-    
-    public void Piiririkkuja.setSulgeja(String sulgeja) {
-        this.sulgeja = sulgeja;
-    }
-    
     public String Piiririkkuja.getIsikukood() {
         return this.isikukood;
     }
     
     public void Piiririkkuja.setIsikukood(String isikukood) {
         this.isikukood = isikukood;
-    }
-    
-    public String Piiririkkuja.getKommentaar() {
-        return this.kommentaar;
-    }
-    
-    public void Piiririkkuja.setKommentaar(String kommentaar) {
-        this.kommentaar = kommentaar;
     }
     
     public String Piiririkkuja.getEesnimi() {
