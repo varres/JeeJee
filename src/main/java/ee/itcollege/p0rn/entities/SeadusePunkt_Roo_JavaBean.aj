@@ -106,14 +106,6 @@ privileged aspect SeadusePunkt_Roo_JavaBean {
         this.sulgeja = sulgeja;
     }
     
-    public Date SeadusePunkt.getSuletud() {
-        return this.suletud;
-    }
-    
-    public void SeadusePunkt.setSuletud(Date suletud) {
-        this.suletud = suletud;
-    }
-    
     public SeadusePunkt SeadusePunkt.getYlemus_seaduse_punkt_ID() {
         return this.ylemus_seaduse_punkt_ID;
     }

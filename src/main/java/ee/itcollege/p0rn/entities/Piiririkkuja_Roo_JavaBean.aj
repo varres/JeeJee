@@ -5,6 +5,7 @@ package ee.itcollege.p0rn.entities;
 
 import java.lang.Long;
 import java.lang.String;
+import java.util.Calendar;
 import java.util.Date;
 
 privileged aspect Piiririkkuja_Roo_JavaBean {
@@ -57,11 +58,11 @@ privileged aspect Piiririkkuja_Roo_JavaBean {
         this.sulgeja = sulgeja;
     }
     
-    public Date Piiririkkuja.getSuletud() {
+    public Calendar Piiririkkuja.getSuletud() {
         return this.suletud;
     }
     
-    public void Piiririkkuja.setSuletud(Date suletud) {
+    public void Piiririkkuja.setSuletud(Calendar suletud) {
         this.suletud = suletud;
     }
     

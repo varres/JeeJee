@@ -5,6 +5,7 @@ package ee.itcollege.p0rn.entities;
 
 import java.lang.Long;
 import java.lang.String;
+import java.util.Calendar;
 import java.util.Date;
 
 privileged aspect Riik_Roo_JavaBean {
@@ -80,13 +81,4 @@ privileged aspect Riik_Roo_JavaBean {
     public void Riik.setSulgeja(String sulgeja) {
         this.sulgeja = sulgeja;
     }
-    
-    public Date Riik.getSuletud() {
-        return this.suletud;
-    }
-    
-    public void Riik.setSuletud(Date suletud) {
-        this.suletud = suletud;
-    }
-    
 }
