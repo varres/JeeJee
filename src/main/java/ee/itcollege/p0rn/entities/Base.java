@@ -63,13 +63,13 @@ public abstract class Base {
 
     @NotNull
     @DateTimeFormat(pattern="dd.MM.yyyy")
-    private Calendar suletud;
+    private Date suletud;
     
-    public Calendar getSuletud() {
+    public Date getSuletud() {
         return this.suletud;
     }
     
-    public void setSuletud(Calendar suletud) {
+    public void setSuletud(Date suletud) {
         this.suletud = suletud;
     }
 	 
@@ -92,7 +92,7 @@ public abstract class Base {
 		}
 	    avatud = new Date();
 	    muudetud = new Date();
-	    this.suletud = tempDate;
+	    this.suletud = tempDate.getTime();
 	}
 	
 	@PostPersist

@@ -58,14 +58,6 @@ privileged aspect Piiririkkuja_Roo_JavaBean {
         this.sulgeja = sulgeja;
     }
     
-    public Calendar Piiririkkuja.getSuletud() {
-        return this.suletud;
-    }
-    
-    public void Piiririkkuja.setSuletud(Calendar suletud) {
-        this.suletud = suletud;
-    }
-    
     public String Piiririkkuja.getIsikukood() {
         return this.isikukood;
     }
