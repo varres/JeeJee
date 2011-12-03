@@ -56,7 +56,7 @@ public class SeadusController {
     
     @RequestMapping(value = "/{seaduse_ID}", params = "form", method = RequestMethod.GET)
     public String updateForm(@PathVariable("seaduse_ID") Long seaduse_ID, Model uiModel) {
-        uiModel.addAttribute("seadusepunkts", SeadusePunkt.findAllSeadusePunktsLiivi(seaduse_ID, "", ""));
+        uiModel.addAttribute("seadusepunkts", SeadusePunkt.findAllSeadusePunktsTopLevel(seaduse_ID, "", ""));
         uiModel.addAttribute("seadus", Seadus.findSeadus(seaduse_ID));
         uiModel.addAttribute("seadusePunkt", new SeadusePunkt());
 
