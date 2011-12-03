@@ -44,8 +44,6 @@ public class SeadusePunktController {
         }*/
         uiModel.asMap().clear();
         seadusepunkt.merge();
-        
-        uiModel.addAttribute("seadusePunkt", uiModel);
 
         try {
         	return "redirect:/seaduses/" + encodeUrlPathSegment(seadusepunkt.getSeaduse_ID().getId().toString(), httpServletRequest) + "?form";
@@ -66,7 +64,11 @@ public class SeadusePunktController {
 
     @RequestMapping(value = "/{seaduse_punkt_ID}", params = "form", method = RequestMethod.GET)
     public String updateForm(@PathVariable("seaduse_punkt_ID") Long seaduse_punkt_ID, Model uiModel) {
-        uiModel.addAttribute("seadusePunkt", SeadusePunkt.findSeadusePunkt(seaduse_punkt_ID));
+    	SeadusePunkt us = SeadusePunkt.findSeadusePunkt(seaduse_punkt_ID);
+    	try {
+    		uiModel.addAttribute("seaduseYlemPunkt_ID", us.getYlemus_seaduse_punkt_ID().getId().toString());
+    	} catch (Exception ex) {}
+    	uiModel.addAttribute("seadusePunkt", SeadusePunkt.findSeadusePunkt(seaduse_punkt_ID));
         try {
         	uiModel.addAttribute("alam_seadusepunkts", SeadusePunkt.findAllAlamSeadusePunkts(seaduse_punkt_ID));
         } catch (Exception ex) {
