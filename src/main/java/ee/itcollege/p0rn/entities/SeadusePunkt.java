@@ -96,7 +96,7 @@ public class SeadusePunkt extends Base {
     	if (kuni.length() > 0) {
     		g = g + " AND kehtiv_kuni <= '" + kuni + "'";
     	}
-    	g = g + " AND sulgeja = '' ";
+    	g = g + " AND suletud > CURDATE() ";
     	
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o " + g, SeadusePunkt.class).getResultList();
     }

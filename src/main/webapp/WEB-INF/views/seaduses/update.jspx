@@ -14,7 +14,7 @@
         <table>
             <tr>
                 <th>§</th>
-                <th colspan="3"><spring:message code="title" /></th>
+                <th colspan="2"><spring:message code="title" /></th>
             </tr>
             <c:forEach items="${seadusepunkts}" var="b">
                 <tr>
@@ -25,17 +25,15 @@
                         <c:out value="${b.pais}"/>
                     </td>
                     <td>
+                    	<spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="del_url">
+                            <spring:param name="delete"/>
+                        </spring:url>
+                        <a class="button" href="${del_url}"><spring:message code="delete" /></a>
                         <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="edit_url">
                             <spring:param name="form"/>
             				<spring:param name="seaduse_ID" value="${seadus.seaduse_ID}"/>
                         </spring:url>
                         <a class="button" href="${edit_url}"><spring:message code="edit" /></a>
-                    </td>
-                    <td>
-                        <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="del_url">
-                            <spring:param name="delete"/>
-                        </spring:url>
-                        <a class="button" href="${del_url}"><spring:message code="delete" /></a>
                     </td>
                 </tr>
             </c:forEach>
