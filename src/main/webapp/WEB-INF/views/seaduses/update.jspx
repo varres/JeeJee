@@ -48,8 +48,7 @@
         <a class="button" href="${create_url}"><spring:message code="new" /></a>
     </span>
     </div>
-    
-    
+
     <div class="fll">
     
         <field:input field="kood" id="c_ee_itcollege_p0rn_entities_Seadus_kood" max="20" required="true" z="xp3gNS0lU2lE+HSmaQhq75HMTzk="/>

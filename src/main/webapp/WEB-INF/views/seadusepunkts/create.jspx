@@ -7,8 +7,8 @@
         <field:input field="pais" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_pais" max="20" required="true" z="ume40BUrwhhoMRtUo7B2vGjm5SI="/>
         <field:textarea field="tekst" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_tekst" required="true" z="user-managed"/>
         <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kommentaar" required="true" z="user-managed"/>
-        <field:input field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_alates" max="20" required="true" z="M6pD5OANfhApdJZy0aIMKCncE3o="/>
-        <field:input field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_kuni" max="20" required="true" z="oddZiczfbrvsZT+7WaqU6veR3Lo="/>
+        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_alates_date_format}" label="Kehtiv alates" field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_alates" required="true" z="M6pD5OANfhApdJZy0aIMKCncE3o="/>
+        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_kuni_date_format}" label="Kehtiv kuni" field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_kuni" required="true" z="oddZiczfbrvsZT+7WaqU6veR3Lo="/>
         <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avaja" render="false" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadusePunkt_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avatud" render="false" required="true" z="user-managed"/>
         <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muutja" render="false" required="true" z="user-managed"/>
