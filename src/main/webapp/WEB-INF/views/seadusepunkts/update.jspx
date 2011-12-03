@@ -5,7 +5,7 @@ xmlns:springform="http://www.springframework.org/tags/form">
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_p0rn_entities_SeadusePunkt" idField="seaduse_punkt_ID" modelAttribute="seadusePunkt" path="/seadusepunkts" versionField="Version" z="W5nlJW/82fi1L1AgJJoyTcxL+7E=">
      <div class="flr">
-    <page:show id="pl_ee_itcollege_p0rn_entities_SeadusePunkt" object="${alam_seadusepunkts}" path="/seadusepunkts" z="dBv4+VUGHdxce+sj8hZkT63JKYs=">
+    <div class="dijitTitlePane">
         <!--<field:display field="name" id="pl_ee_itcollege_p0rn_entities_Seadus" object="${cage}" z="8A8Ciz+KXs63h7jwGDod5gFgilY="/>!-->
         <div>
             <!--<spring:message code="label_ee_itcollege_p0rn_entities_Seadus_plural"/>!-->
@@ -39,7 +39,7 @@ xmlns:springform="http://www.springframework.org/tags/form">
             </c:forEach>
         </table>
          <div class="clr"></div>
-    </page:show>
+    </div>
     <span class="new">
         <spring:url value="/seadusepunkts" var="create_url">
             <spring:param name="form"/>

@@ -4,10 +4,10 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_p0rn_entities_Piiririkkuja" idField="piiririkkuja_ID" modelAttribute="piiririkkuja" path="/piiririkkujas" versionField="Version" z="MoOG+XGKQmIGQg+8NE3/ZWXeOH8=">
       <div class="flr">
-   		<page:show id="pl_ee_itcollege_p0rn_entities_Kodakondsus" object="${kodakondsuses}" path="/kodakonsuses" z="dBv4+VUGHdxce+sj8hZkT63JKYs=">
-        <!--<field:display field="name" id="pl_ee_itcollege_p0rn_entities_Kodakondsus" object="${cage}" z="8A8Ciz+KXs63h7jwGDod5gFgilY="/>!-->
+
+   		<div class="dijitTitlePane">
         <div>
-            <!--<spring:message code="label_ee_itcollege_p0rn_entities_Kodakondsus_plural"/>!-->
+            <spring:message code="label_ee_itcollege_p0rn_entities_kodakondsus_kodakondsus_id"/>
         </div>
         <table>
             <tr>
@@ -37,7 +37,8 @@
         </table>
         
           <div class="clr"></div>
-    </page:show>
+    </div>
+    
     <span class="new">
         <spring:url value="/kodakondsuses" var="create_url">
             <spring:param name="form"/>
