@@ -134,16 +134,16 @@ public class Kodakondsus extends Base {
 	    	g2.persist();
 	    
 	    	Seadus s = new Seadus();
-	    	s.setKehtiv_alates("2010-12-30");
-	    	s.setKehtiv_kuni("2011-12-30");
+	    	s.setKehtiv_alates("2010-30-12");
+	    	s.setKehtiv_kuni("2011-30-12");
 	    	s.setKommentaar("");
 	    	s.setKood("AA");
 	    	s.setNimetus("Relva seadus");
 	    	s.persist();
 	    	
 	    	Seadus s2 = new Seadus();
-	    	s2.setKehtiv_alates("2012-12-30");
-	    	s2.setKehtiv_kuni("2015-12-30");
+	    	s2.setKehtiv_alates("2012-30-12");
+	    	s2.setKehtiv_kuni("2015-30-12");
 	    	s2.setKommentaar("");
 	    	s2.setKood("ABWS");
 	    	s2.setNimetus("Raha seadus");
@@ -154,8 +154,8 @@ public class Kodakondsus extends Base {
 	    	sp1.setPais("Palju raha punkt");
 	    	sp1.setTekst("Kõigile raha");
 	    	sp1.setKommentaar("Ausad oleme");
-	    	sp1.setKehtiv_alates("2011-01-25");
-	    	sp1.setKehtiv_kuni("2012-12-30");
+	    	sp1.setKehtiv_alates("2011-25-01");
+	    	sp1.setKehtiv_kuni("2012-30-12");
 	    	sp1.setSeaduse_ID(s2);
 	    	sp1.setYlemus_seaduse_punkt_ID(null);
 	    	sp1.persist();
@@ -165,8 +165,8 @@ public class Kodakondsus extends Base {
 	    	sp2.setPais("Täpsustus");
 	    	sp2.setTekst("Rikastele!");
 	    	sp2.setKommentaar("Problem?");
-	    	sp2.setKehtiv_alates("2011-01-25");
-	    	sp2.setKehtiv_kuni("2020-12-30");
+	    	sp2.setKehtiv_alates("2011-25-01");
+	    	sp2.setKehtiv_kuni("2020-30-12");
 	    	sp2.setSeaduse_ID(s2);
 	    	sp2.setYlemus_seaduse_punkt_ID(sp1);
 	    	sp2.persist();
@@ -176,8 +176,8 @@ public class Kodakondsus extends Base {
 	    	sp3.setPais("Relvad!");
 	    	sp3.setTekst("Lastele relvi!");
 	    	sp3.setKommentaar("Tehtud!");
-	    	sp3.setKehtiv_alates("2012-01-25");
-	    	sp3.setKehtiv_kuni("2012-12-30");
+	    	sp3.setKehtiv_alates("2012-25-01");
+	    	sp3.setKehtiv_kuni("2012-30-12");
 	    	sp3.setSeaduse_ID(s);
 	    	sp3.setYlemus_seaduse_punkt_ID(null);
 	    	sp3.persist();
