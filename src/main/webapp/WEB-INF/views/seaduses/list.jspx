@@ -4,13 +4,17 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_p0rn_entities_Seadus" items="${seaduses}" z="wykT0xuWSu0GQ7Nojq6vNljd+0c=">
         <table:table data="${seaduses}" id="l_ee_itcollege_p0rn_entities_Seadus" path="/seaduses" typeIdFieldName="seaduse_ID" z="XuBc4nu69nuAlg1i/6VYySTzVt0=">
-            <table:column id="c_ee_itcollege_p0rn_entities_Seadus_sulgeja" property="sulgeja" z="akg6ROXoAmkhdX6sMNPiLQLZCf4="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_Seadus_sulgeja" property="sulgeja" z="akg6ROXoAmkhdX6sMNPiLQLZCf4="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_Seadus_muutja" property="muutja" z="uWh7nmRJJAFqp8rJsauDZm9Tfgk="/>
-            <table:column date="true" dateTimePattern="${seadus_muudetud_date_format}" id="c_ee_itcollege_p0rn_entities_Seadus_muudetud" property="muudetud" z="rl72+l0HO74lL0jiSgSe2102lWM="/>
-            <table:column date="true" dateTimePattern="${seadus_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_Seadus_avatud" property="avatud" z="8LgY5XJgjrS5IcEqK/HRNcgHXR4="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_Seadus_kommentaar" property="kommentaar" z="Ra8aXOEnvZ+6XRBpqIl78+qotMw="/>
-            <table:column date="true" dateTimePattern="${seadus_suletud_date_format}" id="c_ee_itcollege_p0rn_entities_Seadus_suletud" property="suletud" z="Lf3isWZJ6ClXzD0LqJo/ffE4BJc="/>
+            <table:column property="kood" id="c_ee_itcollege_p0rn_entities_Seadus_kood" z="user-managed"/>
+            <table:column property="nimetus" id="c_ee_itcollege_p0rn_entities_Seadus_nimetus" z="user-managed"/>
+	        <table:column id="c_ee_itcollege_p0rn_entities_Seadus_kommentaar" property="kommentaar" z="user-managed"/>            
+	        <table:column property="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_alates" z="user-managed"/>
+    	    <table:column property="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_kuni" z="user-managed"/>            
+        
+            <table:column render="false" id="c_ee_itcollege_p0rn_entities_Seadus_sulgeja" property="sulgeja" z="user-managed"/>
+            <table:column render="false" id="c_ee_itcollege_p0rn_entities_Seadus_muutja" property="muutja" z="user-managed"/>
+            <table:column render="false" date="true" dateTimePattern="${seadus_muudetud_date_format}" id="c_ee_itcollege_p0rn_entities_Seadus_muudetud" property="muudetud" z="user-managed"/>
+            <table:column render="false" date="true" dateTimePattern="${seadus_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_Seadus_avatud" property="avatud" z="user-managed"/>
+            <table:column render="false" date="true" dateTimePattern="${seadus_suletud_date_format}" id="c_ee_itcollege_p0rn_entities_Seadus_suletud" property="suletud" z="user-manageds"/>
         </table:table>
     </page:list>
 </div>
