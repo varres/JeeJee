@@ -51,9 +51,9 @@
         				widgetAttrs : {
         					required: false, 
         					constraints: {
-        						datePattern : 'yyyy-dd-MM', 
+        						datePattern : 'yyyy-MM-dd', 
         						required : false
-        					}, datePattern : 'yyyy-dd-MM'
+        					}, datePattern : 'yyyy-MM-dd'
         				}
         		})
         	);
@@ -64,9 +64,9 @@
         				widgetAttrs : {
         					required: false, 
         					constraints: {
-        						datePattern : 'yyyy-dd-MM', 
+        						datePattern : 'yyyy-MM-dd', 
         						required : false
-        					}, datePattern : 'yyyy-dd-MM'
+        					}, datePattern : 'yyyy-MM-dd'
         				}
         		})
         	);
@@ -84,7 +84,7 @@
 	    	<c:forEach items="${seadusepunkts}" var="b">
 	    	<tr>
 	    		<td>
-	    			${b.paragrahv} ${b.pais} ${b.suletud}
+	    			${b.paragrahv} ${b.pais}
 	    		</td>
 	    		<td>${b.kehtiv_alates}</td>
 	    		<td>${b.kehtiv_kuni}</td>
