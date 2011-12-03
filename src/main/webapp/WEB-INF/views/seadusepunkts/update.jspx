@@ -9,7 +9,7 @@
         <field:input field="tekst" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_tekst" max="20" required="true" z="Cu4ksNcLRAMlenxdHrWQtc2Mu3o="/>
         <field:input field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_alates" max="20" required="true" z="M6pD5OANfhApdJZy0aIMKCncE3o="/>
         <field:input field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_kuni" max="20" required="true" z="oddZiczfbrvsZT+7WaqU6veR3Lo="/>
-        <field:input field="kommentaar" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kommentaar" max="20" required="true" z="7suJDy5dX1qQgAfLtv/c4jAzRrk="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kommentaar" required="true" z="nO9f+WdlfUtsey2ZvFcKb7zzpuA="/>
         <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avaja" render="false" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadusePunkt_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avatud" render="false" required="true" z="user-managed"/>
         <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muutja" render="false" required="true" z="user-managed"/>

@@ -29,35 +29,35 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.KodakondsusConverter implements Converter<Kodakondsus, String> {
         public String convert(Kodakondsus kodakondsus) {
-            return new StringBuilder().append(kodakondsus.getKommentaar()).append(" ").append(kodakondsus.getAvaja()).append(" ").append(kodakondsus.getAvatud()).append(" ").append(kodakondsus.getMuutja()).toString();
+            return new StringBuilder().append(kodakondsus.getKommentaar()).append(" ").append(kodakondsus.getSulgeja()).append(" ").append(kodakondsus.getSuletud()).append(" ").append(kodakondsus.getAvatud()).toString();
         }
         
     }
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.PiiririkkujaConverter implements Converter<Piiririkkuja, String> {
         public String convert(Piiririkkuja piiririkkuja) {
-            return new StringBuilder().append(piiririkkuja.getKommentaar()).append(" ").append(piiririkkuja.getAvaja()).append(" ").append(piiririkkuja.getAvatud()).append(" ").append(piiririkkuja.getMuutja()).toString();
+            return new StringBuilder().append(piiririkkuja.getKommentaar()).append(" ").append(piiririkkuja.getSulgeja()).append(" ").append(piiririkkuja.getSuletud()).append(" ").append(piiririkkuja.getAvatud()).toString();
         }
         
     }
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.RiikConverter implements Converter<Riik, String> {
         public String convert(Riik riik) {
-            return new StringBuilder().append(riik.getKommentaar()).append(" ").append(riik.getAvaja()).append(" ").append(riik.getAvatud()).append(" ").append(riik.getMuutja()).toString();
+            return new StringBuilder().append(riik.getKommentaar()).append(" ").append(riik.getSulgeja()).append(" ").append(riik.getSuletud()).append(" ").append(riik.getAvatud()).toString();
         }
         
     }
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.SeadusConverter implements Converter<Seadus, String> {
         public String convert(Seadus seadus) {
-            return new StringBuilder().append(seadus.getKommentaar()).append(" ").append(seadus.getAvaja()).append(" ").append(seadus.getAvatud()).append(" ").append(seadus.getMuutja()).toString();
+            return new StringBuilder().append(seadus.getKommentaar()).append(" ").append(seadus.getSulgeja()).append(" ").append(seadus.getSuletud()).append(" ").append(seadus.getAvatud()).toString();
         }
         
     }
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.SeadusePunktConverter implements Converter<SeadusePunkt, String> {
         public String convert(SeadusePunkt seadusePunkt) {
-            return new StringBuilder().append(seadusePunkt.getKommentaar()).append(" ").append(seadusePunkt.getAvaja()).append(" ").append(seadusePunkt.getAvatud()).append(" ").append(seadusePunkt.getMuutja()).toString();
+            return new StringBuilder().append(seadusePunkt.getKommentaar()).append(" ").append(seadusePunkt.getSulgeja()).append(" ").append(seadusePunkt.getSuletud()).append(" ").append(seadusePunkt.getAvatud()).toString();
         }
         
     }

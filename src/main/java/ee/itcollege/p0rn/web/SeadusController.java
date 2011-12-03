@@ -72,6 +72,5 @@ public class SeadusController {
         uiModel.addAttribute("seadus_muudetud_date_format", datetimeformat);
         uiModel.addAttribute("seadus_kehtiv_alates_date_format", datetimeformat);
         uiModel.addAttribute("seadus_kehtiv_kuni_date_format", datetimeformat);
-        
     }
 }

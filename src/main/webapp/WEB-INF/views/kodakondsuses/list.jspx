@@ -4,12 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_p0rn_entities_Kodakondsus" items="${kodakondsuses}" z="dBv4+VUGHdxce+sj8hZkT63JKYs=">
         <table:table data="${kodakondsuses}" id="l_ee_itcollege_p0rn_entities_Kodakondsus" path="/kodakondsuses" typeIdFieldName="kodakondsus_ID" z="BrxQJr9EFdTefLxShSwQTq2/6Yg=">
-            <table:column id="c_ee_itcollege_p0rn_entities_Kodakondsus_avaja" property="avaja" z="kszZOXU0SUGeOZlrnuURtemrJxc="/>
             <table:column date="true" dateTimePattern="${kodakondsus_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_Kodakondsus_avatud" property="avatud" z="XXu49jPcxkm3Bmyl+N+qFG113/E="/>
             <table:column id="c_ee_itcollege_p0rn_entities_Kodakondsus_muutja" property="muutja" z="zkr/OSCveJ3oN2NOmS+mdNa+6oE="/>
             <table:column date="true" dateTimePattern="${kodakondsus_muudetud_date_format}" id="c_ee_itcollege_p0rn_entities_Kodakondsus_muudetud" property="muudetud" z="dkt6nX+MvedqNRm9fDf4xW5fDL0="/>
             <table:column id="c_ee_itcollege_p0rn_entities_Kodakondsus_sulgeja" property="sulgeja" z="x+01jEKhD2avtZ6rAkTBy3cPzt8="/>
             <table:column date="true" dateTimePattern="${kodakondsus_suletud_date_format}" id="c_ee_itcollege_p0rn_entities_Kodakondsus_suletud" property="suletud" z="Q3L3EPi5eAY+4UeMMwIaBc/Raxs="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Kodakondsus_kommentaar" property="kommentaar" z="WOLJZe6tjGdZFRGQ2ctNLbW2ygU="/>
         </table:table>
     </page:list>
 </div>

@@ -7,12 +7,13 @@
             <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_isikukood" property="isikukood"/>
             <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_eesnimi" property="eesnimi"/>
             <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_perek_nimi" property="perek_nimi"/>
-            <table:column render="false" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avaja" property="avaja" z="wPoo9GZWqIglUviZG3HI6A6jcaU="/>
-            <table:column render="false" date="true" dateTimePattern="${piiririkkuja_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avatud" property="avatud" z="s0c7dANPOwDeVgD0inipb7REOiE="/>
-            <table:column render="false" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_muutja" property="muutja" z="Yuf2Xs0548bEQ9Jyf49fxkZ52fk="/>
-            <table:column render="false" date="true" dateTimePattern="${piiririkkuja_muudetud_date_format}" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_muudetud" property="muudetud" z="+eib+RrkdgAcPNXEeN1Y0deyujM="/>
-            <table:column render="false" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_sulgeja" property="sulgeja" z="E/kw3O21kHJDWSgBf6yXm0IYaMI="/>
-            <table:column render="false" date="true" dateTimePattern="${piiririkkuja_suletud_date_format}" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_suletud" property="suletud" z="/crAXR+SS3Vdaxjm1ej+btmj/xk="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avaja" property="avaja" render="false" z="wPoo9GZWqIglUviZG3HI6A6jcaU="/>
+            <table:column date="true" dateTimePattern="${piiririkkuja_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avatud" property="avatud" render="false" z="user-managed"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_muutja" property="muutja" render="false" z="user-managed"/>
+            <table:column date="true" dateTimePattern="${piiririkkuja_muudetud_date_format}" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_muudetud" property="muudetud" render="false" z="user-managed"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_sulgeja" property="sulgeja" render="false" z="user-managed"/>
+            <table:column date="true" dateTimePattern="${piiririkkuja_suletud_date_format}" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_suletud" property="suletud" render="false" z="user-managed"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_Piiririkkuja_kommentaar" property="kommentaar" z="GopjPvArjUGzdSwvD7EG/wb4oUg="/>
         </table:table>
     </page:list>
 </div>

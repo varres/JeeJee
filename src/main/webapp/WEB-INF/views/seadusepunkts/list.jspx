@@ -4,12 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_p0rn_entities_SeadusePunkt" items="${seadusepunkts}" z="+twsmkOZJ3knkSjNqB8qEIv+XNY=">
         <table:table data="${seadusepunkts}" id="l_ee_itcollege_p0rn_entities_SeadusePunkt" path="/seadusepunkts" typeIdFieldName="seaduse_punkt_ID" z="OAtiSJahPLwCLXV0MHtwLdqpAsg=">
-            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" property="seaduse_ID" z="gs6T+NJOBrR2lUGblmgzDYCWVgQ="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_paragrahv" property="paragrahv" z="R0HPcxPwYvcY5igiOA0jrmlezVA="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_pais" property="pais" z="fLC0MYHO/gFehswC3CT5RtVehes="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_tekst" property="tekst" z="iYaXum7CcGI5p0Qoi0LHxTw+y5I="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_alates" property="kehtiv_alates" z="OWcX7vr6A0Ivb2EltHMZXvKthqY="/>
-            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_kuni" property="kehtiv_kuni" z="SkiZgtQzl3Fj4sivSeQwUqy241c="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kommentaar" property="kommentaar" z="xuFM/6YsAMg4uu2+jKlmvt0YgmE="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_sulgeja" property="sulgeja" z="8JyWrjJZ1IUHlm4v89CrMxMRlL8="/>
+            <table:column date="true" dateTimePattern="${seadusePunkt_suletud_date_format}" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_suletud" property="suletud" z="BUB0mSqKASJaJ7ILVPTMKw9d+UM="/>
+            <table:column date="true" dateTimePattern="${seadusePunkt_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avatud" property="avatud" z="23WcfhwZrBedMtAla+2H61HtSf8="/>
+            <table:column date="true" dateTimePattern="${seadusePunkt_muudetud_date_format}" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muudetud" property="muudetud" z="FFjFofDCAzCCrTDlmb+fiWg69PI="/>
+            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muutja" property="muutja" z="oRF8UDYXxPpMsBK3boGiiNMHpD4="/>
         </table:table>
     </page:list>
 </div>

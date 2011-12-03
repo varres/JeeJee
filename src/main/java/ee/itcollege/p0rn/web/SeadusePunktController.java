@@ -69,4 +69,11 @@ public class SeadusePunktController {
         	return "redirect:/seaduses";
         }
     }
+	
+    void addDateTimeFormatPatterns(Model uiModel) {
+    	String datetimeformat = "yyyy/dd/MM";
+        uiModel.addAttribute("seadusePunkt_avatud_date_format", datetimeformat);
+        uiModel.addAttribute("seadusePunkt_muudetud_date_format", datetimeformat);
+        uiModel.addAttribute("seadusePunkt_suletud_date_format", datetimeformat);
+    }
 }

@@ -13,8 +13,6 @@ import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -81,14 +79,6 @@ privileged aspect KodakondsusController_Roo_Controller {
     @ModelAttribute("riiks")
     public Collection<Riik> KodakondsusController.populateRiiks() {
         return Riik.findAllRiiks();
-    }
-    
-    void KodakondsusController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("kodakondsus_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("kodakondsus_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("kodakondsus_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("kodakondsus_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("kodakondsus_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     String KodakondsusController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

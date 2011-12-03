@@ -10,8 +10,6 @@ import java.lang.Long;
 import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
-import org.joda.time.format.DateTimeFormat;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -57,13 +55,6 @@ privileged aspect PiiririkkujaController_Roo_Controller {
     @ModelAttribute("piiririkkujas")
     public Collection<Piiririkkuja> PiiririkkujaController.populatePiiririkkujas() {
         return Piiririkkuja.findAllPiiririkkujas();
-    }
-    
-    void PiiririkkujaController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("piiririkkuja_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("piiririkkuja_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("piiririkkuja_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("piiririkkuja_synniaeg_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     String PiiririkkujaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

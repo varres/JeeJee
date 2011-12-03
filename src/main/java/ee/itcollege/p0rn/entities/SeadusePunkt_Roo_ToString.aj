@@ -25,8 +25,7 @@ privileged aspect SeadusePunkt_Roo_ToString {
         sb.append("Suletud: ").append(getSuletud()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("TableName: ").append(getTableName()).append(", ");
-        sb.append("Tekst: ").append(getTekst()).append(", ");
-        sb.append("Version: ").append(getVersion());
+        sb.append("Tekst: ").append(getTekst());
         return sb.toString();
     }
     
