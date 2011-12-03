@@ -6,7 +6,6 @@ package ee.itcollege.p0rn.entities;
 import ee.itcollege.p0rn.entities.SeadusePunkt;
 import java.lang.Long;
 import java.lang.String;
-import java.util.Date;
 
 privileged aspect SeadusePunkt_Roo_JavaBean {
     
@@ -56,62 +55,6 @@ privileged aspect SeadusePunkt_Roo_JavaBean {
     
     public void SeadusePunkt.setKehtiv_kuni(String kehtiv_kuni) {
         this.kehtiv_kuni = kehtiv_kuni;
-    }
-    
-    public String SeadusePunkt.getKommentaar() {
-        return this.kommentaar;
-    }
-    
-    public void SeadusePunkt.setKommentaar(String kommentaar) {
-        this.kommentaar = kommentaar;
-    }
-    
-    public String SeadusePunkt.getAvaja() {
-        return this.avaja;
-    }
-    
-    public void SeadusePunkt.setAvaja(String avaja) {
-        this.avaja = avaja;
-    }
-    
-    public Date SeadusePunkt.getAvatud() {
-        return this.avatud;
-    }
-    
-    public void SeadusePunkt.setAvatud(Date avatud) {
-        this.avatud = avatud;
-    }
-    
-    public String SeadusePunkt.getMuutja() {
-        return this.muutja;
-    }
-    
-    public void SeadusePunkt.setMuutja(String muutja) {
-        this.muutja = muutja;
-    }
-    
-    public Date SeadusePunkt.getMuudetud() {
-        return this.muudetud;
-    }
-    
-    public void SeadusePunkt.setMuudetud(Date muudetud) {
-        this.muudetud = muudetud;
-    }
-    
-    public String SeadusePunkt.getSulgeja() {
-        return this.sulgeja;
-    }
-    
-    public void SeadusePunkt.setSulgeja(String sulgeja) {
-        this.sulgeja = sulgeja;
-    }
-    
-    public Date SeadusePunkt.getSuletud() {
-        return this.suletud;
-    }
-    
-    public void SeadusePunkt.setSuletud(Date suletud) {
-        this.suletud = suletud;
     }
     
     public SeadusePunkt SeadusePunkt.getYlemus_seaduse_punkt_ID() {

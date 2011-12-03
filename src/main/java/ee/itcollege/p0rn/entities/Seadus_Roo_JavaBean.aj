@@ -5,7 +5,6 @@ package ee.itcollege.p0rn.entities;
 
 import java.lang.Long;
 import java.lang.String;
-import java.util.Date;
 
 privileged aspect Seadus_Roo_JavaBean {
     
@@ -47,46 +46,6 @@ privileged aspect Seadus_Roo_JavaBean {
     
     public void Seadus.setKehtiv_kuni(String kehtiv_kuni) {
         this.kehtiv_kuni = kehtiv_kuni;
-    }
-    
-    public String Seadus.getKommentaar() {
-        return this.kommentaar;
-    }
-    
-    public void Seadus.setKommentaar(String kommentaar) {
-        this.kommentaar = kommentaar;
-    }
-    
-    public String Seadus.getAvaja() {
-        return this.avaja;
-    }
-    
-    public void Seadus.setAvaja(String avaja) {
-        this.avaja = avaja;
-    }
-    
-    public Date Seadus.getAvatud() {
-        return this.avatud;
-    }
-    
-    public void Seadus.setAvatud(Date avatud) {
-        this.avatud = avatud;
-    }
-    
-    public String Seadus.getMuutja() {
-        return this.muutja;
-    }
-    
-    public void Seadus.setMuutja(String muutja) {
-        this.muutja = muutja;
-    }
-    
-    public Date Seadus.getMuudetud() {
-        return this.muudetud;
-    }
-    
-    public void Seadus.setMuudetud(Date muudetud) {
-        this.muudetud = muudetud;
     }
     
 }

@@ -21,8 +21,7 @@ privileged aspect Kodakondsus_Roo_ToString {
         sb.append("Piiririkkuja_ID: ").append(getPiiririkkuja_ID()).append(", ");
         sb.append("Riik_ID: ").append(getRiik_ID()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
-        sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
-        sb.append("Version: ").append(getVersion());
+        sb.append("Sulgeja: ").append(getSulgeja());
         return sb.toString();
     }
     

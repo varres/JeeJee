@@ -131,4 +131,12 @@ public abstract class Base {
        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
        return em;
    }
+
+public String getKommentaar() {
+	return kommentaar;
+}
+
+public void setKommentaar(String kommentaar) {
+	this.kommentaar = kommentaar;
+}
 }

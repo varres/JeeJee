@@ -9,17 +9,12 @@ import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piiririkkuja_Roo_Entity {
     
     declare @type: Piiririkkuja: @Entity;
-    
-    @PersistenceContext
-    transient EntityManager Piiririkkuja.entityManager;
     
     @Version
     @Column(name = "version")
@@ -40,17 +35,6 @@ privileged aspect Piiririkkuja_Roo_Entity {
     }
     
     @Transactional
-    public void Piiririkkuja.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Piiririkkuja attached = Piiririkkuja.findPiiririkkuja(this.piiririkkuja_ID);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
     public void Piiririkkuja.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
@@ -68,12 +52,6 @@ privileged aspect Piiririkkuja_Roo_Entity {
         Piiririkkuja merged = this.entityManager.merge(this);
         this.entityManager.flush();
         return merged;
-    }
-    
-    public static final EntityManager Piiririkkuja.entityManager() {
-        EntityManager em = new Piiririkkuja().entityManager;
-        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
-        return em;
     }
     
     public static long Piiririkkuja.countPiiririkkujas() {

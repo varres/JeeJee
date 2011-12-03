@@ -36,28 +36,28 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.PiiririkkujaConverter implements Converter<Piiririkkuja, String> {
         public String convert(Piiririkkuja piiririkkuja) {
-            return new StringBuilder().append(piiririkkuja.getAvaja()).append(" ").append(piiririkkuja.getAvatud()).append(" ").append(piiririkkuja.getMuutja()).append(" ").append(piiririkkuja.getMuudetud()).toString();
+            return new StringBuilder().append(piiririkkuja.getSulgeja()).append(" ").append(piiririkkuja.getSuletud()).append(" ").append(piiririkkuja.getKommentaar()).append(" ").append(piiririkkuja.getIsikukood()).toString();
         }
         
     }
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.RiikConverter implements Converter<Riik, String> {
         public String convert(Riik riik) {
-            return new StringBuilder().append(riik.getISO_kood()).append(" ").append(riik.getANSI_kood()).append(" ").append(riik.getKommentaar()).append(" ").append(riik.getAvaja()).toString();
+            return new StringBuilder().append(riik.getSulgeja()).append(" ").append(riik.getSuletud()).append(" ").append(riik.getKommentaar()).append(" ").append(riik.getISO_kood()).toString();
         }
         
     }
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.SeadusConverter implements Converter<Seadus, String> {
         public String convert(Seadus seadus) {
-            return new StringBuilder().append(seadus.getSulgeja()).append(" ").append(seadus.getSuletud()).append(" ").append(seadus.getKood()).append(" ").append(seadus.getNimetus()).toString();
+            return new StringBuilder().append(seadus.getSulgeja()).append(" ").append(seadus.getSuletud()).append(" ").append(seadus.getKommentaar()).append(" ").append(seadus.getKood()).toString();
         }
         
     }
     
     static class ee.itcollege.p0rn.web.ApplicationConversionServiceFactoryBean.SeadusePunktConverter implements Converter<SeadusePunkt, String> {
         public String convert(SeadusePunkt seadusePunkt) {
-            return new StringBuilder().append(seadusePunkt.getParagrahv()).append(" ").append(seadusePunkt.getPais()).append(" ").append(seadusePunkt.getTekst()).append(" ").append(seadusePunkt.getKehtiv_alates()).toString();
+            return new StringBuilder().append(seadusePunkt.getSulgeja()).append(" ").append(seadusePunkt.getSuletud()).append(" ").append(seadusePunkt.getKommentaar()).append(" ").append(seadusePunkt.getParagrahv()).toString();
         }
         
     }

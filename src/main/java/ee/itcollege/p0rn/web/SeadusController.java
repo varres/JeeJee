@@ -64,4 +64,14 @@ public class SeadusController {
         addDateTimeFormatPatterns(uiModel);
         return "seaduses/update";
     }
+    
+    void addDateTimeFormatPatterns(Model uiModel) {
+    	String datetimeformat = "yyyy/dd/MM";
+        uiModel.addAttribute("seadus_suletud_date_format", datetimeformat);
+        uiModel.addAttribute("seadus_avatud_date_format", datetimeformat);
+        uiModel.addAttribute("seadus_muudetud_date_format", datetimeformat);
+        uiModel.addAttribute("seadus_kehtiv_alates_date_format", datetimeformat);
+        uiModel.addAttribute("seadus_kehtiv_kuni_date_format", datetimeformat);
+        
+    }
 }

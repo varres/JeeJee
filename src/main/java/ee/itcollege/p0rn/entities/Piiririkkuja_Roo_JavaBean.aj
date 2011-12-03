@@ -17,68 +17,12 @@ privileged aspect Piiririkkuja_Roo_JavaBean {
         this.piiririkkuja_ID = piiririkkuja_ID;
     }
     
-    public String Piiririkkuja.getAvaja() {
-        return this.avaja;
-    }
-    
-    public void Piiririkkuja.setAvaja(String avaja) {
-        this.avaja = avaja;
-    }
-    
-    public Date Piiririkkuja.getAvatud() {
-        return this.avatud;
-    }
-    
-    public void Piiririkkuja.setAvatud(Date avatud) {
-        this.avatud = avatud;
-    }
-    
-    public String Piiririkkuja.getMuutja() {
-        return this.muutja;
-    }
-    
-    public void Piiririkkuja.setMuutja(String muutja) {
-        this.muutja = muutja;
-    }
-    
-    public Date Piiririkkuja.getMuudetud() {
-        return this.muudetud;
-    }
-    
-    public void Piiririkkuja.setMuudetud(Date muudetud) {
-        this.muudetud = muudetud;
-    }
-    
-    public String Piiririkkuja.getSulgeja() {
-        return this.sulgeja;
-    }
-    
-    public void Piiririkkuja.setSulgeja(String sulgeja) {
-        this.sulgeja = sulgeja;
-    }
-    
-    public Date Piiririkkuja.getSuletud() {
-        return this.suletud;
-    }
-    
-    public void Piiririkkuja.setSuletud(Date suletud) {
-        this.suletud = suletud;
-    }
-    
     public String Piiririkkuja.getIsikukood() {
         return this.isikukood;
     }
     
     public void Piiririkkuja.setIsikukood(String isikukood) {
         this.isikukood = isikukood;
-    }
-    
-    public String Piiririkkuja.getKommentaar() {
-        return this.kommentaar;
-    }
-    
-    public void Piiririkkuja.setKommentaar(String kommentaar) {
-        this.kommentaar = kommentaar;
     }
     
     public String Piiririkkuja.getEesnimi() {
