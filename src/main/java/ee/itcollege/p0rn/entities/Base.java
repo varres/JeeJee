@@ -1,12 +1,14 @@
 package ee.itcollege.p0rn.entities;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
@@ -34,8 +36,7 @@ public abstract class Base {
     private String avaja;
 
     @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     @Column(updatable=false)
     private Date avatud;
 
@@ -44,12 +45,12 @@ public abstract class Base {
     private String muutja;
 
     @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date muudetud;
 
     @NotNull
-    @Size(max = 32)
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    @Column(updatable=false)
     private String sulgeja;
    
     public String getSulgeja() {
@@ -61,37 +62,42 @@ public abstract class Base {
 	}
 
     @NotNull
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
+    @DateTimeFormat(pattern="dd.MM.yyyy")
     private Date suletud;
     
     public Date getSuletud() {
-		return suletud;
-	}
-
-	public void setSuletud(Date suletud) {
-		this.suletud = suletud;
-	}
+        return this.suletud;
+    }
+    
+    public void setSuletud(Date suletud) {
+        this.suletud = suletud;
+    }
 	 
+
 	@PrePersist
-	protected void onCreate() {
+	public void setCreated() {
+		Calendar tempDate = Calendar.getInstance();
+		tempDate.clear();
+		tempDate.set(Calendar.YEAR, 9999);
+		tempDate.set(Calendar.MONTH, Calendar.DECEMBER);
+		tempDate.set(Calendar.DAY_OF_MONTH, 31);
 		if (SecurityContextHolder.getContext().getAuthentication() != null) {
 	   		avaja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
 	   		muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
+	   		sulgeja = "";
 		} else {
 		   	avaja = "unknown";
 		   	muutja = "unknown";
+		   	sulgeja = "unknown";
 		}
 	    avatud = new Date();
 	    muudetud = new Date();
-
-	    sulgeja = "";
-	    try {
-	    	SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-	    	suletud = (Date)format.parse("2099/12/31");
-	    } catch (ParseException e) {
-	    	e.printStackTrace();
-	    }
+	    this.suletud = tempDate.getTime();
+	}
+	
+	@PostPersist
+	protected void afterCreate() {
+		
 	}
 
    @PreUpdate
@@ -101,16 +107,8 @@ public abstract class Base {
 	   
 	   muutja = (String) SecurityContextHolder.getContext().getAuthentication().getName();
 	   muudetud = new Date();
-     
-     
-	   sulgeja = "";
-	   try {
-		   SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
-		   suletud = (Date)format.parse("2099/12/31");
-	   } catch (ParseException e) {
-		   e.printStackTrace();
-	   }
    }
+   
    
    abstract String getTableName();
    abstract String getIdName();
@@ -120,7 +118,7 @@ public abstract class Base {
    public void remove() {
        if (this.entityManager == null) this.entityManager = entityManager();
        setSulgeja((String) SecurityContextHolder.getContext().getAuthentication().getName());
-       this.entityManager.createQuery("UPDATE "+getTableName()+" o SET suletud = CURDATE(), sulgeja = '" + getSulgeja() + "' WHERE "+getIdName()+" = " + this.getId()).executeUpdate();
+       this.entityManager.createQuery("UPDATE "+getTableName()+" SET suletud = CURDATE(), sulgeja = '" + getSulgeja() + "' WHERE "+getIdName()+" = " + this.getId()).executeUpdate();
    }
    
    @PersistenceContext
