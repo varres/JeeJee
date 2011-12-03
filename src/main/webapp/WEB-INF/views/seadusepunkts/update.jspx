@@ -38,15 +38,16 @@ xmlns:springform="http://www.springframework.org/tags/form">
                 </tr>
             </c:forEach>
         </table>
-         <div class="clr"></div>
-    </div>
-    <span class="new">
+         <span class="new">
         <spring:url value="/seadusepunkts" var="create_url">
             <spring:param name="form"/>
             <spring:param name="seadusePunkt_ID" value="${seadusePunkt.seaduse_punkt_ID}"/>
         </spring:url>
         <a class="button" href="${create_url}"><spring:message code="new" /></a>
     </span>
+         <div class="clr"></div>
+    </div>
+   
     </div>
     
     

@@ -35,17 +35,17 @@
                 </tr>
             </c:forEach>
         </table>
-        
-          <div class="clr"></div>
-    </div>
-    
-    <span class="new">
+            <span class="new">
         <spring:url value="/kodakondsuses" var="create_url">
             <spring:param name="form"/>
             <spring:param name="piiririkkuja_ID" value="${piiririkkuja.piiririkkuja_ID}"/>
         </spring:url>
         <a class="button" href="${create_url}"><spring:message code="new" /></a>
     </span>
+          <div class="clr"></div>
+    </div>
+    
+
     </div>
     <div class="fll">
         <field:input field="avaja" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avaja" render="false" required="false" z="user-managed"/>

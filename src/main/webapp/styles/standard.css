@@ -418,7 +418,7 @@ div table a.button, a.button, div .submit input {
 	float:right;
 	width:auto;
 	position:relative;
-	top:-40px;
+	top:-35px;
 	right:0;
 }
 .fll {
@@ -427,7 +427,7 @@ div table a.button, a.button, div .submit input {
 .dijitTitlePane .dijitTitlePane table {
 	width:auto;
 	min-width:300px;
-	margin-bottom:35px;
+	margin-bottom:5px;
 }
 
 #_title_fu_ee_itcollege_p0rn_entities_Piiririkkuja_id div .submit input,
@@ -480,8 +480,6 @@ table tr {
 	position:relative;
 }
 .new {
-	position:absolute;
-	bottom:0px;
 	right:0;
 }
 .

@@ -40,8 +40,6 @@
                 </tr>
             </c:forEach>
         </table>
-<div class="clr"></div>
-    </div>
         <span class="new">
         <spring:url value="/seadusepunkts" var="create_url">
             <spring:param name="form"/>
@@ -49,6 +47,9 @@
         </spring:url>
         <a class="button" href="${create_url}"><spring:message code="new" /></a>
     </span>
+<div class="clr"></div>
+    </div>
+        
     </div>
 
     <div class="fll">
