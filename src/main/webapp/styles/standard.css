@@ -483,7 +483,9 @@ table tr {
 	right:0;
 	float:right;
 }
-.
+.strike {
+	text-decoration:line-through;
+}
 .new a.button {
 	float:right;
 	margin-top:5px;

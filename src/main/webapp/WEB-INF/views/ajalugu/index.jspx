@@ -84,7 +84,12 @@
 	    	<c:forEach items="${seadusepunkts}" var="b">
 	    	<tr>
 	    		<td>
-	    			${b.paragrahv} ${b.pais}
+	    			<c:if test="${b.suletud=='9999-12-31 00:00:00.0'}">
+	    				<span class="strike">${b.paragrahv} ${b.pais}</span>
+	    			</c:if>
+	    			<c:if test="${b.suletud!='9999-12-31 00:00:00.0'}">
+	    				${b.suletud}
+	    			</c:if>
 	    		</td>
 	    		<td>${b.kehtiv_alates}</td>
 	    		<td>${b.kehtiv_kuni}</td>
