@@ -83,7 +83,9 @@
     		</tr>
 	    	<c:forEach items="${seadusepunkts}" var="b">
 	    	<tr>
-	    		<td>${b.paragrahv} ${b.pais}</td>
+	    		<td>
+	    			${b.paragrahv} ${b.pais} ${b.suletud}
+	    		</td>
 	    		<td>${b.kehtiv_alates}</td>
 	    		<td>${b.kehtiv_kuni}</td>
 	    		<td>
