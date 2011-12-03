@@ -29,24 +29,64 @@ public abstract class Base {
 	
     @NotNull
     private String kommentaar;
-	
+    
+    public String getKommentaar() {
+    	return kommentaar;
+    }
+
+    public void setKommentaar(String kommentaar) {
+    	this.kommentaar = kommentaar;
+    }
+
 	@NotNull
     @Size(max = 32)
     @Column(updatable=false)
     private String avaja;
+	
+	public String getAvaja() {
+		return avaja;
+	}
+
+	public void setAvaja(String avaja) {
+		this.avaja = avaja;
+	}
 
     @NotNull
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     @Column(updatable=false)
     private Date avatud;
+    
+	public Date getAvatud() {
+		return avatud;
+	}
+
+	public void setAvatud(Date avatud) {
+		this.avatud = avatud;
+	}
 
     @NotNull
     @Size(max = 32)
     private String muutja;
+    
+	public String getMuutja() {
+		return muutja;
+	}
+
+	public void setMuutja(String muutja) {
+		this.muutja = muutja;
+	}
 
     @NotNull
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date muudetud;
+
+	public Date getMuudetud() {
+		return muudetud;
+	}
+
+	public void setMuudetud(Date muudetud) {
+		this.muudetud = muudetud;
+	}
 
     @NotNull
     @DateTimeFormat(pattern = "dd.MM.yyyy")
@@ -162,11 +202,5 @@ public abstract class Base {
        return em;
    }
 
-public String getKommentaar() {
-	return kommentaar;
-}
 
-public void setKommentaar(String kommentaar) {
-	this.kommentaar = kommentaar;
-}
 }
