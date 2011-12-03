@@ -481,6 +481,7 @@ table tr {
 }
 .new {
 	right:0;
+	float:right;
 }
 .
 .new a.button {
