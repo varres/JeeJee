@@ -30,7 +30,6 @@
         <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_kommentaar" z="user-managed"/>
         <field:input field="objekt_ID" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_objekt_ID" render="false" z="user-managed"/>
         <field:input field="piiririkkuja_ID" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_piiririkkuja_ID" render="false" required="true" validationMessageCode="field_invalid_integer" z="user-managed"/>
-        <field:input field="sugu" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_sugu" max="1" z="4Wl8fbfgbXB+s4soH3VfGgFFFac="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_p0rn_entities_Piiririkkuja" render="${not empty dependencies}" z="2qjAAc+S+cXkEiYWNx/uUeTQhPA="/>
 </div>
