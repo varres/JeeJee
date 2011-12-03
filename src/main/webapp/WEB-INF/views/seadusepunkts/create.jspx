@@ -16,7 +16,18 @@
         <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_sulgeja" render="false" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_suletud" render="false" required="true" z="user-managed"/>
         <field:select field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" itemLabel="formLabel" itemValue="seaduse_ID" items="${seaduses}" path="/seaduses" z="user-managed"/>
-        <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" itemLabel="formLabel" itemValue="seaduse_punkt_ID" items="${seadusepunkts}" path="/seadusepunkts" z="user-managed"/>
+        <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" itemLabel="formLabel" itemValue="seaduse_punkt_ID" items="${seadusepunkts}" path="/seadusepunkts" render="false" z="user-managed"/>
+    	<div id="_c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID_id">
+	      	<label for="_ylemus_seaduse_punkt_ID_id">Ülemuse seaduse punkt:
+	        </label>
+	        	<select id="_ylemus_seaduse_punkt_ID_id" name="ylemus_seaduse_punkt_ID">
+	        		<option value="">-</option>
+	        			<c:forEach items="${seadusepunkts}" var="b">
+	        				<option value="${b.seaduse_punkt_ID}">${b.pais}</option>
+	        			</c:forEach>
+	        	</select>
+	    </div>
+    
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_p0rn_entities_SeadusePunkt" render="${not empty dependencies}" z="agniRmHNyzsqWyDsnR6v2iplr5w="/>
 </div>
