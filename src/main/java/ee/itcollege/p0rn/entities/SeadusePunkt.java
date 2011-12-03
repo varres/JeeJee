@@ -96,8 +96,21 @@ public class SeadusePunkt extends Base {
     	if (kuni.length() > 0) {
     		g = g + " AND kehtiv_kuni <= '" + kuni + "'";
     	}
+        return entityManager().createQuery("SELECT o FROM SeadusePunkt o " + g, SeadusePunkt.class).getResultList();
+    }
+	
+	public static List<SeadusePunkt> findAllSeadusePunktsLiivi(long seaduse_ID, String alates, String kuni) {
+    	String g = "WHERE 1=1";
+    	if (seaduse_ID > 0) {
+    		g = g + " AND seaduse_ID = " + seaduse_ID;
+    	}
+    	if (alates.length() > 0) {
+    		g = g + " AND kehtiv_alates >= '" + alates + "'";
+    	}
+    	if (kuni.length() > 0) {
+    		g = g + " AND kehtiv_kuni <= '" + kuni + "'";
+    	}
     	g = g + " AND suletud > CURDATE() ";
-    	
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o " + g, SeadusePunkt.class).getResultList();
     }
     
