@@ -69,7 +69,7 @@ public class KodakondsusController {
     }
 	
     void addDateTimeFormatPatterns(Model uiModel) {
-    	String datetimeformat = "yyyy/dd/MM";
+    	String datetimeformat = "yyyy-dd-MM";
         uiModel.addAttribute("kodakondsus_avatud_date_format", datetimeformat);
         uiModel.addAttribute("kodakondsus_muudetud_date_format", datetimeformat);
         uiModel.addAttribute("kodakondsus_suletud_date_format", datetimeformat);

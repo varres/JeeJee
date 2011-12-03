@@ -84,8 +84,8 @@ public class SeadusePunkt extends Base {
 
 	@ManyToOne
 	private ee.itcollege.p0rn.entities.SeadusePunkt ylemus_seaduse_punkt_ID;
-    
-    public static List<SeadusePunkt> findAllSeadusePunkts(long seaduse_ID, String alates, String kuni) {
+
+	public static List<SeadusePunkt> findAllSeadusePunkts(long seaduse_ID, String alates, String kuni) {
     	String g = "WHERE 1=1";
     	if (seaduse_ID > 0) {
     		g = g + " AND seaduse_ID = " + seaduse_ID;
@@ -111,6 +111,9 @@ public class SeadusePunkt extends Base {
     
     public static List<SeadusePunkt> findSeadusePunktEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE suletud > CURDATE()", SeadusePunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    public static List<SeadusePunkt> findAllAlamSeadusePunkts(Long master_id) {
+    	return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE ylemus_seaduse_punkt_ID = " + master_id.toString(), SeadusePunkt.class).getResultList();
     }
     
 	public String getFormLabel() {

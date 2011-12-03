@@ -83,7 +83,7 @@ public class PiiririkkujaController {
     }
     
     void addDateTimeFormatPatterns(Model uiModel) {
-    	String datetimeformat = "yyyy/dd/MM";
+    	String datetimeformat = "yyyy-dd-MM";
         uiModel.addAttribute("piiririkkuja_avatud_date_format", datetimeformat);
         uiModel.addAttribute("piiririkkuja_muudetud_date_format", datetimeformat);
         uiModel.addAttribute("piiririkkuja_suletud_date_format", datetimeformat);

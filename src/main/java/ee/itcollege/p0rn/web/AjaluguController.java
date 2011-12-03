@@ -32,7 +32,7 @@ public class AjaluguController {
     }
 
     void addDateTimeFormatPatterns(Model uiModel) {
-    	String datetimeformat = "yyyy/dd/MM";
+    	String datetimeformat = "yyyy-dd-MM";
         uiModel.addAttribute("seadus_kehtiv_alates_date_format", datetimeformat);
         uiModel.addAttribute("seadus_kehtiv_kuni_date_format", datetimeformat);
     }
