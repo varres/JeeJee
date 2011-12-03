@@ -36,6 +36,7 @@ public class SeadusePunkt extends Base {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable=true)
     private Long seaduse_punkt_ID;
     
 	public Long getId() {
@@ -111,4 +112,8 @@ public class SeadusePunkt extends Base {
     public static List<SeadusePunkt> findSeadusePunktEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE suletud > CURDATE()", SeadusePunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
+    
+	public String getFormLabel() {
+		return getPais();
+	}
 }

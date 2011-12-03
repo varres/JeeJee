@@ -76,6 +76,8 @@ public class SeadusePunktController {
 	
     void addDateTimeFormatPatterns(Model uiModel) {
     	String datetimeformat = "yyyy/dd/MM";
+        uiModel.addAttribute("seadusePunkt_kehtiv_alates_date_format", datetimeformat);
+        uiModel.addAttribute("seadusePunkt_kehtiv_kuni_date_format", datetimeformat);
         uiModel.addAttribute("seadusePunkt_avatud_date_format", datetimeformat);
         uiModel.addAttribute("seadusePunkt_muudetud_date_format", datetimeformat);
         uiModel.addAttribute("seadusePunkt_suletud_date_format", datetimeformat);
