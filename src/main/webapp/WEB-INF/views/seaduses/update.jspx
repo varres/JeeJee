@@ -5,7 +5,7 @@
     <form:update id="fu_ee_itcollege_p0rn_entities_Seadus" idField="seaduse_ID" modelAttribute="seadus" path="/seaduses" versionField="Version" z="yNxVUHdRDjJZl7toZfV5AI0zuao=">
         <field:input field="kood" id="c_ee_itcollege_p0rn_entities_Seadus_kood" max="20" required="true" z="xp3gNS0lU2lE+HSmaQhq75HMTzk="/>
         <field:input field="nimetus" id="c_ee_itcollege_p0rn_entities_Seadus_nimetus" max="20" required="true" z="NGnC0aC3lSKLhv2SKljpszR569o="/>
-        <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Seadus_kommentaar" required="true" z="user-managed"/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Seadus_kommentaar" required="true" z="user-manage"/>
         <field:datetime dateTimePattern="${seadus_kehtiv_alates_date_format}" field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_alates" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadus_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_kuni" required="true" z="user-managed"/>
         <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_Seadus_avaja" render="false" required="true" z="user-managed"/>
@@ -14,7 +14,10 @@
         <field:datetime dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Seadus_muudetud" render="false" required="true" z="user-managed"/>
         <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_Seadus_sulgeja" render="false" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Seadus_suletud" render="false" required="true" z="user-managed"/>
+    <spring:url value="/seaduses/${seadus.seaduse_ID}" var="loobu_url" />
+    <a class="button" href="${loobu_url}">Loobu</a>
     </form:update>
+    
     <page:show id="pl_ee_itcollege_p0rn_entities_SeadusePunkt" object="${seadusepunkts}" path="/seadusepunkts" z="dBv4+VUGHdxce+sj8hZkT63JKYs=">
         <!--<field:display field="name" id="pl_ee_itcollege_p0rn_entities_Seadus" object="${cage}" z="8A8Ciz+KXs63h7jwGDod5gFgilY="/>!-->
         <div>
@@ -22,8 +25,8 @@
         </div>
         <table>
             <tr>
-                <th>Paragrahv</th>
-                <th colspan="3">P�is</th>
+                <th>§</th>
+                <th colspan="3">Päis</th>
             </tr>
             <c:forEach items="${seadusepunkts}" var="b">
                 <tr>
@@ -37,13 +40,13 @@
                         <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="edit_url">
                             <spring:param name="form"/>
                         </spring:url>
-                        <a class="button" href="${edit_url}">VAATA</a>
+                        <a class="button" href="${edit_url}">Muuda</a>
                     </td>
                     <td>
                         <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="del_url">
                             <spring:param name="delete"/>
                         </spring:url>
-                        <a class="button" href="${del_url}">KUSTUTA</a>
+                        <a class="button" href="${del_url}">Kustuta</a>
                     </td>
                 </tr>
             </c:forEach>
