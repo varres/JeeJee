@@ -56,7 +56,7 @@ public class PiiririkkujaController {
         }
         uiModel.asMap().clear();
         piiririkkuja.persist();
-        return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
+        return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest) + "?form";
     }
     
     @RequestMapping(value = "/{piiririkkuja_ID}", params = "form", method = RequestMethod.GET)

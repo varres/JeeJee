@@ -3,99 +3,82 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_p0rn_entities_Piiririkkuja" idField="piiririkkuja_ID" modelAttribute="piiririkkuja" path="/piiririkkujas" versionField="Version" z="MoOG+XGKQmIGQg+8NE3/ZWXeOH8=">
-        <div class="flr">
-            <page:show id="pl_ee_itcollege_p0rn_entities_Kodakondsus" object="${kodakondsuses}" path="/kodakonsuses" z="dBv4+VUGHdxce+sj8hZkT63JKYs=">
-                <!--<field:display field="name" id="pl_ee_itcollege_p0rn_entities_Kodakondsus" object="${cage}" z="8A8Ciz+KXs63h7jwGDod5gFgilY="/>!-->
-                <div>
-                    <!--<spring:message code="label_ee_itcollege_p0rn_entities_Kodakondsus_plural"/>!-->
-                </div>
-                <table>
-                    <tr>
-                        <th>
-                            <spring:message code="country"/>
-                        </th>
-                        <th colspan="2">
-                            <spring:message code="isn"/>
-                        </th>
-                    </tr>
-                    <c:forEach items="${kodakondsuses}" var="b">
-                        <tr>
-                            <td>
-                                <c:out value="${b.riik_ID.ISO_kood}"/>
-                            </td>
-                            <td>
-                                <c:out value="${b.isikukood}"/>
-                            </td>
-                            <td>
-                                <spring:url value="/kodakondsuses/${b.kodakondsus_ID}" var="del_url">
-                                    <spring:param name="delete"/>
-                                </spring:url>
-                                <a class="button" href="${del_url}">
-                                    <spring:message code="delete"/>
-                                </a>
-                                <spring:url value="/kodakondsuses/${b.kodakondsus_ID}" var="edit_url">
-                                    <spring:param name="form"/>
-                                </spring:url>
-                                <a class="button" href="${edit_url}">
-                                    <spring:message code="view"/>
-                                </a>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </table>
-                <span class="new">
-                    <spring:url value="/kodakondsuses" var="create_url">
-                        <spring:param name="form"/>
-                        <spring:param name="piiririkkuja_ID" value="${piiririkkuja.piiririkkuja_ID}"/>
-                    </spring:url>
-                    <a class="button" href="${create_url}">
-                        <spring:message code="new"/>
-                    </a>
-                </span>
-            </page:show>
+      <div class="flr">
+   		<page:show id="pl_ee_itcollege_p0rn_entities_Kodakondsus" object="${kodakondsuses}" path="/kodakonsuses" z="dBv4+VUGHdxce+sj8hZkT63JKYs=">
+        <!--<field:display field="name" id="pl_ee_itcollege_p0rn_entities_Kodakondsus" object="${cage}" z="8A8Ciz+KXs63h7jwGDod5gFgilY="/>!-->
+        <div>
+            <!--<spring:message code="label_ee_itcollege_p0rn_entities_Kodakondsus_plural"/>!-->
         </div>
-        <div class="fll">
-            <field:input field="avaja" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avaja" render="false" required="false" z="user-managed"/>
-            <field:datetime dateTimePattern="${piiririkkuja_avatud_date_format}" disableFormBinding="true" field="avatud" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avatud" render="false" required="false" z="user-managed"/>
-            <field:input field="muutja" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_muutja" render="false" required="false" z="user-managed"/>
-            <field:datetime dateTimePattern="${piiririkkuja_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_muudetud" render="false" required="false" z="user-managed"/>
-            <field:input field="sulgeja" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_sulgeja" render="false" z="user-managed"/>
-            <field:datetime dateTimePattern="${piiririkkuja_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_suletud" render="false" required="false" z="user-managed"/>
-            <field:input field="isikukood" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_isikukood" max="20" z="5f0DE6djqortbvSOvpFW2VjwaTI="/>
-            <field:input field="eesnimi" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_eesnimi" max="25" z="rI5Cd9zF5ECY7/3yBjLdaRtZiiU="/>
-            <field:input field="perek_nimi" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_perek_nimi" z="user-managed"/>
-            <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_synniaeg" z="14+EeDyUeTxI+u3vqH4coSah4Hc="/>
-            <div>
-                <label for="_synniaeg_id">
-                    <spring:message code="sex"/>:</label>
-                <div class="dijit dijitReset dijitInlineTable dijitLeft dijitTextBox dijitDateTextBox cust">
-                    <select name="sugu">
-                        <c:if test="${piiririkkuja.sugu=='N'}">
-                            <option value="M">
-                                <spring:message code="man"/>
-                            </option>
-                            <option selected="selected" value="N">
-                                <spring:message code="woman"/>
-                            </option>
-                        </c:if>
-                        <c:if test="${piiririkkuja.sugu!='N'}">
-                            <option selected="selected" value="M">
-                                <spring:message code="man"/>
-                            </option>
-                            <option value="N">
-                                <spring:message code="woman"/>
-                            </option>
-                        </c:if>
-                    </select>
-                </div>
-            </div>
-            <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_kommentaar" z="user-managed"/>
-            <field:input field="objekt_ID" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_objekt_ID" render="false" z="user-managed"/>
-            <a class="cancel button" href="#" onclick="history.back();">
-                <spring:message code="cancel"/>
-            </a>
-        </div>
-        <div class="clr">.</div>
-        <field:input field="sugu" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_sugu" max="1" z="4Wl8fbfgbXB+s4soH3VfGgFFFac="/>
+        <table>
+            <tr>
+                <th><spring:message code="country" /></th>
+                <th colspan="2"><spring:message code="isn" /></th>
+            </tr>
+            <c:forEach items="${kodakondsuses}" var="b">
+                <tr>
+                    <td>
+                        <c:out value="${b.riik_ID.ISO_kood}"/>
+                    </td>
+                    <td>
+                        <c:out value="${b.isikukood}"/>
+                    </td>
+                    <td>
+                    	<spring:url value="/kodakondsuses/${b.kodakondsus_ID}" var="del_url">
+                            <spring:param name="delete"/>
+                        </spring:url>
+                        <a class="button" href="${del_url}"><spring:message code="delete" /></a>
+                        <spring:url value="/kodakondsuses/${b.kodakondsus_ID}" var="edit_url">
+                            <spring:param name="form"/>
+                        </spring:url>
+                        <a class="button" href="${edit_url}"><spring:message code="view" /></a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+        
+          <div class="clr"></div>
+    </page:show>
+    <span class="new">
+        <spring:url value="/kodakondsuses" var="create_url">
+            <spring:param name="form"/>
+            <spring:param name="piiririkkuja_ID" value="${piiririkkuja.piiririkkuja_ID}"/>
+        </spring:url>
+        <a class="button" href="${create_url}"><spring:message code="new" /></a>
+    </span>
+    </div>
+    <div class="fll">
+        <field:input field="avaja" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avaja" render="false" required="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${piiririkkuja_avatud_date_format}" disableFormBinding="true" field="avatud" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_avatud" render="false" required="false" z="user-managed"/>
+        <field:input field="muutja" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_muutja" render="false" required="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${piiririkkuja_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_muudetud" render="false" required="false" z="user-managed"/>
+        <field:input field="sulgeja" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_sulgeja" render="false" z="user-managed"/>
+        <field:datetime dateTimePattern="${piiririkkuja_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_suletud" render="false" required="false" z="user-managed"/>
+        <field:input field="isikukood" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_isikukood" max="20" z="5f0DE6djqortbvSOvpFW2VjwaTI="/>
+        <field:input field="eesnimi" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_eesnimi" max="25" z="rI5Cd9zF5ECY7/3yBjLdaRtZiiU="/>
+        <field:input field="perek_nimi" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_perek_nimi" z="user-managed"/>
+        <field:datetime dateTimePattern="${piiririkkuja_synniaeg_date_format}" field="synniaeg" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_synniaeg" z="14+EeDyUeTxI+u3vqH4coSah4Hc="/>
+        <div>
+        <label for="_synniaeg_id"><spring:message code="sex" />:</label>
+			<div class="dijit dijitReset dijitInlineTable dijitLeft dijitTextBox dijitDateTextBox cust">
+		        <select name="sugu">
+		        	<c:if test="${piiririkkuja.sugu=='N'}">
+		        	    <option value="M"><spring:message code="man" /></option>
+		        		<option value="N" selected="selected"><spring:message code="woman" /></option>
+		        	</c:if>
+		        	<c:if test="${piiririkkuja.sugu!='N'}">
+		        		<option value="M" selected="selected"><spring:message code="man" /></option>
+		        		<option value="N"><spring:message code="woman" /></option>
+		        	</c:if>
+		        </select>
+		    </div>
+		 </div>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_kommentaar" z="user-managed"/>
+        <field:input field="objekt_ID" id="c_ee_itcollege_p0rn_entities_Piiririkkuja_objekt_ID" render="false" z="user-managed"/>
+   		<a class="cancel button" href="#" onclick="history.back();"><spring:message code="cancel" /></a>
+   		
+  </div>
+  <div class="clr">.</div>
     </form:update>
+    
+    
 </div>
