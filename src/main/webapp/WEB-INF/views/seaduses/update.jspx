@@ -2,31 +2,19 @@
 <div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:spring="http://www.springframework.org/tags" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
+    
     <form:update id="fu_ee_itcollege_p0rn_entities_Seadus" idField="seaduse_ID" modelAttribute="seadus" path="/seaduses" versionField="Version" z="yNxVUHdRDjJZl7toZfV5AI0zuao=">
-        <field:input field="kood" id="c_ee_itcollege_p0rn_entities_Seadus_kood" max="20" required="true" z="xp3gNS0lU2lE+HSmaQhq75HMTzk="/>
-        <field:input field="nimetus" id="c_ee_itcollege_p0rn_entities_Seadus_nimetus" max="20" required="true" z="NGnC0aC3lSKLhv2SKljpszR569o="/>
-        <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Seadus_kommentaar" required="true" z="user-managed"/>
-        <field:datetime dateTimePattern="${seadus_kehtiv_alates_date_format}" field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_alates" required="true" z="user-managed"/>
-        <field:datetime dateTimePattern="${seadus_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_kuni" required="true" z="user-managed"/>
-        <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_Seadus_avaja" render="false" required="true" z="user-managed"/>
-        <field:datetime dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_Seadus_avatud" render="false" required="true" z="user-managed"/>
-        <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_Seadus_muutja" render="false" required="true" z="user-managed"/>
-        <field:datetime dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Seadus_muudetud" render="false" required="true" z="user-managed"/>
-        <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_Seadus_sulgeja" render="false" required="true" z="user-managed"/>
-        <field:datetime dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Seadus_suletud" render="false" required="true" z="user-managed"/>
-        <spring:url value="/seaduses/${seadus.seaduse_ID}" var="loobu_url"/>
-        <a class="button" href="${loobu_url}">Loobu</a>
-    </form:update>
+        <div class="flr">
     <page:show id="pl_ee_itcollege_p0rn_entities_SeadusePunkt" object="${seadusepunkts}" path="/seadusepunkts" z="dBv4+VUGHdxce+sj8hZkT63JKYs=">
         <!--<field:display field="name" id="pl_ee_itcollege_p0rn_entities_Seadus" object="${cage}" z="8A8Ciz+KXs63h7jwGDod5gFgilY="/>!-->
         <div>
             <!--<spring:message code="label_ee_itcollege_p0rn_entities_Seadus_plural"/>!-->
         </div>
-        Punktid
+        <spring:message code="paragraphs" />
         <table>
             <tr>
                 <th>§</th>
-                <th colspan="3">Päis</th>
+                <th colspan="3"><spring:message code="title" /></th>
             </tr>
             <c:forEach items="${seadusepunkts}" var="b">
                 <tr>
@@ -41,23 +29,46 @@
                             <spring:param name="form"/>
             				<spring:param name="seaduse_ID" value="${seadus.seaduse_ID}"/>
                         </spring:url>
-                        <a class="button" href="${edit_url}">Muuda</a>
+                        <a class="button" href="${edit_url}"><spring:message code="edit" /></a>
                     </td>
                     <td>
                         <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="del_url">
                             <spring:param name="delete"/>
                         </spring:url>
-                        <a class="button" href="${del_url}">Kustuta</a>
+                        <a class="button" href="${del_url}"><spring:message code="delete" /></a>
                     </td>
                 </tr>
             </c:forEach>
         </table>
+<div class="clr"></div>
     </page:show>
-    <span class="new">
+        <span class="new">
         <spring:url value="/seadusepunkts" var="create_url">
             <spring:param name="form"/>
             <spring:param name="seaduse_ID" value="${seadus.seaduse_ID}"/>
         </spring:url>
-        <a class="button" href="${create_url}">Lisa uus</a>
+        <a class="button" href="${create_url}"><spring:message code="new" /></a>
     </span>
+    </div>
+    
+    
+    <div class="fll">
+    
+        <field:input field="kood" id="c_ee_itcollege_p0rn_entities_Seadus_kood" max="20" required="true" z="xp3gNS0lU2lE+HSmaQhq75HMTzk="/>
+        <field:input field="nimetus" id="c_ee_itcollege_p0rn_entities_Seadus_nimetus" max="20" required="true" z="NGnC0aC3lSKLhv2SKljpszR569o="/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Seadus_kommentaar" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadus_kehtiv_alates_date_format}" field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_alates" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadus_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_Seadus_kehtiv_kuni" required="true" z="user-managed"/>
+        <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_Seadus_avaja" render="false" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadus_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_Seadus_avatud" render="false" required="true" z="user-managed"/>
+        <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_Seadus_muutja" render="false" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Seadus_muudetud" render="false" required="true" z="user-managed"/>
+        <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_Seadus_sulgeja" render="false" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadus_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Seadus_suletud" render="false" required="true" z="user-managed"/>
+        <spring:url value="/seaduses/${seadus.seaduse_ID}" var="loobu_url"/>
+        <a class="cancel button" href="${loobu_url}"><spring:message code="cancel" /></a>
+   
+   </div>
+  <div class="clr">.</div>
+ </form:update>
 </div>

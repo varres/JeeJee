@@ -429,7 +429,9 @@ div table a.button, a.button, div .submit input {
 	min-width:300px;
 	margin-bottom:35px;
 }
-#_title_fu_ee_itcollege_p0rn_entities_Piiririkkuja_id div .submit input {
+
+#_title_fu_ee_itcollege_p0rn_entities_Piiririkkuja_id div .submit input,
+#_title_fu_ee_itcollege_p0rn_entities_Seadus_id div .submit input {
 	position:absolute;
 	bottom:10px;
 	right:0;
@@ -481,6 +483,7 @@ table tr {
 	bottom:0px;
 	right:0;
 }
+.
 .new a.button {
 	float:right;
 	margin-top:5px;
