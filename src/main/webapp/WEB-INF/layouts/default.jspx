@@ -1,6 +1,8 @@
 <html xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:tiles="http://tiles.apache.org/tags-tiles" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" >  
 	
-	<jsp:output doctype-root-element="HTML" doctype-system="about:legacy-compat" />
+	<jsp:output doctype-root-element="HTML" doctype-public="//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="about:legacy-compat" />
+
+	
 	
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />  
 	<jsp:directive.page pageEncoding="UTF-8" /> 
