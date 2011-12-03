@@ -3,6 +3,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
@@ -13,12 +14,15 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import org.springframework.security.access.prepost.PreFilter;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,7 +31,12 @@ import org.springframework.transaction.annotation.Transactional;
 @RooEntity(mappedSuperclass = true)
 public abstract class Base {
 	
+	public Base() {
+		setCreated();
+	}
+	
     @NotNull
+    @Size(min=0)
     private String kommentaar;
     
     public String getKommentaar() {
@@ -39,7 +48,6 @@ public abstract class Base {
     }
 
 	@NotNull
-    @Size(max = 32)
     @Column(updatable=false)
     private String avaja;
 
@@ -49,7 +57,6 @@ public abstract class Base {
     private Date avatud;
     
     @NotNull
-    @Size(max = 32)
     private String muutja;
   
 
@@ -63,6 +70,10 @@ public abstract class Base {
     @Column(updatable=false)
     private String sulgeja;
    
+    @NotNull
+    @DateTimeFormat(pattern="dd.MM.yyyy")
+    private Date suletud;
+    
     public String getSulgeja() {
 		return sulgeja;
 	}
@@ -71,9 +82,6 @@ public abstract class Base {
 		this.sulgeja = sulgeja;
 	}
 
-    @NotNull
-    @DateTimeFormat(pattern="dd.MM.yyyy")
-    private Date suletud;
     
     public Date getSuletud() {
         return this.suletud;
@@ -114,7 +122,6 @@ public abstract class Base {
     public void setAvaja(String avaja) {
         this.avaja = avaja;
     }
-	 
 
 	@PrePersist
 	public void setCreated() {
@@ -171,6 +178,4 @@ public abstract class Base {
        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
        return em;
    }
-
-
 }

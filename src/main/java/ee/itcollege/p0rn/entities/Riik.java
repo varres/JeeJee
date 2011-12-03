@@ -11,6 +11,7 @@ import javax.validation.constraints.Size;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -57,4 +58,17 @@ public class Riik extends Base {
         sb.append("ISO_kood: ").append(getISO_kood());
         return sb.toString();
     }
+	
+    public static long countRiiks() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Riik o WHERE suletud > CURDATE()", Long.class).getSingleResult();
+    }
+    
+    public static List<Riik> findAllRiiks() {
+        return entityManager().createQuery("SELECT o FROM Riik o WHERE suletud > CURDATE()", Riik.class).getResultList();
+    }
+    
+    public static List<Riik> findRiikEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Riik o WHERE suletud > CURDATE()", Riik.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
 }

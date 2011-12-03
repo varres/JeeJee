@@ -31,13 +31,13 @@ import javax.persistence.Column;
 
 public class Listen implements ApplicationListener {
 	public void onApplicationEvent(ApplicationEvent event) {
-	
+		
 		if (event instanceof AuthenticationFailureBadCredentialsEvent) {
 	
 		} else if (event instanceof AuthenticationSuccessEvent) {
-			Kodakondsus.importFUCK();
+
 		} else {
-		
+			Kodakondsus.importFUCK();
 		}
 	}
 }

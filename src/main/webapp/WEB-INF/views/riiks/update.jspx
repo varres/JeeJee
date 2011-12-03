@@ -6,11 +6,11 @@
         <field:input field="ISO_kood" id="c_ee_itcollege_p0rn_entities_Riik_ISO_kood" max="20" required="true" z="5oA8MtxLlLbyFW8dl71VTjRKy2A="/>
         <field:input field="ANSI_kood" id="c_ee_itcollege_p0rn_entities_Riik_ANSI_kood" max="20" required="true" z="xbZtsG3KcmNiCrnKS/7Y/ytV25U="/>
         <field:input field="kommentaar" id="c_ee_itcollege_p0rn_entities_Riik_kommentaar" required="true" z="4TKpX9CD8tQBC9mc0qdQJ+gGoPw="/>
-        <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_Riik_avaja" required="true" z="GoH5poZr41Ha17KgpDRVS5fHBEk="/>
-        <field:datetime dateTimePattern="${riik_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_Riik_avatud" required="true" z="TLVjT1tBURUFv8E7GDpI7/2blgU="/>
-        <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_Riik_muutja" required="true" z="GSY0Gudbhu6WYdesVq5AVXQgnZA="/>
-        <field:datetime dateTimePattern="${riik_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Riik_muudetud" required="true" z="OY3WioVEHZE734hOIwL3G3chauc="/>
-        <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_Riik_sulgeja" required="true" z="ZuxnyigiT/pXqc8XpW3qBpmvZGE="/>
-        <field:datetime dateTimePattern="${riik_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Riik_suletud" required="true" z="4mNBUliQkgpEy8XQjJqKRQa4xrM="/>
+        <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_Riik_avaja" render="false" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${riik_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_Riik_avatud" render="false" required="true" z="user-managed"/>
+        <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_Riik_muutja" render="false" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${riik_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Riik_muudetud" render="false" required="true" z="user-managed"/>
+        <field:input field="sulgeja" id="c_ee_itcollege_p0rn_entities_Riik_sulgeja" render="false" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${riik_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Riik_suletud" render="false" required="true" z="user-managed"/>
     </form:update>
 </div>

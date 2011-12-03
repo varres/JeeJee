@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import ee.itcollege.p0rn.entities.Kodakondsus;
 import ee.itcollege.p0rn.entities.Piiririkkuja;
+import ee.itcollege.p0rn.entities.Riik;
 
 
 import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
@@ -35,7 +36,7 @@ public class KodakondsusController {
 	
 	@RequestMapping(method = RequestMethod.POST)
     public String create(@Valid Kodakondsus kodakondsus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
+       if (bindingResult.hasErrors()) {
             uiModel.addAttribute("kodakondsus", kodakondsus);
             addDateTimeFormatPatterns(uiModel);
             return "kodakondsuses/create";
@@ -45,7 +46,15 @@ public class KodakondsusController {
         return "redirect:/piiririkkujas/" + kodakondsus.getPiiririkkuja_ID().getPiiririkkuja_ID() + "?form";
     }
 	
-
+	@RequestMapping(value = "/{kodakondsus_ID}", method = RequestMethod.DELETE)
+    public String delete(@PathVariable("kodakondsus_ID") Long kodakondsus_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+		Kodakondsus.findKodakondsus(kodakondsus_ID).remove();
+        uiModel.asMap().clear();
+        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
+        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
+        return "redirect:/kodakondsuses";
+	}
+	
 	@RequestMapping(value = "/{kodakondsus_ID}", params = "delete", method = RequestMethod.GET)
     public String delete(@PathVariable("kodakondsus_ID") Long kodakondsus_ID, Model uiModel) {
         Kodakondsus model = Kodakondsus.findKodakondsus(kodakondsus_ID);

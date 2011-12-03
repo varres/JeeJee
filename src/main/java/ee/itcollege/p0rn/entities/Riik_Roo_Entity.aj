@@ -6,7 +6,6 @@ package ee.itcollege.p0rn.entities;
 import ee.itcollege.p0rn.entities.Riik;
 import java.lang.Integer;
 import java.lang.Long;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Version;
@@ -54,21 +53,9 @@ privileged aspect Riik_Roo_Entity {
         return merged;
     }
     
-    public static long Riik.countRiiks() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Riik o", Long.class).getSingleResult();
-    }
-    
-    public static List<Riik> Riik.findAllRiiks() {
-        return entityManager().createQuery("SELECT o FROM Riik o", Riik.class).getResultList();
-    }
-    
     public static Riik Riik.findRiik(Long riik_ID) {
         if (riik_ID == null) return null;
         return entityManager().find(Riik.class, riik_ID);
-    }
-    
-    public static List<Riik> Riik.findRiikEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Riik o", Riik.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

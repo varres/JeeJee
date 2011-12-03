@@ -47,7 +47,6 @@ public class PiiririkkujaController {
     @RequestMapping(method = RequestMethod.POST)
     public String create(@Valid Piiririkkuja piiririkkuja, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
     	piiririkkuja.setDefaultValues();
-    	/*
     	if (bindingResult.hasErrors()) {
     		System.out.println(bindingResult.getAllErrors().toString());
             uiModel.addAttribute("piiririkkuja", piiririkkuja);
@@ -55,7 +54,6 @@ public class PiiririkkujaController {
             addDateTimeFormatPatterns(uiModel);
             return "piiririkkujas/create";
         }
-        */
         uiModel.asMap().clear();
         piiririkkuja.persist();
         return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
@@ -74,12 +72,11 @@ public class PiiririkkujaController {
     
     @RequestMapping(method = RequestMethod.PUT)
     public String update(@Valid Piiririkkuja piiririkkuja, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        /**if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piiririkkuja", piiririkkuja);
             addDateTimeFormatPatterns(uiModel);
             return "piiririkkujas/update";
         }
-        */
         uiModel.asMap().clear();
         piiririkkuja.merge();
         return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getPiiririkkuja_ID().toString(), httpServletRequest);
