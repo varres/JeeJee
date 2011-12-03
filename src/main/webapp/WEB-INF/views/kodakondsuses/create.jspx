@@ -3,16 +3,16 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_p0rn_entities_Kodakondsus" modelAttribute="kodakondsus" path="/kodakondsuses" render="${empty dependencies}" z="2qh1ZvqG4YMJ6622g3eYXFwtUxE=">
-        <field:input field="avaja" id="c_ee_itcollege_p0rn_entities_Kodakondsus_avaja" required="true" z="user-managed"/>
-        <field:datetime dateTimePattern="${kodakondsus_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_Kodakondsus_avatud" required="true" z="Y/tIywh2hcNDQLWj74k/nElzFmI="/>
-        <field:input field="muutja" id="c_ee_itcollege_p0rn_entities_Kodakondsus_muutja" required="true" z="user-managed"/>
-        <field:datetime dateTimePattern="${kodakondsus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Kodakondsus_muudetud" required="true" z="3nQSd3mo6tOIlvj2x8ek0F5Tww0="/>
-        <field:input field="sulgeja" id="c_ee_itcollege_p0rn_entities_Kodakondsus_sulgeja" z="user-managed"/>
-        <field:datetime dateTimePattern="${kodakondsus_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Kodakondsus_suletud" required="true" z="11F5Jo6UQ3nHwzhW/mfSE0Xy0kc="/>
+        <field:input render="false" field="avaja" id="c_ee_itcollege_p0rn_entities_Kodakondsus_avaja" required="true" z="user-managed"/>
+        <field:datetime render="false" dateTimePattern="${kodakondsus_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_Kodakondsus_avatud" required="true" z="Y/tIywh2hcNDQLWj74k/nElzFmI="/>
+        <field:input render="false" field="muutja" id="c_ee_itcollege_p0rn_entities_Kodakondsus_muutja" required="true" z="user-managed"/>
+        <field:datetime render="false" dateTimePattern="${kodakondsus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_Kodakondsus_muudetud" required="true" z="3nQSd3mo6tOIlvj2x8ek0F5Tww0="/>
+        <field:input render="false" field="sulgeja" id="c_ee_itcollege_p0rn_entities_Kodakondsus_sulgeja" z="user-managed"/>
+        <field:datetime render="false" dateTimePattern="${kodakondsus_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_Kodakondsus_suletud" required="true" z="11F5Jo6UQ3nHwzhW/mfSE0Xy0kc="/>
         <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_Kodakondsus_kommentaar" z="user-managed"/>
         <field:datetime dateTimePattern="${kodakondsus_alates_date_format}" field="alates" id="c_ee_itcollege_p0rn_entities_Kodakondsus_alates" z="w1t1VOEbWMfPYB+E08qx+lAftAg="/>
         <field:datetime dateTimePattern="${kodakondsus_kuni_date_format}" field="kuni" id="c_ee_itcollege_p0rn_entities_Kodakondsus_kuni" z="ZzeB2xK1AAAfznD2o7sUhTiigzI="/>
-        <field:select field="riik_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_riik_ID" itemValue="riik_ID" items="${riiks}" path="/riiks" z="d05074jfqWoJ3CGN/JBI3shWY94="/>
+        <field:select field="riik_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_riik_ID" itemValue="riik_ID" itemLabel="ISO_kood" items="${riiks}" path="/riiks" z="d05074jfqWoJ3CGN/JBI3shWY94="/>
         <field:input field="isikukood" id="c_ee_itcollege_p0rn_entities_Kodakondsus_isikukood" max="20" z="2bd3IpJmq+1R9m0nriBWZzJqYh0="/>
         <field:select field="piiririkkuja_ID" id="c_ee_itcollege_p0rn_entities_Kodakondsus_piiririkkuja_ID" itemValue="piiririkkuja_ID" items="${piiririkkujas}" path="/piiririkkujas" z="90HiVk9s90RXJB3GhZ+9Df2SEoI="/>
     </form:create>

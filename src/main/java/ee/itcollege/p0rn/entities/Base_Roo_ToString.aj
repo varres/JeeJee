@@ -5,24 +5,17 @@ package ee.itcollege.p0rn.entities;
 
 import java.lang.String;
 
-privileged aspect Riik_Roo_ToString {
+privileged aspect Base_Roo_ToString {
     
-    public String Riik.toString() {
+    public String Base.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("ANSI_kood: ").append(getANSI_kood()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud()).append(", ");
-        sb.append("ISO_kood: ").append(getISO_kood()).append(", ");
-        sb.append("Id: ").append(getId()).append(", ");
-        sb.append("IdName: ").append(getIdName()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Muudetud: ").append(getMuudetud()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
-        sb.append("Riik_ID: ").append(getRiik_ID()).append(", ");
         sb.append("Suletud: ").append(getSuletud()).append(", ");
-        sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
-        sb.append("TableName: ").append(getTableName()).append(", ");
-        sb.append("Version: ").append(getVersion());
+        sb.append("Sulgeja: ").append(getSulgeja());
         return sb.toString();
     }
     

@@ -51,4 +51,10 @@ public class Riik extends Base {
 	public Long getId() {
 		return riik_ID;
 	}
+	
+	public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("ISO_kood: ").append(getISO_kood());
+        return sb.toString();
+    }
 }
