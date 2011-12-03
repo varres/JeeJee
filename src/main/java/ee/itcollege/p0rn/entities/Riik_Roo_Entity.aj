@@ -40,17 +40,6 @@ privileged aspect Riik_Roo_Entity {
     }
     
     @Transactional
-    public void Riik.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Riik attached = Riik.findRiik(this.riik_ID);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
     public void Riik.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();

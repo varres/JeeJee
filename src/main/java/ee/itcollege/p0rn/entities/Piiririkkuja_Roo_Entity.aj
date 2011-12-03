@@ -40,17 +40,6 @@ privileged aspect Piiririkkuja_Roo_Entity {
     }
     
     @Transactional
-    public void Piiririkkuja.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Piiririkkuja attached = Piiririkkuja.findPiiririkkuja(this.piiririkkuja_ID);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
     public void Piiririkkuja.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();

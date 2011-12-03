@@ -40,17 +40,6 @@ privileged aspect Seadus_Roo_Entity {
     }
     
     @Transactional
-    public void Seadus.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Seadus attached = Seadus.findSeadus(this.seaduse_ID);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
     public void Seadus.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
