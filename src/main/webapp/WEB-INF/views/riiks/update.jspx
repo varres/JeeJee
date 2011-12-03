@@ -5,7 +5,7 @@
     <form:update id="fu_ee_itcollege_p0rn_entities_Riik" idField="riik_ID" modelAttribute="riik" path="/riiks" versionField="Version" z="Q4xajt+Us6WUM6RuYGJVlb3QaeM=">
         <field:input field="ISO_kood" id="c_ee_itcollege_p0rn_entities_Riik_ISO_kood" max="20" required="true" z="5oA8MtxLlLbyFW8dl71VTjRKy2A="/>
         <field:input field="ANSI_kood" id="c_ee_itcollege_p0rn_entities_Riik_ANSI_kood" max="20" required="true" z="xbZtsG3KcmNiCrnKS/7Y/ytV25U="/>
-        <field:input field="kommentaar" id="c_ee_itcollege_p0rn_entities_Riik_kommentaar" required="true" z="4TKpX9CD8tQBC9mc0qdQJ+gGoPw="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_p0rn_entities_Riik_kommentaar" min="0" required="true" z="zRRU5n/5eLV+vYWEnbt/0lko1C0="/>
         <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_Riik_avaja" render="false" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${riik_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_Riik_avatud" render="false" required="true" z="user-managed"/>
         <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_Riik_muutja" render="false" required="true" z="user-managed"/>
