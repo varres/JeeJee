@@ -7,8 +7,8 @@
         <field:input field="pais" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_pais" max="20" required="true" z="ume40BUrwhhoMRtUo7B2vGjm5SI="/>
         <field:textarea field="tekst" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_tekst" required="true" z="user-managed"/>
         <field:textarea field="kommentaar" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kommentaar" required="true" z="user-managed"/>
-        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_alates_date_format}" label="Kehtiv alates" field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_alates" required="true" z="M6pD5OANfhApdJZy0aIMKCncE3o="/>
-        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_kuni_date_format}" label="Kehtiv kuni" field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_kuni" required="true" z="oddZiczfbrvsZT+7WaqU6veR3Lo="/>
+        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_alates_date_format}" field="kehtiv_alates" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_alates" label="Kehtiv alates" required="true" z="user-managed"/>
+        <field:datetime dateTimePattern="${seadusePunkt_kehtiv_kuni_date_format}" field="kehtiv_kuni" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kehtiv_kuni" label="Kehtiv kuni" required="true" z="user-managed"/>
         <field:textarea field="avaja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avaja" render="false" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadusePunkt_avatud_date_format}" field="avatud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avatud" render="false" required="true" z="user-managed"/>
         <field:textarea field="muutja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muutja" render="false" required="true" z="user-managed"/>
@@ -17,17 +17,16 @@
         <field:datetime dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_suletud" render="false" required="true" z="user-managed"/>
         <field:select field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" itemLabel="formLabel" itemValue="seaduse_ID" items="${seaduses}" path="/seaduses" z="user-managed"/>
         <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" itemLabel="formLabel" itemValue="seaduse_punkt_ID" items="${seadusepunkts}" path="/seadusepunkts" render="false" z="user-managed"/>
-    	<div id="_c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID_id">
-	      	<label for="_ylemus_seaduse_punkt_ID_id">Ülemuse seaduse punkt:
+        <div id="_c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID_id">
+            <label for="_ylemus_seaduse_punkt_ID_id">Ülemuse seaduse punkt:
 	        </label>
-	        	<select id="_ylemus_seaduse_punkt_ID_id" name="ylemus_seaduse_punkt_ID">
-	        		<option value="">-</option>
-	        			<c:forEach items="${seadusepunkts}" var="b">
-	        				<option value="${b.seaduse_punkt_ID}">${b.pais}</option>
-	        			</c:forEach>
-	        	</select>
-	    </div>
-    
+            <select id="_ylemus_seaduse_punkt_ID_id" name="ylemus_seaduse_punkt_ID">
+                <option value="">-</option>
+                <c:forEach items="${seadusepunkts}" var="b">
+                    <option value="${b.seaduse_punkt_ID}">${b.pais}</option>
+                </c:forEach>
+            </select>
+        </div>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_p0rn_entities_SeadusePunkt" render="${not empty dependencies}" z="agniRmHNyzsqWyDsnR6v2iplr5w="/>
 </div>
