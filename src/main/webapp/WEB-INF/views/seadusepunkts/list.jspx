@@ -4,14 +4,13 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_p0rn_entities_SeadusePunkt" items="${seadusepunkts}" z="+twsmkOZJ3knkSjNqB8qEIv+XNY=">
         <table:table data="${seadusepunkts}" id="l_ee_itcollege_p0rn_entities_SeadusePunkt" path="/seadusepunkts" typeIdFieldName="seaduse_punkt_ID" z="OAtiSJahPLwCLXV0MHtwLdqpAsg=">
-            <table:column property="paragrahv" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_paragrahv" z="user-managed"/>
-            <table:column property="pais" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_pais" z="user-managed"/>
-            <table:column property="tekst" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_tekst" z="user-managed"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_paragrahv" property="paragrahv" z="user-managed"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_pais" property="pais" z="user-managed"/>
+            <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_tekst" property="tekst" z="user-managed"/>
             <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_kommentaar" property="kommentaar" z="user-managed"/>
-            
             <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_sulgeja" property="sulgeja" render="false" z="user-managed"/>
             <table:column date="true" dateTimePattern="${seadusePunkt_suletud_date_format}" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_suletud" property="suletud" render="false" z="user-managed"/>
-            <table:column date="true" dateTimePattern="${seadusePunkt_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avatud" property="avatud" render="false" z="user-manager"/>
+            <table:column date="true" dateTimePattern="${seadusePunkt_avatud_date_format}" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_avatud" property="avatud" render="false" z="user-managed"/>
             <table:column date="true" dateTimePattern="${seadusePunkt_muudetud_date_format}" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muudetud" property="muudetud" render="false" z="user-managed"/>
             <table:column id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muutja" property="muutja" render="false" z="user-managed"/>
         </table:table>
