@@ -126,7 +126,7 @@ public class SeadusePunkt extends Base {
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE suletud > CURDATE()", SeadusePunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     public static List<SeadusePunkt> findAllAlamSeadusePunkts(Long master_id) {
-    	return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE ylemus_seaduse_punkt_ID = " + master_id.toString(), SeadusePunkt.class).getResultList();
+    	return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE suletud > CURDATE() AND ylemus_seaduse_punkt_ID = " + master_id.toString(), SeadusePunkt.class).getResultList();
     }
     
 	public String getFormLabel() {

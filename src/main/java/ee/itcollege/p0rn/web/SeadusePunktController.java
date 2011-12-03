@@ -28,6 +28,12 @@ public class SeadusePunktController {
         }
         uiModel.asMap().clear();
         seadusepunkt.merge();
+        
+        String next_url = httpServletRequest.getParameter("next").toString();
+    	if (!next_url.equals("")) {
+    		return "redirect:"+next_url;
+    	}
+        
         try {
         	return "redirect:/seaduses/" + encodeUrlPathSegment(seadusepunkt.getSeaduse_ID().getId().toString(), httpServletRequest) + "?form";
         } catch (Exception ex) {
@@ -42,9 +48,15 @@ public class SeadusePunktController {
             addDateTimeFormatPatterns(uiModel);
             return "seaduses/update";
         }
-        uiModel.asMap().clear();
+    	
+    	uiModel.asMap().clear();
         seadusepunkt.merge();
 
+        String next_url = httpServletRequest.getParameter("next").toString();
+    	if (!next_url.equals("")) {
+    		return "redirect:"+next_url;
+    	}
+        
         try {
         	return "redirect:/seaduses/" + encodeUrlPathSegment(seadusepunkt.getSeaduse_ID().getId().toString(), httpServletRequest) + "?form";
         } catch (Exception ex) {
@@ -53,18 +65,23 @@ public class SeadusePunktController {
     }
     
 	@RequestMapping(params = "form", method = RequestMethod.GET)
-    public String createForm(@RequestParam(required = false) Long seaduse_ID, Model uiModel) {
+    public String createForm(@RequestParam(value = "next", required = false) String next_url, @RequestParam(value = "seadusePunkt_ID", required = false) Long parent_seadusePunkt_ID, @RequestParam(required = false) Long seaduse_ID, Model uiModel) {
 		SeadusePunkt model = new SeadusePunkt();
 		model.setSeaduse_ID(Seadus.findSeadus(seaduse_ID));
         uiModel.addAttribute("seadusePunkt", model);
+        uiModel.addAttribute("parent_seadusePunkt_ID", parent_seadusePunkt_ID);
+        uiModel.addAttribute("next", next_url);
         addDateTimeFormatPatterns(uiModel);
         return "seadusepunkts/create";
     }
 	
 
     @RequestMapping(value = "/{seaduse_punkt_ID}", params = "form", method = RequestMethod.GET)
-    public String updateForm(@PathVariable("seaduse_punkt_ID") Long seaduse_punkt_ID, Model uiModel) {
+    public String updateForm(@PathVariable("seaduse_punkt_ID") Long seaduse_punkt_ID, @RequestParam(value = "next", required = false) String next_url, Model uiModel) {
     	SeadusePunkt us = SeadusePunkt.findSeadusePunkt(seaduse_punkt_ID);
+    	
+        uiModel.addAttribute("next", next_url);
+    	
     	try {
     		uiModel.addAttribute("seaduseYlemPunkt_ID", us.getYlemus_seaduse_punkt_ID().getId().toString());
     	} catch (Exception ex) {}
@@ -89,11 +106,14 @@ public class SeadusePunktController {
 	}
     
 	@RequestMapping(value = "/{seadusepunkt_ID}", params = "delete", method = RequestMethod.GET)
-    public String delete(@PathVariable("seadusepunkt_ID") Long seadusepunkt_ID, Model uiModel) {
+    public String delete(@PathVariable("seadusepunkt_ID") Long seadusepunkt_ID, @RequestParam(value = "next", required = false) String next_url, Model uiModel) {
         SeadusePunkt model = SeadusePunkt.findSeadusePunkt(seadusepunkt_ID);
         if (model!=null) {
         	model.remove();
         	uiModel.asMap().clear();
+        	if (!next_url.equals("")) {
+        		return "redirect:"+next_url;
+        	}
         	return "redirect:/seaduses/" + model.getSeaduse_ID().getId().toString() + "?form";
         } else {
         	uiModel.asMap().clear();

@@ -27,11 +27,13 @@
                     <td>
                     	<spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="del_url">
                             <spring:param name="delete"/>
+                            <spring:param name="next" value="/seaduses/${seadus.seaduse_ID}/?form"/>
                         </spring:url>
                         <a class="button" href="${del_url}"><spring:message code="delete" /></a>
                         <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="edit_url">
                             <spring:param name="form"/>
             				<spring:param name="seaduse_ID" value="${seadus.seaduse_ID}"/>
+            				<spring:param name="next" value="/seaduses/${seadus.seaduse_ID}/?form"/>
                         </spring:url>
                         <a class="button" href="${edit_url}"><spring:message code="edit" /></a>
                     </td>
@@ -44,6 +46,7 @@
         <spring:url value="/seadusepunkts" var="create_url">
             <spring:param name="form"/>
             <spring:param name="seaduse_ID" value="${seadus.seaduse_ID}"/>
+            <spring:param name="next" value="/seaduses/${seadus.seaduse_ID}/?form"/>
         </spring:url>
         <a class="button" href="${create_url}"><spring:message code="new" /></a>
     </span>

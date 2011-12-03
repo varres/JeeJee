@@ -25,13 +25,16 @@ xmlns:springform="http://www.springframework.org/tags/form">
                         <c:out value="${b.pais}"/>
                     </td>
                     <td>
-                     <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="del_url">
+                     	<spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="del_url">
                             <spring:param name="delete"/>
+                            <spring:param name="next" value="/seadusepunkts/${seadusePunkt.seaduse_punkt_ID}/?form"/>
                         </spring:url>
                         <a class="button" href="${del_url}"><spring:message code="delete" /></a>
+                        
                         <spring:url value="/seadusepunkts/${b.seaduse_punkt_ID}" var="edit_url">
                             <spring:param name="form"/>
                             <spring:param name="seaduse_ID" value="${seadus.seaduse_ID}"/>
+                            <spring:param name="next" value="/seadusepunkts/${seadusePunkt.seaduse_punkt_ID}/?form"/>
                         </spring:url>
                         <a class="button" href="${edit_url}"><spring:message code="edit" /></a>
                     </td>
@@ -44,6 +47,7 @@ xmlns:springform="http://www.springframework.org/tags/form">
         <spring:url value="/seadusepunkts" var="create_url">
             <spring:param name="form"/>
             <spring:param name="seadusePunkt_ID" value="${seadusePunkt.seaduse_punkt_ID}"/>
+            <spring:param name="next" value="/seadusepunkts/${seadusePunkt.seaduse_punkt_ID}/?form"/>
         </spring:url>
         <a class="button" href="${create_url}"><spring:message code="new" /></a>
     </span>
@@ -65,9 +69,9 @@ xmlns:springform="http://www.springframework.org/tags/form">
         <field:datetime dateTimePattern="${seadusePunkt_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_muudetud" render="false" required="true" z="user-managed"/>
         <field:textarea field="sulgeja" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_sulgeja" render="false" required="true" z="user-managed"/>
         <field:datetime dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_suletud" render="false" required="true" z="user-managed"/>
-        <field:select field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" itemValue="seaduse_ID" items="${seaduses}" path="/seaduses" render="false" z="user-managed"/>
+        <field:select field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" itemValue="seaduse_ID" items="${seaduses}" path="/seaduses" render="true" z="user-managed"/>
         <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID"  itemLabel="formLabel" itemValue="seaduse_punkt_ID" items="${seadusepunkts}" required="false" path="/seadusepunkts" render="false" z="user-managed"/>
-      		
+      	<input type="hidden" name="next" id="next" value="${next}"/>
 	      <div id="_c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID_id">
 	      	<label for="_ylemus_seaduse_punkt_ID_id">Ülemuse seaduse punkt:
 	        </label>

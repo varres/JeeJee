@@ -17,13 +17,20 @@
         <field:datetime dateTimePattern="${seadusePunkt_suletud_date_format}" field="suletud" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_suletud" render="false" required="true" z="user-managed"/>
         <field:select field="seaduse_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_seaduse_ID" itemLabel="formLabel" itemValue="seaduse_ID" items="${seaduses}" path="/seaduses" z="user-managed"/>
         <field:select field="ylemus_seaduse_punkt_ID" id="c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID" itemLabel="formLabel" itemValue="seaduse_punkt_ID" items="${seadusepunkts}" path="/seadusepunkts" render="false" z="user-managed"/>
+        <input type="hidden" name="next" id="next" value="${next}"/>
         <div id="_c_ee_itcollege_p0rn_entities_SeadusePunkt_ylemus_seaduse_punkt_ID_id">
             <label for="_ylemus_seaduse_punkt_ID_id">Ülemuse seaduse punkt:
 	        </label>
             <select id="_ylemus_seaduse_punkt_ID_id" name="ylemus_seaduse_punkt_ID">
                 <option value="">-</option>
                 <c:forEach items="${seadusepunkts}" var="b">
-                    <option value="${b.seaduse_punkt_ID}">${b.pais}</option>
+                	<c:if test="${b.seaduse_punkt_ID != parent_seadusePunkt_ID}">
+	        			<option value="${b.seaduse_punkt_ID}">${b.pais}</option>
+	        		</c:if>
+	        		<c:if test="${b.seaduse_punkt_ID == parent_seadusePunkt_ID}">
+	        			<option selected="selected" value="${b.seaduse_punkt_ID}">${b.pais}</option>
+	        		</c:if>
+                    
                 </c:forEach>
             </select>
         </div>
