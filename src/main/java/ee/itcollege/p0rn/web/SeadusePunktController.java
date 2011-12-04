@@ -102,7 +102,7 @@ public class SeadusePunktController {
         uiModel.asMap().clear();	
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/seaduses";
+        return "redirect:/seadusepunkts";
 	}
     
 	@RequestMapping(value = "/{seadusepunkt_ID}", params = "delete", method = RequestMethod.GET)
