@@ -88,7 +88,7 @@
 	    				<span class="strike">${b.paragrahv} ${b.pais}</span>
 	    			</c:if>
 	    			<c:if test="${b.suletud=='9999-12-31 00:00:00.0'}">
-	    				${b.suletud}
+	    				${b.paragrahv} ${b.pais}
 	    			</c:if>
 	    		</td>
 	    		<td>${b.kehtiv_alates}</td>
