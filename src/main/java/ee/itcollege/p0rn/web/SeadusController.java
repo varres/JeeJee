@@ -31,12 +31,11 @@ public class SeadusController {
 	
     @RequestMapping(method = RequestMethod.POST)
     public String create(@Valid Seadus seadus, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
+    	uiModel.addAttribute("seadus", seadus);
     	if (bindingResult.hasErrors()) {
-        	uiModel.addAttribute("seadus", seadus);
             addDateTimeFormatPatterns(uiModel);
             return "seaduses/create";
         }
-    	uiModel.addAttribute("seadus", seadus);
         uiModel.asMap().clear();
         seadus.persist();
         return "redirect:/seaduses/" + encodeUrlPathSegment(seadus.getId().toString(), httpServletRequest);
