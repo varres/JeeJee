@@ -60,7 +60,7 @@ public class Kodakondsus extends Base {
     }
     
     public static List<Kodakondsus> findAllByPiiririkkuja(long id) {
-        return entityManager().createQuery("SELECT o FROM Kodakondsus o WHERE suletud > CURDATE() AND piiririkkuja_ID = " + id, Kodakondsus.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM Kodakondsus o WHERE suletud > CURDATE() AND piiririkkuja_ID = :piiririkkujaId", Kodakondsus.class).setParameter("piiririkkujaId", id).getResultList();
     }
 
     public static void importFUCK() {

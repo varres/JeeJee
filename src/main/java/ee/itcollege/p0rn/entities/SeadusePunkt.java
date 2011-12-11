@@ -1,33 +1,18 @@
 package ee.itcollege.p0rn.entities;
 
-import org.springframework.roo.addon.entity.RooEntity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.tostring.RooToString;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
-import javax.validation.constraints.Size;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import org.springframework.format.annotation.DateTimeFormat;
-import ee.itcollege.p0rn.entities.Seadus;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.javabean.RooJavaBean;
+import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
@@ -86,32 +71,31 @@ public class SeadusePunkt extends Base {
 	private ee.itcollege.p0rn.entities.SeadusePunkt ylemus_seaduse_punkt_ID;
 
 	public static List<SeadusePunkt> findAllSeadusePunkts(long seaduse_ID, String alates, String kuni) {
-    	String g = "WHERE 1=1";
+    	String g = "";
     	if (seaduse_ID > 0) {
-    		g = g + " AND seaduse_ID = " + seaduse_ID;
+    		g += " AND seaduse_ID = " + seaduse_ID;
     	}
     	if (alates.length() > 0) {
-    		g = g + " AND kehtiv_alates >= '" + alates + "'";
+    		g += " AND kehtiv_alates >= '" + alates + "'";
     	}
     	if (kuni.length() > 0) {
-    		g = g + " AND kehtiv_kuni <= '" + kuni + "'";
+    		g += " AND kehtiv_kuni <= '" + kuni + "'";
     	}
-        return entityManager().createQuery("SELECT o FROM SeadusePunkt o " + g, SeadusePunkt.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE 1=1" + g, SeadusePunkt.class).getResultList();
     }
 	
 	public static List<SeadusePunkt> findAllSeadusePunktsTopLevel(long seaduse_ID, String alates, String kuni) {
-    	String g = "WHERE 1=1";
+    	String g = "";
     	if (seaduse_ID > 0) {
-    		g = g + " AND seaduse_ID = " + seaduse_ID;
+    		g += " AND seaduse_ID = " + seaduse_ID;
     	}
     	if (alates.length() > 0) {
-    		g = g + " AND kehtiv_alates >= '" + alates + "'";
+    		g += " AND kehtiv_alates >= '" + alates + "'";
     	}
     	if (kuni.length() > 0) {
-    		g = g + " AND kehtiv_kuni <= '" + kuni + "'";
+    		g += " AND kehtiv_kuni <= '" + kuni + "'";
     	}
-    	g = g + " AND suletud > CURDATE() AND ylemus_seaduse_punkt_id = null";
-        return entityManager().createQuery("SELECT o FROM SeadusePunkt o " + g, SeadusePunkt.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE (suletud > CURDATE() OR suletud IS NULL) AND ylemus_seaduse_punkt_id = NULL" + g, SeadusePunkt.class).getResultList();
     }
     
     public static long countSeadusePunkts() {
@@ -126,7 +110,7 @@ public class SeadusePunkt extends Base {
         return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE suletud > CURDATE()", SeadusePunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     public static List<SeadusePunkt> findAllAlamSeadusePunkts(Long master_id) {
-    	return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE suletud > CURDATE() AND ylemus_seaduse_punkt_ID = " + master_id.toString(), SeadusePunkt.class).getResultList();
+    	return entityManager().createQuery("SELECT o FROM SeadusePunkt o WHERE suletud > CURDATE() AND ylemus_seaduse_punkt_ID = :ylemusSeadusePunkId", SeadusePunkt.class).setParameter("ylemusSeadusePunkId", master_id.toString()).getResultList();
     }
     
 	public String getFormLabel() {
